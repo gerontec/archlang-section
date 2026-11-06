@@ -61,3 +61,7 @@ storey height minus the `@floor` build-up of the level above.
 Only what the cut plane hits — nothing behind it is projected, no roofs, axis-aligned cuts only,
 straight stairs only, rooms/walls from `walls from rooms` (authored `wall` statements are not read),
 and the cut line is not drawn in the floor plan (ArchLang has no element for it).
+
+## License
+
+MIT, see [LICENSE](LICENSE). ArchLang itself is a separate project under its own license.
