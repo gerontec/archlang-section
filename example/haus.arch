@@ -10,7 +10,7 @@ plan "Haus" {
   paper A3 portrait
   scale 1:50
   north up
-  dims auto all
+  dims auto walls     # only the wall-thickness call-outs; no exterior chains (rooms carry clear dims)
   sheet text { decimal "," total "SUMME" }
   schedule rooms net
 
@@ -108,6 +108,30 @@ plan "Haus" {
     window at (XE, 5560) width 1050 wall exterior
     window at (XE, 2035) width 1000 wall exterior
 
+    # clear room dimensions (DIN 1356 style, face to face inside each room): `dim clear` from
+    # centerline to centerline, pulled in to the inner wall faces by ArchLang. One width (x) and
+    # one depth (y) per room, each on a line kept off the furniture where the room allows.
+    dim clear (XM, 2260) -> (XW, 2260) offset 0           # stairwell width, south of the west door (east to west: figure on the room side)
+    dim clear (600, YN) -> (600, YST) offset 0            # stairwell depth, west of the flight
+    dim clear (XM, 1300) -> (XB, 1300) offset 0           # WC
+    dim clear (5900, YN) -> (5900, YWC) offset 0
+    dim clear (XM, 2450) -> (XB, 2450) offset 0           # lobby
+    dim clear (5300, YWC) -> (5300, YBA) offset 0
+    dim clear (XB, 2000) -> (XE, 2000) offset 0           # bath
+    dim clear (7250, YN) -> (7250, YBA) offset 0
+    dim clear (XW, 3700) -> (XH, 3700) offset 0           # kitchen
+    dim clear (2000, YST) -> (2000, YKI) offset 0
+    dim clear (XH, 6500) -> (XM, 6500) offset 0           # hall
+    dim clear (4000, YST) -> (4000, YLR) offset 0
+    dim clear (XW, 8600) -> (XH, 8600) offset 0           # room W
+    dim clear (2200, YKI) -> (2200, YLR) offset 0
+    dim clear (XM, 4400) -> (XE, 4400) offset 0           # room NE
+    dim clear (8300, YBA) -> (8300, YNE) offset 0
+    dim clear (XM, 9400) -> (XE, 9400) offset 0           # room SE
+    dim clear (8300, YNE) -> (8300, YS) offset 0
+    dim clear (XW, 9600) -> (XM, 9600) offset 0           # living room
+    dim clear (2950, YLR) -> (2950, YS) offset 0
+
     # doors
     # west door of the living room: per level (terrace door 2000 double on the ground floor)
     door at (XW, 1735) width 900 wall exterior swing outward
@@ -116,7 +140,7 @@ plan "Haus" {
     door at (XH, 4255) width 800 wall partition swing into kueche
     door at (XM, 8235) width 800 wall partition swing into zso
     door at (XM, 5235) width 800 wall partition swing into zno
-    door at (4295, YST) width 800 wall partition swing into treppe
+    door at (4295, YST) width 800 wall partition swing into flur     # flat entrance: opens inward, into the hall
     door at (5595, YWC) width 800 wall partition swing into wc
     door at (XB, 2610) width 750 wall partition swing into bad
     # hall -> lobby: open passage, no door leaf
