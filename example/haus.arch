@@ -77,7 +77,7 @@ plan "Haus" {
       room id=zw at (XW, YKI) size (XH - XW) x (YLR - YKI) label "Heizung" uses utility
     }
     if lvl == 0 {
-      room id=zw at (XW, YKI) size (XH - XW) x (YLR - YKI) label "Kino" uses living
+      room id=zw at (XW, YKI) size (XH - XW) x (YLR - YKI) label "Kino" at (1900, 7150) uses living
     }
     if lvl == 1 {
       room id=zw at (XW, YKI) size (XH - XW) x (YLR - YKI) label "Esszimmer" uses dining
@@ -164,6 +164,32 @@ plan "Haus" {
     # 450 left between its end and the south wall at the archway. The sofa_l symbol fixes its seat
     # depth at min(0.56 x short, 0.35 x long) = 822, so the legs are drawn 82 deep, not 90
     furniture sofa_l at (140, 6035) size 1900x2350 label "Eckcouch 235/190" rotate 270 mirror
+    # display cabinet (Vitrine) in the cinema's north-east corner, across the corner between the
+    # chimney's south face (y 6455) and the hall wall (face x 3545): a triangle whose legs are the
+    # two faces, 1030 each, from the corner (3545, 6455) to (2515, 6455) and (3545, 7485); its
+    # front on the 45 deg diagonal, 1457 long, 728 from the corner. Height 1740: 600 left free
+    # below the ceiling (clear height EG_CLEAR 2340). Like the corner bath, ArchLang
+    # has no triangular piece: the legs are the faces, the front a labelled dimension line (a
+    # wall there would cut the triangle off the room)
+    dim (2515, 6455) -> (3545, 7485) offset 0 text "Vitrine h 174"
+    # projection screen on the cinema's east wall, between the display cabinet (ends y 7485) and
+    # the south wall face (y 8835): 1350 free, screen 1320 wide centred in it (y 7500-8820),
+    # image 1320 x 750 (about 16:9, 1.76:1). ArchLang has no screen symbol: drawn as a whiteboard 40 deep
+    # (the housing) on the wall face; height and format only in the label (sections draw no furniture)
+    furniture whiteboard at (3505, 7500) size 40x1320 label "Leinwand 132 x 75" rotate 90
+    # the symbol is too thin to carry its label at 1:50: labelled by a dimension line in front of it
+    dim (3465, 7500) -> (3465, 8820) offset 0 text "Leinwand 132/75"
+    # projector, ceiling mount: lens 100 below the ceiling (h 2240 above FFB), x 1700 on the screen
+    # axis y 8160, throw 1805 to the screen face x 3505 (throw ratio ~1.37 at 1320 wide). Screen
+    # planned at h 950-1700 (seated eye ~1100). The lens is tilted ~27 deg down to the screen
+    # centre: the image keystones ~18 % (bottom wider than top), corrected in the projector;
+    # with the usual built-in 100 % offset ~17 deg / ~11 %, with ~70 % vertical lens shift none.
+    # In plan the beam clears the cabinet front by ~200. ArchLang has no projector symbol:
+    # drawn as a box 300 x 350 (lens on its east face) plus the beam's edge rays as dimension lines
+    furniture box at (1400, 7985) size 300x350 label "Beamer"
+    dim (1700, 8160) -> (3505, 7500) offset 0 text ""
+    dim (1700, 8160) -> (3505, 8820) offset 0 text ""
+    dim (1700, 8160) -> (3505, 8160) offset 0 text "Beamer h 224, 27°"
     # bedroom: double bed, two mattresses 90 x 190 (footprint 1800 x 1900 = mattresses, no frame),
     # head end on the south wall (face y 7575), centred in the clear width (faces x 5095 / 8770
     # -> 6932,5, grid 5 -> 6935); its foot end at y 5675 stays clear of the door leaf (to y 5635)
