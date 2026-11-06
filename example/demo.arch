@@ -9,7 +9,7 @@ plan "Demo" {
   let D = 10000
   let XS = 5000      # stair hall | WC, lobby
   let XB = 6200      # WC, lobby | bath (as in the real house: a small WC, then the larger bath)
-  let YH = 3600      # stair hall | living
+  let YH = 2430      # stair hall | living: 2.22 m clear, as in the house (1.01 stair eye + 1.21 hall)
   let YW = 1800      # WC | lobby
   let YK = 4000      # WC, lobby, bath | room
 
@@ -31,7 +31,7 @@ plan "Demo" {
     room id=living at (0, YH) size XS x (D - YH) label "Wohnen" uses living
     room id=room at (XS, YK) size (W - XS) x (D - YK) label "Zimmer" uses bedroom
     walls from rooms exterior 300 partition 115
-    door at (XS, 3000) width 800 wall partition swing into lobby
+    door at (XS, 3200) width 800 wall partition swing into lobby
     door at (5600, YW) width 800 wall partition swing into lobby
     door at (XB, 2600) width 800 wall partition swing into bath
     furniture wc in wc anchor top flush size 400x700

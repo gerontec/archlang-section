@@ -22,7 +22,7 @@ plan "Haus" {
   let XE = 8910
   let YN = 0
   let YWC = 1770     # WC | lobby
-  let YST = 2475     # stairwell | kitchen/hall
+  let YST = 2440     # stairwell | kitchen/hall: 2.22 m clear (1.01 stair eye + 1.21 hall), measured
   let YBA = 3870     # bath/lobby | room NE
   let YKI = 5960     # kitchen | room W
   let YNE = 7650     # room NE | room SE
@@ -82,7 +82,7 @@ plan "Haus" {
 
     # doors
     door at (XW, 10985) width 1000 wall exterior swing into wz
-    door at (XW, 1785) width 900 wall exterior swing outward
+    door at (XW, 1735) width 900 wall exterior swing outward
     door at (4295, YLR) width 800 wall partition swing into wz
     door at (XH, 6735) width 800 wall partition swing into zw
     door at (XH, 4255) width 800 wall partition swing into kueche
