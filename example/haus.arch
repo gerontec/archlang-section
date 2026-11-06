@@ -164,6 +164,35 @@ plan "Haus" {
     # head end on the south wall (face y 7575), centred in the clear width (faces x 5095 / 8770
     # -> 6932,5, grid 5 -> 6935); its foot end at y 5675 stays clear of the door leaf (to y 5635)
     furniture double_bed at (6035, 5675) size 1800x1900 label "Doppelbett 2 x 90/190" rotate 180
+    # kitchen: U-shaped, 600 deep, open to the east (door to the hall on the east wall, y 3855-4655).
+    # Clear faces: west x 140, east x 3545, north y 2525, south y 5885.
+    # Base of the U on the west wall with the double sink under the window (y 4085-5085): the
+    # sink 1200 long centred on the window centre y 4585, so its tap sits exactly mid-window
+    # and both casements open past it. The two legs run along the north and south walls to the
+    # east wall; 2160 clear between them, the door swing stays between the legs.
+    # Fit-out after the usual kitchen planning rules (DIN 18022, AMK): dishwasher right beside
+    # the sink, hob neither in a corner nor beside the tall unit, worktop on both sides of it,
+    # fridge as a tall unit at the end of a leg; work triangle sink-hob-fridge about 6 m.
+    # Hob + hood on the south leg near the west wall: the hood must be <= 1800 from the west
+    # wall (its duct, 100 mm, runs along the south wall to the outside through the west wall).
+    #   west leg:  corner counter 860 | dishwasher 600 | double sink 1200 | corner counter 700
+    #   south leg: counter 400 | hob 600 (centre x 1440 = 1300 from the west wall face) |
+    #              counter 1205 | fridge tall unit 600
+    #   north leg: counter run 2805 (storage)
+    furniture kitchen_sink at (140, 3985) size 600x1200 label "Doppelspüle" rotate 270
+    furniture counter at (140, 2525) size 600x860 rotate 270
+    furniture dishwasher at (140, 3385) size 600x600 label "GS" rotate 270
+    furniture counter at (140, 5185) size 600x700 rotate 270
+    furniture counter at (740, 2525) size 2805x600
+    furniture counter at (740, 5285) size 400x600 rotate 180
+    furniture stove at (1140, 5285) size 600x600 label "Kochfeld" rotate 180
+    furniture range_hood at (1140, 5385) size 600x500 label "Dunstabzug" rotate 180
+    furniture counter at (1740, 5285) size 1205x600 rotate 180
+    furniture fridge at (2945, 5285) size 600x600 label "Kühlschrank" rotate 180
+    # exhaust duct DN 100 from the hood along the south wall, 100 below the ceiling (clear
+    # height 2340 -> at 2240 above the finished floor), to the outside through the west wall. ArchLang has no duct: drawn as a dimension line from the
+    # hood centre to the outer face of the west wall, labelled
+    dim (1440, 5835) -> (-140, 5835) offset 0 text "Abluft DN 100"
     # bath fittings: ground floor only
     # bath fittings (measured): a level-access shower 90 x 90 in the north-east corner,
     # a corner bath with 130 cm legs in the north-west corner (ArchLang has no corner bath:
@@ -188,7 +217,8 @@ plan "Haus" {
     void id=schacht at (SX, SY) size 410x410
   }
 
-  notes "Grundriss aller Geschosse identisch mit eg.arch (Stand 2026-11-05)"
+  notes "Wände aller Geschosse identisch, Raumnutzung je Geschoss"
         "Raumhöhen und Deckenaufbau gemessen 2026-11-06, Aufteilung Estrich/Beton angenommen"
+        "EG Küche: Abluft DN 100 vom Dunstabzug zur Westwand, 10 cm unter der Decke"
   title { project "Haus KG/EG/OG" drawn_by "GH" date "2026-11-06" }
 }
