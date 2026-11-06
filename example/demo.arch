@@ -12,7 +12,7 @@ plan "Demo" {
 
   # --- section data (comments, ignored by ArchLang) ---
   # @section A x=1000 look east
-  # @section B y=4100 look north    # through the winders and the exit flight
+  # @section B y=1000 look south    # in front of the stair: flight, winders and exit in view
   # @datum 0
   # @floor -1 Estrich:50 Bodenplatte:250
   # @floor 0 Fliesen:15 Estrich:65 Trittschall:30 Stahlbeton:180 Putz:15

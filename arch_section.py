@@ -652,7 +652,10 @@ def level_cut(level, axis, pos, look="north"):
             continue
         pieces_all = stair_pieces(v)
         n_lo, n_hi = (("x", "w") if axis == "x" else ("y", "h"))
-        if any(p["bbox"][n_lo] < pos < p["bbox"][n_lo] + p["bbox"][n_hi] for p in pieces_all):
+        # a stair the cut passes through, or one wholly behind the cut plane (drawn in view)
+        behind = (lambda p: p["bbox"][n_lo] + p["bbox"][n_hi] > pos) if look in ("east", "south") \
+            else (lambda p: p["bbox"][n_lo] < pos)
+        if any(behind(p) for p in pieces_all):
             stairs.append({"v": v, "dir": v.get("dir", "up")})
     return {"rooms": rooms, "walls": walls, "stairs": stairs}
 
