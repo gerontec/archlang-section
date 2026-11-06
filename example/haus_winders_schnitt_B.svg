@@ -112,5 +112,5 @@
 <line x1="9005" y1="3510" x2="9105" y2="3410" stroke="#000" stroke-width="13"/>
 <text x="4455" y="3385" font-size="120" text-anchor="middle">9,20</text>
 <text x="-145" y="-6680" font-size="210" font-weight="bold">Schnitt B-B  (y = 0,65 m, Blick nach Norden)</text>
-<text x="-145" y="4840" font-size="105">M 1:50 · arch_section.py (rudimentär: nur Schnittebene, keine Ansicht dahinter, Dach nicht modelliert)</text>
+<text x="-145" y="4840" font-size="105">M 1:50 · arch_section.py (rudimentär: nur Schnittebene, Ansicht dahinter nur Treppen, Dach nicht modelliert)</text>
 </svg>

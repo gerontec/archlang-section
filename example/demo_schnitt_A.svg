@@ -13,6 +13,15 @@
   <rect width="150" height="150" fill="#ffe0e0"/><line x1="0" y1="0" x2="0" y2="150" stroke="#e05050" stroke-width="8"/></pattern>
 </defs>
 <rect x="-9150.0" y="-7200" width="23500.0" height="12300.0" fill="white"/>
+<polyline points="3600,488 4600,488 4600,-0 3600,-0 3600,488" fill="none" stroke="#000" stroke-width="6"/>
+<polyline points="3600,325 4600,325" fill="none" stroke="#000" stroke-width="6"/>
+<polyline points="3600,162 4600,162" fill="none" stroke="#000" stroke-width="6"/>
+<polyline points="3600,-2316 4600,-2316 4600,-2850 3600,-2850 3600,-2316" fill="none" stroke="#000" stroke-width="6"/>
+<polyline points="3600,-2494 4600,-2494" fill="none" stroke="#000" stroke-width="6"/>
+<polyline points="3600,-2672 4600,-2672" fill="none" stroke="#000" stroke-width="6"/>
+<polyline points="3600,-5084 4600,-5084 4600,-5600 3600,-5600 3600,-5084" fill="none" stroke="#000" stroke-width="6"/>
+<polyline points="3600,-5256 4600,-5256" fill="none" stroke="#000" stroke-width="6"/>
+<polyline points="3600,-5428 4600,-5428" fill="none" stroke="#000" stroke-width="6"/>
 <rect x="-150" y="2600" width="10300" height="50" fill="url(#screed)" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="2650" width="10300" height="250" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="0" width="1350" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
@@ -124,5 +133,5 @@
 <line x1="10100" y1="3650" x2="10200" y2="3550" stroke="#000" stroke-width="13"/>
 <text x="5000" y="3525" font-size="120" text-anchor="middle">10,30</text>
 <text x="-150" y="-6960" font-size="210" font-weight="bold">Schnitt A-A  (x = 1,00 m, Blick nach Osten)</text>
-<text x="-150" y="4980" font-size="105">M 1:50 · arch_section.py (rudimentär: nur Schnittebene, keine Ansicht dahinter, Dach nicht modelliert)</text>
+<text x="-150" y="4980" font-size="105">M 1:50 · arch_section.py (rudimentär: nur Schnittebene, Ansicht dahinter nur Treppen, Dach nicht modelliert)</text>
 </svg>

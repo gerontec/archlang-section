@@ -214,6 +214,22 @@ def stair_profile(ul, uh, za, zb, steps, head):
     return pts, risers, rise, run
 
 
+def view_lines(v):
+    """Polylines of a stair piece behind the cut plane, seen in view (no fill, thin lines)."""
+    kind, ua, ub, za, zb, steps, head = v
+    if kind == "side":
+        pts, n, rise, run = stair_profile(ua, ub, za, zb, steps, head)
+        off = STAIR_WAIST * math.hypot(run, rise) / abs(run) if run else STAIR_WAIST
+        return [pts + [(ub, zb - off), (ua, za - off), (ua, za)]]
+    if kind == "end":                       # seen end-on: one line per tread nosing
+        risers = max(1, math.ceil((zb - za) / RISER_MAX)) if steps is None else steps + (1 if head else 0)
+        rise = (zb - za) / risers
+        lines = [[(ua, za), (ub, za), (ub, zb), (ua, zb), (ua, za)]]
+        lines += [[(ua, za + k * rise), (ub, za + k * rise)] for k in range(1, risers)]
+        return lines
+    return [[(ua, za - STAIR_WAIST), (ub, za - STAIR_WAIST), (ub, za), (ua, za), (ua, za - STAIR_WAIST)]]
+
+
 def winder_ends(p, pieces, axis):
     """Low and high end of a winder landing along a cut line.  The cut 'y=pos' runs along x.
     Along the entry flight's axis the winders rise away from the entry side; along the exit
@@ -230,7 +246,7 @@ def winder_ends(p, pieces, axis):
     return (hi_c if abs(high - lo_c) < 1 else lo_c), high
 
 
-def level_cut(level, axis, pos):
+def level_cut(level, axis, pos, look="north"):
     """Rooms, walls and openings of one level on the cut line, in plan coordinate c along the line."""
     pj = level["plan"]
     rooms = []
@@ -264,12 +280,34 @@ def level_cut(level, axis, pos):
         if v.get("kind") != "stair" or "bbox" not in v:
             continue
         pieces_all = stair_pieces(v)
+
+        def normal(p):                                          # piece extent across the cut
+            bb = p["bbox"]
+            return (bb["x"], bb["x"] + bb["w"]) if axis == "x" else (bb["y"], bb["y"] + bb["h"])
+        if not any(n0 < pos < n1 for n0, n1 in (normal(p) for p in pieces_all)):
+            continue                                            # the cut misses this stair
+        beyond = (lambda n0, n1: n0 >= pos - 1) if look in ("east", "south") else (lambda n0, n1: n1 <= pos + 1)
         for p in pieces_all:
             bb = p["bbox"]
             x0, y0, x1, y1 = bb["x"], bb["y"], bb["x"] + bb["w"], bb["y"] + bb["h"]
-            if axis == "x" and not (x0 < pos < x1) or axis == "y" and not (y0 < pos < y1):
-                continue
             a0, a1 = (y0, y1) if axis == "x" else (x0, x1)      # piece extent along the cut
+            n0, n1 = normal(p)
+            if not (n0 < pos < n1):
+                if not beyond(n0, n1):
+                    continue                                    # in front of the cut: cut away
+                # behind the cut plane: drawn in view
+                common = {"f0": p["f0"], "f1": p["f1"], "head": p["head"], "dir": v.get("dir", "up")}
+                if p["axis"] is None and p.get("winders"):
+                    lo, hi = winder_ends(p, pieces_all, axis)
+                    stairs.append({"mode": "view_side", "c_low": lo, "c_high": hi, "steps": p["winders"], **common})
+                elif p["axis"] is None:
+                    stairs.append({"mode": "view_flat", "c0": a0, "c1": a1, **common})
+                elif p["axis"] != axis:                         # runs parallel to the cut: side view
+                    stairs.append({"mode": "view_side", "c_low": p["low"], "c_high": p["high"],
+                                   "steps": p["steps"], **common})
+                else:                                           # runs away from the cut: end view
+                    stairs.append({"mode": "view_end", "c0": a0, "c1": a1, "steps": p["steps"], **common})
+                continue
             if p["axis"] is None and p.get("winders"):          # winders: rise across the cut
                 lo, hi = winder_ends(p, pieces_all, axis)
                 stairs.append({"mode": "along", "c_low": lo, "c_high": hi, "steps": p["winders"],
@@ -304,7 +342,7 @@ def build_section(levels, d, name):
     sign = 1 if look in ("east", "north") else -1
     datum = next((l["elev"] for l in levels if l["n"] == d["datum"]), levels[0]["elev"])
     top = levels[-1]
-    cuts = {l["n"]: level_cut(l, axis, pos) for l in levels}
+    cuts = {l["n"]: level_cut(l, axis, pos, look) for l in levels}
     if not any(cuts[n]["rooms"] for n in cuts):
         sys.exit(f"section {name}: line {axis}={pos:g} crosses no room")
 
@@ -328,7 +366,7 @@ def build_section(levels, d, name):
             return None
         return (min(U(w["c"]) - w["t"] / 2 for w in c["walls"]), max(U(w["c"]) + w["t"] / 2 for w in c["walls"]))
 
-    els = {"walls": [], "slabs": [], "glass": [], "stairs": [], "texts": [], "dims": [], "marks": []}
+    els = {"walls": [], "slabs": [], "glass": [], "stairs": [], "views": [], "texts": [], "dims": [], "marks": []}
     stair_voids = {}   # slab level -> list of (u0,u1) left open
     for l in levels:
         n = l["n"]
@@ -356,7 +394,7 @@ def build_section(levels, d, name):
                     els["glass"].append((u, t, z0 + sill, z0 + head))
             for a, b in segs:
                 els["walls"].append((u - t / 2, a, u + t / 2, b, w["kind"]))
-        taken = [tuple(sorted((U(st["c_low"]), U(st["c_high"])) if st["mode"] == "along"
+        taken = [tuple(sorted((U(st["c_low"]), U(st["c_high"])) if "c_low" in st
                               else (U(st["c0"]), U(st["c1"])))) for st in c["stairs"]]
         for r in c["rooms"]:
             ua, ub = sorted((U(r["c0"]), U(r["c1"])))
@@ -384,6 +422,17 @@ def build_section(levels, d, name):
             zl = z0 if s["dir"] == "up" else z0 - next((x["height"] for x in levels if x["n"] == n - 1), H)
             Hs = H if s["dir"] == "up" else z0 - zl
             vl = n + 1 if s["dir"] == "up" else n
+            if s["mode"].startswith("view"):
+                za, zb = zl + s["f0"] * Hs, zl + s["f1"] * Hs
+                if s["mode"] == "view_side":
+                    els["views"].append(("side", U(s["c_low"]), U(s["c_high"]), za, zb, s["steps"], s["head"]))
+                elif s["mode"] == "view_end":
+                    ua, ub = sorted((U(s["c0"]), U(s["c1"])))
+                    els["views"].append(("end", ua, ub, za, zb, s["steps"], s["head"]))
+                else:
+                    ua, ub = sorted((U(s["c0"]), U(s["c1"])))
+                    els["views"].append(("flat", ua, ub, za, za, 0, False))
+                continue
             if s["mode"] == "along":
                 ul, uh = U(s["c_low"]), U(s["c_high"])
                 els["stairs"].append(("along", ul, uh, zl + s["f0"] * Hs, zl + s["f1"] * Hs, s.get("steps"), s.get("head", True)))
@@ -484,6 +533,10 @@ def render_svg(sec, scale):
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{vw / S:.1f}mm" height="{vh / S:.1f}mm" '
            f'viewBox="{vx:.0f} {vy:.0f} {vw:.0f} {vh:.0f}" font-family="DejaVu Sans, sans-serif">',
            f"<defs>{PATTERNS}</defs>", f'<rect x="{vx}" y="{vy}" width="{vw}" height="{vh}" fill="white"/>']
+    for v in els["views"]:                  # stair behind the cut plane, in view
+        for line in view_lines(v):
+            out.append('<polyline points="' + " ".join(f"{p:.0f},{-q:.0f}" for p, q in line)
+                       + f'" fill="none" stroke="#000" stroke-width="{0.13 * S:.0f}"/>')
     for a, b, c, d_, lname, assumed in els["slabs"]:
         out.append(f'<rect x="{a:.0f}" y="{-d_:.0f}" width="{c - a:.0f}" height="{d_ - b:.0f}" fill="{layer_fill(lname, assumed)}" '
                    f'stroke="{"#d03030" if assumed else "#000"}" stroke-width="{0.18 * S:.0f}"'
@@ -551,7 +604,7 @@ def render_svg(sec, scale):
             out.append(f'<text x="{(a + b) / 2:.0f}" y="{-z - 0.5 * txt:.0f}" font-size="{txt * 0.8:.0f}" text-anchor="middle">{fmt_len(b - a)}</text>')
     out.append(f'<text x="{x0:.0f}" y="{vy + 1.6 * txt:.0f}" font-size="{txt * 1.4:.0f}" font-weight="bold">{escape(sec["title"])}</text>')
     out.append(f'<text x="{x0:.0f}" y="{vy + vh - 0.8 * txt:.0f}" font-size="{txt * 0.7:.0f}">M 1:{scale:g} · arch_section.py '
-               f'(rudimentär: nur Schnittebene, keine Ansicht dahinter, Dach nicht modelliert)</text>')
+               f'(rudimentär: nur Schnittebene, Ansicht dahinter nur Treppen, Dach nicht modelliert)</text>')
     out.append("</svg>")
     return "\n".join(out)
 
@@ -561,7 +614,7 @@ def render_dxf(sec, path):
     doc = ezdxf.new("R2010", setup=True)
     doc.units = ezdxf.units.MM
     msp = doc.modelspace()
-    for lay, col in (("S_WAND", 7), ("S_DECKE", 8), ("S_DECKE_ANNAHME", 1), ("S_GLAS", 5), ("S_TREPPE", 9), ("S_TEXT", 7), ("S_GELAENDE", 3)):
+    for lay, col in (("S_WAND", 7), ("S_DECKE", 8), ("S_DECKE_ANNAHME", 1), ("S_GLAS", 5), ("S_TREPPE", 9), ("S_TREPPE_ANSICHT", 8), ("S_TEXT", 7), ("S_GELAENDE", 3)):
         doc.layers.add(lay, color=col)
 
     def box(a, b, c, d_, layer, hatch=None):
@@ -581,6 +634,9 @@ def render_dxf(sec, path):
     for u, t, a, b in els["glass"]:
         for off in (-t / 6, t / 6):
             msp.add_line((u + off, a), (u + off, b), dxfattribs={"layer": "S_GLAS"})
+    for v in els["views"]:
+        for line in view_lines(v):
+            msp.add_lwpolyline(line, dxfattribs={"layer": "S_TREPPE_ANSICHT"})
     for s in els["stairs"]:
         if s[0] == "along":
             _, ul, uh, za, zb, steps, head = s

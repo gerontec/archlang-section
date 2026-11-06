@@ -57,6 +57,8 @@ A level without `@floor` gets an assumed 250 mm slab, drawn red and marked TODO.
   risers/goings (`16 Stg. 175/225`), across the cut as a flight slab; landings flat. The storey rise is
   shared by step count (equal risers): a flight's goings as ArchLang draws its treads, a level landing none,
   one riser before every going and the arrival riser onto the floor above (n goings, n + 1 risers).
+  A stair the cut passes through is drawn whole: the pieces behind the cut plane in view (thin lines,
+  a flight seen end-on as its nosings), the pieces in front of it left out.
   Winders (`landing … winders <n>`) rise with their own steps; that clause needs the ArchLang branch
   `feat/stair-winders` (see `example/haus_winders.arch`, `example/poc_winders.png`). Run against a local
   build with `ARCHLANG_CLI=/path/to/archlang/dist/cli.js`
@@ -66,7 +68,7 @@ storey height minus the `@floor` build-up of the level above.
 
 ## Limits
 
-Only what the cut plane hits — nothing behind it is projected, no roofs, axis-aligned cuts only,
+Only what the cut plane hits — nothing behind it is projected except the cut stair, no roofs, axis-aligned cuts only,
 no winders (see above), rooms/walls from `walls from rooms` (authored `wall` statements are not read),
 and the cut line is not drawn in the floor plan (ArchLang has no element for it).
 
