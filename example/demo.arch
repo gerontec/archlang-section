@@ -7,9 +7,11 @@ plan "Demo" {
 
   let W = 8000
   let D = 10000
-  let XS = 5000      # stair hall | kitchen
-  let YH = 3000      # stair hall | living
-  let YK = 4000      # kitchen | room
+  let XS = 5000      # stair hall | WC, lobby
+  let XB = 6200      # WC, lobby | bath (as in the real house: a small WC, then the larger bath)
+  let YH = 3600      # stair hall | living
+  let YW = 1800      # WC | lobby
+  let YK = 4000      # WC, lobby, bath | room
 
   # --- section data (comments, ignored by ArchLang) ---
   # @section A x=700 look east      # in front of the first step: the flight full width, the turn behind
@@ -23,17 +25,24 @@ plan "Demo" {
 
   component floorplan() {
     room id=hall at (0, 0) size XS x YH label "Treppenhaus" uses circulation
-    room id=kitchen at (XS, 0) size (W - XS) x YK label "Küche" uses kitchen
+    room id=wc at (XS, 0) size (XB - XS) x YW label "WC" uses wc
+    room id=lobby at (XS, YW) size (XB - XS) x (YK - YW) label "Vorraum" uses hall
+    room id=bath at (XB, 0) size (W - XB) x YK label "Bad" uses bath
     room id=living at (0, YH) size XS x (D - YH) label "Wohnen" uses living
     room id=room at (XS, YK) size (W - XS) x (D - YK) label "Zimmer" uses bedroom
     walls from rooms exterior 300 partition 115
-    door at (XS, 2000) width 900 wall partition swing into kitchen
+    door at (XS, 3000) width 800 wall partition swing into lobby
+    door at (5600, YW) width 800 wall partition swing into lobby
+    door at (XB, 2600) width 800 wall partition swing into bath
+    furniture wc in wc anchor top flush size 400x700
+    furniture basin in bath anchor top flush size 600x450
+    furniture bathtub in bath anchor right flush size 750x1700
     door at (2000, YH) width 900 wall partition swing into living
     door at (XS, 7000) width 900 wall partition swing into room
     door at (0, 6000) width 1000 wall exterior
     window at (2500, D) width 1500 wall exterior
     window at (W, 7000) width 1500 wall exterior sill 500 head 2250
-    window at (6500, 0) width 1200 wall exterior
+    window at (7100, 0) width 1000 wall exterior
     # like the real house: along the north wall, climbs west -> east, the winders turn south
     # (`winders` needs the ArchLang branch feat/stair-winders)
     stair id=tr dir up width 1000 {
