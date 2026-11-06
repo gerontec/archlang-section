@@ -178,12 +178,17 @@ plan "Haus" {
     #   west leg:  corner counter 860 | dishwasher 600 | double sink 1200 | corner counter 700
     #   south leg: counter 400 | hob 600 (centre x 1440 = 1300 from the west wall face) |
     #              counter 1205 | fridge tall unit 600
-    #   north leg: counter run 2805 (storage)
+    #   north leg: counter run 1605 (storage), ends at x 2345; the north-east corner is a coffee
+    #              corner for two (table 600 x 600 in the corner, chairs on its west and south side,
+    #              the south chair ends at y 3575, clear of the door swing from y 3855)
     furniture kitchen_sink at (140, 3985) size 600x1200 label "Doppelspüle" rotate 270
     furniture counter at (140, 2525) size 600x860 rotate 270
     furniture dishwasher at (140, 3385) size 600x600 label "GS" rotate 270
     furniture counter at (140, 5185) size 600x700 rotate 270
-    furniture counter at (740, 2525) size 2805x600
+    furniture counter at (740, 2525) size 1605x600
+    furniture id=kaffeetisch table at (2945, 2525) size 600x600 label "Kaffeetisch"
+    furniture chair at (2495, 2600) size 450x450 facing kaffeetisch
+    furniture chair at (3020, 3125) size 450x450 facing kaffeetisch
     furniture counter at (740, 5285) size 400x600 rotate 180
     furniture stove at (1140, 5285) size 600x600 label "Kochfeld" rotate 180
     furniture range_hood at (1140, 5385) size 600x500 label "Dunstabzug" rotate 180
