@@ -43,7 +43,7 @@ plan "Haus" {
   # @section B y=645 look north      # along the stair flight, WC, bath (cf. photo IMG_20261106_083237)
   # @datum 0
   # floor build-up top -> bottom in mm; level -1 = basement ground slab, level 2 = ceiling above OG.
-  # Total 320 measured; the split finish+screed 80 / concrete 240 is an ASSUMPTION.
+  # Total 320 incl. floor finish confirmed 2026-11-06; only the split 80 / 240 is assumed.
   # @floor 0 Belag+Estrich:80 Stahlbeton:240
   # @floor 1 Belag+Estrich:80 Stahlbeton:240
   # @floor 2 Belag+Estrich:80 Stahlbeton:240
