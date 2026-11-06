@@ -1,0 +1,39 @@
+# Two-storey demo house with a basement for arch_section.py.
+plan "Demo" {
+  units mm
+  grid 5
+  scale 1:50
+  north up
+
+  let W = 8000
+  let D = 10000
+  let XS = 3000      # stair hall | living
+  let YK = 4000      # kitchen | living
+
+  # --- section data (comments, ignored by ArchLang) ---
+  # @section A x=1000 look east
+  # @section B y=1500 look north
+  # @datum 0
+  # @floor -1 Estrich:50 Bodenplatte:250
+  # @floor 0 Fliesen:15 Estrich:65 Trittschall:30 Stahlbeton:180 Putz:15
+  # @floor 1 Parkett:15 Estrich:60 Trittschall:40 Stahlbeton:160 Putz:15
+  # @floor 2 Dielen:25 "Holzbalken mit Daemmung":200 Gipskarton:15
+  # @ground -300
+
+  component floorplan() {
+    room id=hall at (0, 0) size XS x D label "Diele" uses hall
+    room id=kitchen at (XS, 0) size (W - XS) x YK label "Küche" uses kitchen
+    room id=living at (XS, YK) size (W - XS) x (D - YK) label "Wohnen" uses living
+    walls from rooms exterior 300 partition 115
+    door at (XS, 2000) width 900 wall partition swing into kitchen
+    door at (XS, 7000) width 900 wall partition swing into living
+    window at (1500, D) width 1200 wall exterior
+    window at (W, 7000) width 1500 wall exterior sill 500 head 2250
+    window at (5500, 0) width 1200 wall exterior
+    stair at (500, 400) size 1000x3600 dir up
+  }
+
+  level -1 "Keller" height 2600 { floorplan() }
+  level 0 "Erdgeschoss" height 2850 { floorplan() }
+  level 1 "Obergeschoss" height 2750 { floorplan() }
+}

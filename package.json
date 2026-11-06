@@ -1,0 +1,8 @@
+{
+  "name": "archlang-section",
+  "private": true,
+  "description": "Rudimentary building sections for ArchLang plans",
+  "dependencies": {
+    "@chanmeng666/archlang": "^1.55.0"
+  }
+}

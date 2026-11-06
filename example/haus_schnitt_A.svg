@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="532.4mm" height="244.0mm" viewBox="-9145 -7150 26620 12200" font-family="DejaVu Sans, sans-serif">
+<defs>
+<pattern id="concrete" patternUnits="userSpaceOnUse" width="120" height="120" patternTransform="rotate(45)">
+  <rect width="120" height="120" fill="#c8c8c8"/><line x1="0" y1="0" x2="0" y2="120" stroke="#555" stroke-width="10"/></pattern>
+<pattern id="screed" patternUnits="userSpaceOnUse" width="80" height="80">
+  <rect width="80" height="80" fill="#e8e8e8"/><circle cx="40" cy="40" r="8" fill="#777"/></pattern>
+<pattern id="insulation" patternUnits="userSpaceOnUse" width="120" height="60">
+  <rect width="120" height="60" fill="#fff6d0"/><path d="M0 60 L30 0 L60 60 L90 0 L120 60" fill="none" stroke="#a08020" stroke-width="6"/></pattern>
+<pattern id="wood" patternUnits="userSpaceOnUse" width="200" height="40">
+  <rect width="200" height="40" fill="#e9cf9f"/><line x1="0" y1="20" x2="200" y2="20" stroke="#8a6a30" stroke-width="5"/></pattern>
+<pattern id="plaster" patternUnits="userSpaceOnUse" width="50" height="50"><rect width="50" height="50" fill="#f7f7f7"/></pattern>
+<pattern id="todo" patternUnits="userSpaceOnUse" width="150" height="150" patternTransform="rotate(45)">
+  <rect width="150" height="150" fill="#ffe0e0"/><line x1="0" y1="0" x2="0" y2="150" stroke="#e05050" stroke-width="8"/></pattern>
+</defs>
+<rect x="-9145.0" y="-7150" width="26620.0" height="12200" fill="white"/>
+<rect x="-145" y="2600" width="13420" height="250" fill="url(#todo)" stroke="#d03030" stroke-width="9" stroke-dasharray="100 50"/>
+<rect x="-145" y="0" width="290" height="250" fill="url(#todo)" stroke="#d03030" stroke-width="9" stroke-dasharray="100 50"/>
+<rect x="1145" y="0" width="12130" height="250" fill="url(#todo)" stroke="#d03030" stroke-width="9" stroke-dasharray="100 50"/>
+<rect x="-145" y="-2800" width="290" height="250" fill="url(#todo)" stroke="#d03030" stroke-width="9" stroke-dasharray="100 50"/>
+<rect x="1145" y="-2800" width="12130" height="250" fill="url(#todo)" stroke="#d03030" stroke-width="9" stroke-dasharray="100 50"/>
+<rect x="-145" y="-5550" width="290" height="250" fill="url(#todo)" stroke="#d03030" stroke-width="9" stroke-dasharray="100 50"/>
+<rect x="1145" y="-5550" width="12130" height="250" fill="url(#todo)" stroke="#d03030" stroke-width="9" stroke-dasharray="100 50"/>
+<rect x="-145" y="250" width="290" height="2350" fill="#222" stroke="#000" stroke-width="12"/>
+<rect x="2400" y="250" width="150" height="250" fill="#555" stroke="#000" stroke-width="12"/>
+<rect x="8835" y="250" width="150" height="250" fill="#555" stroke="#000" stroke-width="12"/>
+<rect x="12985" y="250" width="290" height="2350" fill="#222" stroke="#000" stroke-width="12"/>
+<rect x="-145" y="-2550" width="290" height="2550" fill="#222" stroke="#000" stroke-width="12"/>
+<rect x="2400" y="-2550" width="150" height="450" fill="#555" stroke="#000" stroke-width="12"/>
+<rect x="8835" y="-2550" width="150" height="450" fill="#555" stroke="#000" stroke-width="12"/>
+<rect x="12985" y="-2550" width="290" height="2550" fill="#222" stroke="#000" stroke-width="12"/>
+<rect x="-145" y="-5300" width="290" height="2500" fill="#222" stroke="#000" stroke-width="12"/>
+<rect x="2400" y="-5300" width="150" height="400" fill="#555" stroke="#000" stroke-width="12"/>
+<rect x="8835" y="-5300" width="150" height="400" fill="#555" stroke="#000" stroke-width="12"/>
+<rect x="12985" y="-5300" width="290" height="2500" fill="#222" stroke="#000" stroke-width="12"/>
+<rect x="145" y="2374" width="1000" height="160" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="645" y="2254" font-size="120" text-anchor="middle">Treppe (quer)</text>
+<rect x="145" y="-243" width="1000" height="160" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="645" y="-363" font-size="120" text-anchor="middle">Treppe (quer)</text>
+<rect x="145" y="-3039" width="1000" height="160" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="645" y="-3159" font-size="120" text-anchor="middle">Treppe (quer)</text>
+<text x="1238" y="647" font-size="150" text-anchor="middle">Treppenhaus</text>
+<text x="1238" y="947" font-size="120" text-anchor="middle">LH 2,35</text>
+<text x="5692" y="647" font-size="150" text-anchor="middle">Flur</text>
+<text x="5692" y="947" font-size="120" text-anchor="middle">LH 2,35</text>
+<text x="11020" y="647" font-size="150" text-anchor="middle">Wohnzimmer</text>
+<text x="11020" y="947" font-size="120" text-anchor="middle">LH 2,35</text>
+<text x="1238" y="-2109" font-size="150" text-anchor="middle">Treppenhaus</text>
+<text x="1238" y="-1809" font-size="120" text-anchor="middle">LH 2,55</text>
+<text x="5692" y="-2109" font-size="150" text-anchor="middle">Flur</text>
+<text x="5692" y="-1809" font-size="120" text-anchor="middle">LH 2,55</text>
+<text x="11020" y="-2109" font-size="150" text-anchor="middle">Wohnzimmer</text>
+<text x="11020" y="-1809" font-size="120" text-anchor="middle">LH 2,55</text>
+<text x="1238" y="-4870" font-size="150" text-anchor="middle">Treppenhaus</text>
+<text x="1238" y="-4570" font-size="120" text-anchor="middle">LH 2,50</text>
+<text x="5692" y="-4870" font-size="150" text-anchor="middle">Flur</text>
+<text x="5692" y="-4570" font-size="120" text-anchor="middle">LH 2,50</text>
+<text x="11020" y="-4870" font-size="150" text-anchor="middle">Wohnzimmer</text>
+<text x="11020" y="-4570" font-size="120" text-anchor="middle">LH 2,50</text>
+<text x="-545" y="2785" font-size="105" text-anchor="end" fill="#c02020">Aufbau unbekannt: Annahme 250 mm (TODO @floor -1)</text>
+<text x="-545" y="185" font-size="105" text-anchor="end" fill="#c02020">Aufbau unbekannt: Annahme 250 mm (TODO @floor 0)</text>
+<text x="-545" y="-2615" font-size="105" text-anchor="end" fill="#c02020">Aufbau unbekannt: Annahme 250 mm (TODO @floor 1)</text>
+<text x="-545" y="-5365" font-size="105" text-anchor="end" fill="#c02020">Aufbau unbekannt: Annahme 250 mm (TODO @floor 2)</text>
+<path d="M13875 2600 l-40 -80 h80 z" fill="#000"/>
+<line x1="13795" y1="2600" x2="17075" y2="2600" stroke="#000" stroke-width="6"/>
+<text x="13955" y="2525" font-size="120">-2,60  OK FFB Keller</text>
+<path d="M13875 0 l-40 -80 h80 z" fill="#000"/>
+<line x1="13795" y1="0" x2="17075" y2="0" stroke="#000" stroke-width="6"/>
+<text x="13955" y="-75" font-size="120">±0,00  OK FFB Erdgeschoss</text>
+<path d="M13875 -2800 l-40 -80 h80 z" fill="#000"/>
+<line x1="13795" y1="-2800" x2="17075" y2="-2800" stroke="#000" stroke-width="6"/>
+<text x="13955" y="-2875" font-size="120">+2,80  OK FFB Obergeschoss</text>
+<path d="M13875 -5550 l-40 -80 h80 z" fill="#000"/>
+<line x1="13795" y1="-5550" x2="17075" y2="-5550" stroke="#000" stroke-width="6"/>
+<text x="13955" y="-5625" font-size="120">+5,55  OK Decke</text>
+<line x1="3762" y1="2600" x2="3762" y2="250" stroke="#000" stroke-width="6"/>
+<line x1="3712" y1="2650" x2="3812" y2="2550" stroke="#000" stroke-width="13"/>
+<line x1="3712" y1="300" x2="3812" y2="200" stroke="#000" stroke-width="13"/>
+<text x="3672" y="1425" font-size="120" text-anchor="middle" transform="rotate(-90 3672 1425)">2,35</text>
+<line x1="3762" y1="0" x2="3762" y2="-2550" stroke="#000" stroke-width="6"/>
+<line x1="3712" y1="50" x2="3812" y2="-50" stroke="#000" stroke-width="13"/>
+<line x1="3712" y1="-2500" x2="3812" y2="-2600" stroke="#000" stroke-width="13"/>
+<text x="3672" y="-1275" font-size="120" text-anchor="middle" transform="rotate(-90 3672 -1275)">2,55</text>
+<line x1="3762" y1="-2800" x2="3762" y2="-5300" stroke="#000" stroke-width="6"/>
+<line x1="3712" y1="-2750" x2="3812" y2="-2850" stroke="#000" stroke-width="13"/>
+<line x1="3712" y1="-5250" x2="3812" y2="-5350" stroke="#000" stroke-width="13"/>
+<text x="3672" y="-4050" font-size="120" text-anchor="middle" transform="rotate(-90 3672 -4050)">2,50</text>
+<line x1="-145" y1="3550" x2="13275" y2="3550" stroke="#000" stroke-width="6"/>
+<line x1="-195" y1="3600" x2="-95" y2="3500" stroke="#000" stroke-width="13"/>
+<line x1="13225" y1="3600" x2="13325" y2="3500" stroke="#000" stroke-width="13"/>
+<text x="6565" y="3475" font-size="120" text-anchor="middle">13,42</text>
+<text x="-145" y="-6910" font-size="210" font-weight="bold">Schnitt A-A  (x = 4,30 m, Blick nach Osten)</text>
+<text x="-145" y="4930" font-size="105">M 1:50 · arch_section.py (rudimentär: nur Schnittebene, keine Ansicht dahinter, Dach nicht modelliert)</text>
+</svg>
