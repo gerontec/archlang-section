@@ -100,21 +100,6 @@ plan "Haus" {
       landing at (3895, 140) size 1000x1000
       flight at (3895, 1140) size 1000x560
     }
-    # bath fittings (measured): a level-access shower 90 x 90 in the north-east corner,
-    # a corner bath with 130 cm legs in the north-west corner (ArchLang has no corner bath:
-    # drawn as its 130 x 130 footprint)
-    furniture shower in bad anchor top-right flush size 900x900 label "Dusche bodengleich 90/90"
-    furniture bathtub in bad anchor top-left flush size 1300x1300 label "Eckwanne 130/130"
-    # pre-wall on the bath's south wall (measured): 130 deep, 1300 high, the drains of WC and
-    # basin run in it (drawn open); the Geberit frame in it sits 300 from the west wall and is
-    # 500 wide, x 6635-7135 (drawn hatched)
-    wall id=vormauer1 prewall thickness 130 material none height 1300 { (6335, 3730) (6635, 3730) }
-    wall id=geberit prewall thickness 130 material poche height 1300 { (6635, 3730) (7135, 3730) }
-    wall id=vormauer2 prewall thickness 130 material none height 1300 { (7135, 3730) (8770, 3730) }
-    # shower WC hung on the pre-wall, centred on the frame
-    furniture wc at (6685, 3065) size 400x600 label "Dusch-WC" rotate 180
-    # basin on the pre-wall (position chosen: centre x 7700, 315 clear of the WC, 770 from the east wall)
-    furniture basin at (7400, 3215) size 600x450 label "Waschbecken" rotate 180
     # chimney on the wall kitchen | room W: 1200 x 420 mm into room W (measured), flush with the
     # hall wall (the room door rests on its face). ArchLang has no chimney symbol: three brick
     # cells of 400 (1200 / 3), each with a stainless flue pipe of 100 mm in its centre (measured),
@@ -132,6 +117,22 @@ plan "Haus" {
   }
   level 0 "Erdgeschoss" height EG_CLEAR + EG_SLAB {
     grundriss()
+    # bath fittings: ground floor only
+    # bath fittings (measured): a level-access shower 90 x 90 in the north-east corner,
+    # a corner bath with 130 cm legs in the north-west corner (ArchLang has no corner bath:
+    # drawn as its 130 x 130 footprint)
+    furniture shower in bad anchor top-right flush size 900x900 label "Dusche bodengleich 90/90"
+    furniture bathtub in bad anchor top-left flush size 1300x1300 label "Eckwanne 130/130"
+    # pre-wall on the bath's south wall (measured): 130 deep, 1300 high, the drains of WC and
+    # basin run in it (drawn open); the Geberit frame in it sits 300 from the west wall and is
+    # 500 wide, x 6635-7135 (drawn hatched)
+    wall id=vormauer1 prewall thickness 130 material none height 1300 { (6335, 3730) (6635, 3730) }
+    wall id=geberit prewall thickness 130 material poche height 1300 { (6635, 3730) (7135, 3730) }
+    wall id=vormauer2 prewall thickness 130 material none height 1300 { (7135, 3730) (8770, 3730) }
+    # shower WC hung on the pre-wall, centred on the frame
+    furniture wc at (6685, 3065) size 400x600 label "Dusch-WC" rotate 180
+    # basin on the pre-wall (position chosen: centre x 7700, 315 clear of the WC, 770 from the east wall)
+    furniture basin at (7400, 3215) size 600x450 label "Waschbecken" rotate 180
   }
   level 1 "Obergeschoss" height OG_CLEAR + OG_SLAB {
     grundriss()
