@@ -37,15 +37,15 @@
 <text x="1330" y="640" font-size="100" fill="#333333" text-anchor="middle" dominant-baseline="central">UP</text>
 </g>
 <g id="A-FLOR-OVHD" inkscape:groupmode="layer" inkscape:label="A-FLOR-OVHD">
-<polygon points="2445,6135 2645,6135 2645,6355 2445,6355" fill="none" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
-<line x1="2445" y1="6135" x2="2645" y2="6355" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
-<line x1="2645" y1="6135" x2="2445" y2="6355" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
-<polygon points="2845,6135 3045,6135 3045,6355 2845,6355" fill="none" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
-<line x1="2845" y1="6135" x2="3045" y2="6355" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
-<line x1="3045" y1="6135" x2="2845" y2="6355" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
-<polygon points="3245,6135 3445,6135 3445,6355 3245,6355" fill="none" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
-<line x1="3245" y1="6135" x2="3445" y2="6355" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
-<line x1="3445" y1="6135" x2="3245" y2="6355" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
+<polygon points="2495,6195 2595,6195 2595,6295 2495,6295" fill="none" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
+<line x1="2495" y1="6195" x2="2595" y2="6295" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
+<line x1="2595" y1="6195" x2="2495" y2="6295" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
+<polygon points="2895,6195 2995,6195 2995,6295 2895,6295" fill="none" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
+<line x1="2895" y1="6195" x2="2995" y2="6295" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
+<line x1="2995" y1="6195" x2="2895" y2="6295" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
+<polygon points="3295,6195 3395,6195 3395,6295 3295,6295" fill="none" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
+<line x1="3295" y1="6195" x2="3395" y2="6295" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
+<line x1="3395" y1="6195" x2="3295" y2="6295" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
 </g>
 <g id="A-WALL" inkscape:groupmode="layer" inkscape:label="A-WALL">
 <path d="M 2345,6035 L 3545,6035 L 3545,6455 L 2345,6455 Z M 2445,6135 L 2445,6355 L 2645,6355 L 2645,6135 Z M 2845,6135 L 2845,6355 L 3045,6355 L 3045,6135 Z M 3245,6135 L 3245,6355 L 3445,6355 L 3445,6135 Z" fill="url(#hatch-brick)" fill-rule="nonzero"/>
