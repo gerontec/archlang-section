@@ -50,30 +50,30 @@
 <rect x="-150" y="-5360" width="300" height="2510" fill="#222" stroke="#000" stroke-width="12"/>
 <rect x="2942" y="-5360" width="115" height="2510" fill="#555" stroke="#000" stroke-width="12"/>
 <rect x="7850" y="-5360" width="300" height="2510" fill="#222" stroke="#000" stroke-width="12"/>
-<polygon points="500,1040 500,867 750,867 750,693 1000,693 1000,520 1250,520 1250,347 1500,347 1500,541 500,1235" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1560" y="527" font-size="120" text-anchor="start">4 Stg. 173/250</text>
-<polygon points="1500,347 1500,173 1700,173 1700,-0 1900,-0 1900,212 1500,558" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1960" y="180" font-size="120" text-anchor="start">2 Stg. 173/200</text>
-<polygon points="500,-1710 500,-1900 750,-1900 750,-2090 1000,-2090 1000,-2280 1250,-2280 1250,-2470 1500,-2470 1500,-2269 500,-1509" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1560" y="-2290" font-size="120" text-anchor="start">4 Stg. 190/250</text>
-<polygon points="1500,-2470 1500,-2660 1700,-2660 1700,-2850 1900,-2850 1900,-2629 1500,-2249" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1960" y="-2670" font-size="120" text-anchor="start">2 Stg. 190/200</text>
-<polygon points="500,-4500 500,-4683 750,-4683 750,-4867 1000,-4867 1000,-5050 1250,-5050 1250,-5233 1500,-5233 1500,-5035 500,-4302" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1560" y="-5053" font-size="120" text-anchor="start">4 Stg. 183/250</text>
-<polygon points="1500,-5233 1500,-5417 1700,-5417 1700,-5600 1900,-5600 1900,-5383 1500,-5016" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1960" y="-5420" font-size="120" text-anchor="start">2 Stg. 183/200</text>
+<polygon points="500,1138 500,975 750,975 750,812 1000,812 1000,650 1250,650 1250,488 1500,488 1500,678 500,1328" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1000" y="1454" font-size="120" text-anchor="middle">4 Stg. 162/250</text>
+<polygon points="1500,488 1500,325 1700,325 1700,162 1900,162 1900,-0 1900,206 1500,694" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1700" y="975" font-size="120" text-anchor="middle">3 Stg. 162/200</text>
+<polygon points="500,-1603 500,-1781 750,-1781 750,-1959 1000,-1959 1000,-2138 1250,-2138 1250,-2316 1500,-2316 1500,-2119 500,-1407" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1000" y="-1284" font-size="120" text-anchor="middle">4 Stg. 178/250</text>
+<polygon points="1500,-2316 1500,-2494 1700,-2494 1700,-2672 1900,-2672 1900,-2850 1900,-2636 1500,-2101" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1700" y="-1807" font-size="120" text-anchor="middle">3 Stg. 178/200</text>
+<polygon points="500,-4397 500,-4569 750,-4569 750,-4741 1000,-4741 1000,-4912 1250,-4912 1250,-5084 1500,-5084 1500,-4890 500,-4203" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1000" y="-4079" font-size="120" text-anchor="middle">4 Stg. 172/250</text>
+<polygon points="1500,-5084 1500,-5256 1700,-5256 1700,-5428 1900,-5428 1900,-5600 1900,-5389 1500,-4873" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1700" y="-4584" font-size="120" text-anchor="middle">3 Stg. 172/200</text>
 <line x1="-2650" y1="300" x2="10650" y2="300" stroke="#3a7a20" stroke-width="25"/>
 <text x="10650" y="210" font-size="120" text-anchor="end" fill="#3a7a20">Gelände -0,30</text>
-<text x="1500" y="690" font-size="150" text-anchor="middle">Diele</text>
-<text x="1500" y="990" font-size="120" text-anchor="middle">LH 2,29</text>
+<text x="2450" y="1332" font-size="150" text-anchor="middle">Diele</text>
+<text x="2450" y="1632" font-size="120" text-anchor="middle">LH 2,29</text>
 <text x="5500" y="690" font-size="150" text-anchor="middle">Wohnen</text>
 <text x="5500" y="990" font-size="120" text-anchor="middle">LH 2,29</text>
-<text x="1500" y="-2117" font-size="150" text-anchor="middle">Diele</text>
-<text x="1500" y="-1817" font-size="120" text-anchor="middle">LH 2,56</text>
+<text x="2450" y="-1400" font-size="150" text-anchor="middle">Diele</text>
+<text x="2450" y="-1100" font-size="120" text-anchor="middle">LH 2,56</text>
 <text x="5500" y="-2117" font-size="150" text-anchor="middle">Wohnen</text>
 <text x="5500" y="-1817" font-size="120" text-anchor="middle">LH 2,56</text>
-<text x="1500" y="-4928" font-size="150" text-anchor="middle">Diele</text>
-<text x="1500" y="-4628" font-size="120" text-anchor="middle">LH 2,51</text>
+<text x="2450" y="-4225" font-size="150" text-anchor="middle">Diele</text>
+<text x="2450" y="-3925" font-size="120" text-anchor="middle">LH 2,51</text>
 <text x="5500" y="-4928" font-size="150" text-anchor="middle">Wohnen</text>
 <text x="5500" y="-4628" font-size="120" text-anchor="middle">LH 2,51</text>
 <text x="-550" y="2810" font-size="105" text-anchor="end" fill="#000">Estrich 50 / Bodenplatte 250 = 300 mm</text>

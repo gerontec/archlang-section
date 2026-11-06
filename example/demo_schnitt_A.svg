@@ -59,26 +59,26 @@
 <line x1="9950" y1="-3750" x2="9950" y2="-4950" stroke="#1060c0" stroke-width="9"/>
 <line x1="10050" y1="-3750" x2="10050" y2="-4950" stroke="#1060c0" stroke-width="9"/>
 <rect x="9850" y="-3770" width="300" height="20" fill="#1060c0"/>
-<polygon points="1200,2600 1200,2427 1467,2427 1467,2253 1733,2253 1733,2080 2000,2080 2000,1907 2267,1907 2267,1733 2533,1733 2533,1560 2800,1560 2800,1387 3067,1387 3067,1213 3333,1213 3333,1040 3600,1040 3600,1231 1200,2791" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1680" y="2510" font-size="120" text-anchor="middle">9 Stg. 173/267</text>
-<polygon points="3600,1040 3600,867 3850,867 3850,693 4100,693 4100,520 4350,520 4350,347 4600,347 4600,541 3600,1235" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="4660" y="527" font-size="120" text-anchor="start">4 Stg. 173/250</text>
-<polygon points="1200,-0 1200,-190 1467,-190 1467,-380 1733,-380 1733,-570 2000,-570 2000,-760 2267,-760 2267,-950 2533,-950 2533,-1140 2800,-1140 2800,-1330 3067,-1330 3067,-1520 3333,-1520 3333,-1710 3600,-1710 3600,-1514 1200,196" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1680" y="-90" font-size="120" text-anchor="middle">9 Stg. 190/267</text>
-<polygon points="3600,-1710 3600,-1900 3850,-1900 3850,-2090 4100,-2090 4100,-2280 4350,-2280 4350,-2470 4600,-2470 4600,-2269 3600,-1509" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="4660" y="-2290" font-size="120" text-anchor="start">4 Stg. 190/250</text>
-<polygon points="1200,-2850 1200,-3033 1467,-3033 1467,-3217 1733,-3217 1733,-3400 2000,-3400 2000,-3583 2267,-3583 2267,-3767 2533,-3767 2533,-3950 2800,-3950 2800,-4133 3067,-4133 3067,-4317 3333,-4317 3333,-4500 3600,-4500 3600,-4306 1200,-2656" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1680" y="-2940" font-size="120" text-anchor="middle">9 Stg. 183/267</text>
-<polygon points="3600,-4500 3600,-4683 3850,-4683 3850,-4867 4100,-4867 4100,-5050 4350,-5050 4350,-5233 4600,-5233 4600,-5035 3600,-4302" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="4660" y="-5053" font-size="120" text-anchor="start">4 Stg. 183/250</text>
+<polygon points="1200,2600 1200,2438 1467,2438 1467,2275 1733,2275 1733,2112 2000,2112 2000,1950 2267,1950 2267,1788 2533,1788 2533,1625 2800,1625 2800,1462 3067,1462 3067,1300 3333,1300 3333,1138 3600,1138 3600,1325 1200,2787" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="2400" y="2488" font-size="120" text-anchor="middle">9 Stg. 162/267</text>
+<polygon points="3600,1138 3600,975 3850,975 3850,812 4100,812 4100,650 4350,650 4350,488 4600,488 4600,678 3600,1328" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="4100" y="1454" font-size="120" text-anchor="middle">4 Stg. 162/250</text>
+<polygon points="1200,-0 1200,-178 1467,-178 1467,-356 1733,-356 1733,-534 2000,-534 2000,-712 2267,-712 2267,-891 2533,-891 2533,-1069 2800,-1069 2800,-1247 3067,-1247 3067,-1425 3333,-1425 3333,-1603 3600,-1603 3600,-1411 1200,192" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="2400" y="-151" font-size="120" text-anchor="middle">9 Stg. 178/267</text>
+<polygon points="3600,-1603 3600,-1781 3850,-1781 3850,-1959 4100,-1959 4100,-2138 4350,-2138 4350,-2316 4600,-2316 4600,-2119 3600,-1407" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="4100" y="-1284" font-size="120" text-anchor="middle">4 Stg. 178/250</text>
+<polygon points="1200,-2850 1200,-3022 1467,-3022 1467,-3194 1733,-3194 1733,-3366 2000,-3366 2000,-3538 2267,-3538 2267,-3709 2533,-3709 2533,-3881 2800,-3881 2800,-4053 3067,-4053 3067,-4225 3333,-4225 3333,-4397 3600,-4397 3600,-4207 1200,-2660" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="2400" y="-2985" font-size="120" text-anchor="middle">9 Stg. 172/267</text>
+<polygon points="3600,-4397 3600,-4569 3850,-4569 3850,-4741 4100,-4741 4100,-4912 4350,-4912 4350,-5084 4600,-5084 4600,-4890 3600,-4203" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="4100" y="-4079" font-size="120" text-anchor="middle">4 Stg. 172/250</text>
 <line x1="-2650" y1="300" x2="12650" y2="300" stroke="#3a7a20" stroke-width="25"/>
 <text x="12650" y="210" font-size="120" text-anchor="end" fill="#3a7a20">Gelände -0,30</text>
-<text x="5000" y="690" font-size="150" text-anchor="middle">Diele</text>
-<text x="5000" y="990" font-size="120" text-anchor="middle">LH 2,29</text>
-<text x="5000" y="-2117" font-size="150" text-anchor="middle">Diele</text>
-<text x="5000" y="-1817" font-size="120" text-anchor="middle">LH 2,56</text>
-<text x="5000" y="-4928" font-size="150" text-anchor="middle">Diele</text>
-<text x="5000" y="-4628" font-size="120" text-anchor="middle">LH 2,51</text>
+<text x="7300" y="1332" font-size="150" text-anchor="middle">Diele</text>
+<text x="7300" y="1632" font-size="120" text-anchor="middle">LH 2,29</text>
+<text x="7300" y="-1400" font-size="150" text-anchor="middle">Diele</text>
+<text x="7300" y="-1100" font-size="120" text-anchor="middle">LH 2,56</text>
+<text x="7300" y="-4225" font-size="150" text-anchor="middle">Diele</text>
+<text x="7300" y="-3925" font-size="120" text-anchor="middle">LH 2,51</text>
 <text x="-550" y="2810" font-size="105" text-anchor="end" fill="#000">Estrich 50 / Bodenplatte 250 = 300 mm</text>
 <text x="-550" y="212" font-size="105" text-anchor="end" fill="#000">Fliesen 15 / Estrich 65 / Trittschall 30 / Stahlbeton 180 / Putz 15 = 305 mm</text>
 <text x="-550" y="-2645" font-size="105" text-anchor="end" fill="#000">Parkett 15 / Estrich 60 / Trittschall 40 / Stahlbeton 160 / Putz 15 = 290 mm</text>

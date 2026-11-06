@@ -38,34 +38,34 @@
 <rect x="2400" y="-5000" width="150" height="240" fill="#555" stroke="#000" stroke-width="12"/>
 <rect x="8835" y="-5000" width="150" height="240" fill="#555" stroke="#000" stroke-width="12"/>
 <rect x="12985" y="-5000" width="290" height="2340" fill="#222" stroke="#000" stroke-width="12"/>
-<polygon points="145,941 145,784 395,784 395,628 645,628 645,471 895,471 895,314 1145,314 1145,503 145,1130" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1205" y="494" font-size="120" text-anchor="start">4 Stg. 157/250</text>
-<polygon points="1145,314 1145,157 1425,157 1425,-0 1705,-0 1705,183 1145,497" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1765" y="180" font-size="120" text-anchor="start">2 Stg. 157/280</text>
-<polygon points="145,-1662 145,-1829 395,-1829 395,-1995 645,-1995 645,-2161 895,-2161 895,-2328 1145,-2328 1145,-2135 145,-1470" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1205" y="-2148" font-size="120" text-anchor="start">4 Stg. 166/250</text>
-<polygon points="1145,-2328 1145,-2494 1425,-2494 1425,-2660 1705,-2660 1705,-2474 1145,-2141" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1765" y="-2480" font-size="120" text-anchor="start">2 Stg. 166/280</text>
-<polygon points="145,-4322 145,-4489 395,-4489 395,-4655 645,-4655 645,-4821 895,-4821 895,-4988 1145,-4988 1145,-4795 145,-4130" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1205" y="-4808" font-size="120" text-anchor="start">4 Stg. 166/250</text>
-<polygon points="1145,-4988 1145,-5154 1425,-5154 1425,-5320 1705,-5320 1705,-5134 1145,-4801" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1765" y="-5140" font-size="120" text-anchor="start">2 Stg. 166/280</text>
+<polygon points="145,1034 145,886 395,886 395,738 645,738 645,591 895,591 895,443 1145,443 1145,629 145,1219" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="645" y="1347" font-size="120" text-anchor="middle">4 Stg. 148/250</text>
+<polygon points="1145,443 1145,295 1425,295 1425,148 1705,148 1705,-0 1705,181 1145,624" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1425" y="796" font-size="120" text-anchor="middle">3 Stg. 148/280</text>
+<polygon points="145,-1565 145,-1721 395,-1721 395,-1878 645,-1878 645,-2034 895,-2034 895,-2191 1145,-2191 1145,-2002 145,-1376" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="645" y="-1250" font-size="120" text-anchor="middle">4 Stg. 156/250</text>
+<polygon points="1145,-2191 1145,-2347 1425,-2347 1425,-2504 1705,-2504 1705,-2660 1705,-2477 1145,-2007" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1425" y="-1834" font-size="120" text-anchor="middle">3 Stg. 156/280</text>
+<polygon points="145,-4225 145,-4381 395,-4381 395,-4538 645,-4538 645,-4694 895,-4694 895,-4851 1145,-4851 1145,-4662 145,-4036" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="645" y="-3910" font-size="120" text-anchor="middle">4 Stg. 156/250</text>
+<polygon points="1145,-4851 1145,-5007 1425,-5007 1425,-5164 1705,-5164 1705,-5320 1705,-5137 1145,-4667" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1425" y="-4494" font-size="120" text-anchor="middle">3 Stg. 156/280</text>
 <line x1="-2645" y1="200" x2="15775" y2="200" stroke="#3a7a20" stroke-width="25"/>
 <text x="15775" y="110" font-size="120" text-anchor="end" fill="#3a7a20">Gelände -0,20</text>
-<text x="1238" y="682" font-size="150" text-anchor="middle">Treppenhaus</text>
-<text x="1238" y="982" font-size="120" text-anchor="middle">LH 2,19</text>
+<text x="1238" y="1295" font-size="150" text-anchor="middle">Treppenhaus</text>
+<text x="1238" y="1595" font-size="120" text-anchor="middle">LH 2,19</text>
 <text x="5692" y="682" font-size="150" text-anchor="middle">Flur</text>
 <text x="5692" y="982" font-size="120" text-anchor="middle">LH 2,19</text>
 <text x="11020" y="682" font-size="150" text-anchor="middle">Wohnzimmer</text>
 <text x="11020" y="982" font-size="120" text-anchor="middle">LH 2,19</text>
-<text x="1238" y="-1945" font-size="150" text-anchor="middle">Treppenhaus</text>
-<text x="1238" y="-1645" font-size="120" text-anchor="middle">LH 2,34</text>
+<text x="1238" y="-1290" font-size="150" text-anchor="middle">Treppenhaus</text>
+<text x="1238" y="-990" font-size="120" text-anchor="middle">LH 2,34</text>
 <text x="5692" y="-1945" font-size="150" text-anchor="middle">Flur</text>
 <text x="5692" y="-1645" font-size="120" text-anchor="middle">LH 2,34</text>
 <text x="11020" y="-1945" font-size="150" text-anchor="middle">Wohnzimmer</text>
 <text x="11020" y="-1645" font-size="120" text-anchor="middle">LH 2,34</text>
-<text x="1238" y="-4605" font-size="150" text-anchor="middle">Treppenhaus</text>
-<text x="1238" y="-4305" font-size="120" text-anchor="middle">LH 2,34</text>
+<text x="1238" y="-3950" font-size="150" text-anchor="middle">Treppenhaus</text>
+<text x="1238" y="-3650" font-size="120" text-anchor="middle">LH 2,34</text>
 <text x="5692" y="-4605" font-size="150" text-anchor="middle">Flur</text>
 <text x="5692" y="-4305" font-size="120" text-anchor="middle">LH 2,34</text>
 <text x="11020" y="-4605" font-size="150" text-anchor="middle">Wohnzimmer</text>

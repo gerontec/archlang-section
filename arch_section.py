@@ -181,13 +181,37 @@ def stair_pieces(v):
             p["steps"] = p.get("winders", 0)
     if len(ordered) == 1:          # straight stair: risers come from the storey height
         ordered[0]["steps"] = None
-    total = sum(p["steps"] or 0 for p in ordered) or 1
+    # Each going is entered by a riser, and the head of the last piece adds the arrival riser
+    # onto the floor above: n goings, n + 1 risers.
+    if ordered[0]["steps"] is None:
+        for p in ordered:
+            p["f0"], p["f1"], p["head"] = 0.0, 1.0, True
+        return ordered
+    risers = sum(p["steps"] for p in ordered) + 1
     acc = 0
-    for p in ordered:
-        p["f0"] = acc / total
-        acc += p["steps"] or total
-        p["f1"] = min(1.0, acc / total)
+    for i, p in enumerate(ordered):
+        p["head"] = i == len(ordered) - 1
+        p["f0"] = acc / risers
+        acc += p["steps"] + (1 if p["head"] else 0)
+        p["f1"] = min(1.0, acc / risers)
     return ordered
+
+
+def stair_profile(ul, uh, za, zb, steps, head):
+    """Step line of one stair piece along the cut: a riser before every going and, at the head
+    of the last piece, the arrival riser onto the floor.  steps None (straight stair): risers
+    from the rise.  Returns (points, risers, rise, going)."""
+    risers = max(1, math.ceil((zb - za) / RISER_MAX)) if steps is None else steps + (1 if head else 0)
+    goings = risers - (1 if head else 0) if steps is None else steps
+    goings = max(1, goings)
+    run, rise = (uh - ul) / goings, (zb - za) / risers
+    pts, z = [(ul, za)], za
+    for i in range(goings):
+        z += rise
+        pts += [(ul + i * run, z), (ul + (i + 1) * run, z)]
+    if risers > goings:
+        pts.append((uh, zb))
+    return pts, risers, rise, run
 
 
 def winder_ends(p, pieces, axis):
@@ -249,12 +273,12 @@ def level_cut(level, axis, pos):
             if p["axis"] is None and p.get("winders"):          # winders: rise across the cut
                 lo, hi = winder_ends(p, pieces_all, axis)
                 stairs.append({"mode": "along", "c_low": lo, "c_high": hi, "steps": p["winders"],
-                               "f0": p["f0"], "f1": p["f1"], "dir": v.get("dir", "up")})
+                               "head": p["head"], "f0": p["f0"], "f1": p["f1"], "dir": v.get("dir", "up")})
             elif p["axis"] is None:                             # landing: flat
                 stairs.append({"mode": "flat", "c0": a0, "c1": a1, "f": p["f0"], "dir": v.get("dir", "up")})
             elif p["axis"] != axis:                              # cut runs along the flight
                 stairs.append({"mode": "along", "c_low": p["low"], "c_high": p["high"], "steps": p["steps"],
-                               "f0": p["f0"], "f1": p["f1"], "dir": v.get("dir", "up")})
+                               "head": p["head"], "f0": p["f0"], "f1": p["f1"], "dir": v.get("dir", "up")})
             else:                                                # cut crosses the flight
                 t = (pos - p["low"]) / (p["high"] - p["low"])
                 stairs.append({"mode": "across", "c0": a0, "c1": a1,
@@ -332,14 +356,27 @@ def build_section(levels, d, name):
                     els["glass"].append((u, t, z0 + sill, z0 + head))
             for a, b in segs:
                 els["walls"].append((u - t / 2, a, u + t / 2, b, w["kind"]))
+        taken = [tuple(sorted((U(st["c_low"]), U(st["c_high"])) if st["mode"] == "along"
+                              else (U(st["c0"]), U(st["c1"])))) for st in c["stairs"]]
         for r in c["rooms"]:
             ua, ub = sorted((U(r["c0"]), U(r["c1"])))
-            zt = z0 + 0.78 * (z1 - z0)   # upper part of the room, clear of stairs
-            els["texts"].append(((ua + ub) / 2, zt + 120, r["label"], "room"))
-            els["texts"].append(((ua + ub) / 2, zt - 180, f"LH {fmt_len(z1 - z0)}", "small"))
+            # label in the widest part of the room no stair of this level runs through
+            free = [(ua, ub)]
+            for ta, tb in taken:
+                free = [seg for a, b in free for seg in ((a, min(b, ta)), (max(a, tb), b)) if seg[1] - seg[0] > 1]
+            fa, fb = max(free, key=lambda f: f[1] - f[0]) if free else (ua, ub)
+            uc = (fa + fb) / 2 if fb - fa >= 800 else (ua + ub) / 2
+            # upper part of the room; lower down where a stair climbs to the ceiling
+            stair_here = any(ta < ub and tb > ua for ta, tb in taken)
+            zt = z0 + (0.5 if stair_here else 0.78) * (z1 - z0)
+            els["texts"].append((uc, zt + 120, r["label"], "room"))
+            els["texts"].append((uc, zt - 180, f"LH {fmt_len(z1 - z0)}", "small"))
         # one clear-height dimension per level, in the widest room
         if c["rooms"]:
-            r = max(c["rooms"], key=lambda r: r["c1"] - r["c0"])
+            def clear(r):
+                ua, ub = sorted((U(r["c0"]), U(r["c1"])))
+                return not any(ta < ub and tb > ua for ta, tb in taken)
+            r = max(c["rooms"], key=lambda r: (clear(r), r["c1"] - r["c0"]))
             ua, ub = sorted((U(r["c0"]), U(r["c1"])))
             els["dims"].append(("v", ua + 0.2 * (ub - ua), z0, z1))
         for s in c["stairs"]:
@@ -349,7 +386,7 @@ def build_section(levels, d, name):
             vl = n + 1 if s["dir"] == "up" else n
             if s["mode"] == "along":
                 ul, uh = U(s["c_low"]), U(s["c_high"])
-                els["stairs"].append(("along", ul, uh, zl + s["f0"] * Hs, zl + s["f1"] * Hs, s.get("steps")))
+                els["stairs"].append(("along", ul, uh, zl + s["f0"] * Hs, zl + s["f1"] * Hs, s.get("steps"), s.get("head", True)))
                 stair_voids.setdefault(vl, []).append(tuple(sorted((ul, uh))))
             else:
                 ua, ub = sorted((U(s["c0"]), U(s["c1"])))
@@ -460,25 +497,20 @@ def render_svg(sec, scale):
         out.append(f'<rect x="{u - t / 2:.0f}" y="{-a - 0.4 * S:.0f}" width="{t:.0f}" height="{0.4 * S:.0f}" fill="#1060c0"/>')
     for s in els["stairs"]:
         if s[0] == "along":
-            _, ul, uh, za, zb, steps = s
-            n = steps or max(1, math.ceil((zb - za) / RISER_MAX))
-            run = (uh - ul) / n
-            rise = (zb - za) / n
-            pts = [(ul, za)]
-            for i in range(n):
-                pts += [(ul + i * run, za + (i + 1) * rise), (ul + (i + 1) * run, za + (i + 1) * rise)]
+            _, ul, uh, za, zb, steps, head = s
+            pts, n, rise, run = stair_profile(ul, uh, za, zb, steps, head)
             slope = math.hypot(run, rise)
             off = STAIR_WAIST * slope / abs(run) if run else STAIR_WAIST
             pts += [(uh, zb - off), (ul, za - off)]
             out.append('<polygon points="' + " ".join(f"{p:.0f},{-q:.0f}" for p, q in pts)
                        + f'" fill="#9a9a9a" stroke="#000" stroke-width="{0.25 * S:.0f}"/>')
-            if abs(uh - ul) >= 1500:     # long flight: label above its foot
-                lx, ly, anc = ul + 0.2 * (uh - ul), za + 0.6 * txt, "middle"
-            else:                        # short flight: label beside its head
-                lx, ly = uh + math.copysign(0.4 * txt, uh - ul), zb - 1.2 * txt
-                anc = "start" if uh > ul else "end"
+            # label centred under the waist, dropped by the slope over half the text length
+            label = f"{n} Stg. {rise:.0f}/{abs(run):.0f}"
+            half = 0.8 * txt * 0.55 * len(label) / 2
+            lx = (ul + uh) / 2
+            ly = (za + zb) / 2 - off - half * abs(rise / run if run else 0) - 1.0 * txt
             out.append(f'<text x="{lx:.0f}" y="{-ly:.0f}" font-size="{txt * 0.8:.0f}" '
-                       f'text-anchor="{anc}">{n} Stg. {rise:.0f}/{abs(run):.0f}</text>')
+                       f'text-anchor="middle">{label}</text>')
         else:
             _, ua, ub, z, _n = s
             out.append(f'<rect x="{ua:.0f}" y="{-z:.0f}" width="{ub - ua:.0f}" height="{STAIR_WAIST:.0f}" fill="#9a9a9a" '
@@ -551,12 +583,8 @@ def render_dxf(sec, path):
             msp.add_line((u + off, a), (u + off, b), dxfattribs={"layer": "S_GLAS"})
     for s in els["stairs"]:
         if s[0] == "along":
-            _, ul, uh, za, zb, steps = s
-            n = steps or max(1, math.ceil((zb - za) / RISER_MAX))
-            run, rise = (uh - ul) / n, (zb - za) / n
-            pts = [(ul, za)]
-            for i in range(n):
-                pts += [(ul + i * run, za + (i + 1) * rise), (ul + (i + 1) * run, za + (i + 1) * rise)]
+            _, ul, uh, za, zb, steps, head = s
+            pts = stair_profile(ul, uh, za, zb, steps, head)[0]
             msp.add_lwpolyline(pts, dxfattribs={"layer": "S_TREPPE"})
         else:
             _, ua, ub, z, _n = s
