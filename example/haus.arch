@@ -101,7 +101,7 @@ plan "Haus" {
 
     # windows (exterior, centre on the wall centerline); only the living room one is measured
     window at (3615, YS) width 1060 wall exterior
-    window at (XW, 4585) width 1070 wall exterior   # kitchen: 1070 wide, two casements 470 each (measured)
+    window at (XW, 4740) width 1070 wall exterior   # kitchen: 1070 wide, two casements 470 each; 610 from the south wall face y 5885 (measured)
     window at (XW, 6810) width 1150 wall exterior
     window at (5720, YS) width 1050 wall exterior
     window at (XE, 10635) width 1000 wall exterior
@@ -181,16 +181,20 @@ plan "Haus" {
     furniture chair at (3820, 12410) size 450x450 facing esstisch
     # kitchen: U-shaped, 600 deep, open to the east (door to the hall on the east wall, y 3855-4655).
     # Clear faces: west x 140, east x 3545, north y 2525, south y 5885.
-    # Base of the U on the west wall with the double sink under the window (y 4050-5120): the
-    # sink 1200 long centred on the window centre y 4585, so its tap sits exactly mid-window
-    # and both casements open past it. The two legs run along the north and south walls to the
+    # Base of the U on the west wall with the sink under the window (y 4205-5275): sink unit
+    # 1000 long, y 3955-4955, seen from the user (facing west) the deep basin 430 on the left
+    # (south, y 4525-4955), the rest 570 on the right only a drainer (north, y 3955-4525). The
+    # basin is centred on the window centre y 4740, so its tap sits exactly mid-window and both
+    # casements open past it. ArchLang's sink symbol is symmetric: drawn as a single-bowl sink
+    # 430 plus a counter labelled as drainer. The two legs run along the north and south walls to the
     # east wall; 2160 clear between them, the door swing stays between the legs.
     # Fit-out after the usual kitchen planning rules (DIN 18022, AMK): dishwasher right beside
     # the sink, hob neither in a corner nor beside the tall unit, worktop on both sides of it,
     # fridge as a tall unit at the end of a leg; work triangle sink-hob-fridge about 6 m.
     # Hob + hood on the south leg near the west wall: the hood must be <= 1800 from the west
     # wall (its duct, 100 mm, runs along the south wall to the outside through the west wall).
-    #   west leg:  corner counter 860 | dishwasher 600 | double sink 1200 | corner counter 700
+    #   west leg:  corner counter 830 | dishwasher 600 | drainer 570 + basin 430 | counter 330 |
+    #              corner counter 600
     #   south leg: counter 400 | hob 600 (centre x 1440 = 1300 from the west wall face) |
     #              counter 1205 | fridge tall unit 600
     #   north leg: counter run 1605 (storage), ends at x 2345; then a coffee corner for two:
@@ -198,10 +202,12 @@ plan "Haus" {
     #              stools 380 x 380 with a hand slot in the seat (ArchLang's stool symbol is round
     #              and has no slot: noted in the label): one east of the table against the east
     #              wall, one south of it (ends at y 3505, clear of the door swing from y 3855)
-    furniture kitchen_sink at (140, 3985) size 600x1200 label "Doppelspüle" rotate 270
-    furniture counter at (140, 2525) size 600x860 rotate 270
-    furniture dishwasher at (140, 3385) size 600x600 label "GS" rotate 270
-    furniture counter at (140, 5185) size 600x700 rotate 270
+    furniture counter at (140, 3955) size 600x570 label "Abtropffläche" rotate 270
+    furniture kitchen_sink at (140, 4525) size 600x430 label "Becken 43" rotate 270
+    furniture counter at (140, 4955) size 600x330 rotate 270
+    furniture counter at (140, 2525) size 600x830 rotate 270
+    furniture dishwasher at (140, 3355) size 600x600 label "GS" rotate 270
+    furniture counter at (140, 5285) size 600x600 rotate 270
     furniture counter at (740, 2525) size 1605x600
     furniture id=kaffeetisch table at (2345, 2525) size 600x600 label "Kaffeetisch"
     furniture stool at (3165, 2635) size 380x380 label "Hocker mit Griffmulde"
@@ -217,11 +223,11 @@ plan "Haus" {
     dim (1440, 5835) -> (-140, 5835) offset 0 text "Abluft DN 100"
     # kitchen window, both casements drawn open at 45 deg for the window maker (does each leaf
     # pass the tap mid-window?): window 1070 = 2 x 65 frame + 2 leaves of 470 (measured), hinged
-    # at y 4115 / 5055 on the frame: wall 280, inner reveal 210 deep to the frame (measured), so
-    # the hinge line is x 140 - 210 = -70 -> tips at (262, 4447) and (262, 4723).
+    # at y 4270 / 5210 on the frame: wall 280, inner reveal 210 deep to the frame (measured), so
+    # the hinge line is x 140 - 210 = -70 -> tips at (262, 4602) and (262, 4878).
     # ArchLang draws windows closed only: the leaves are dimension lines labelled 45 deg.
-    dim (-70, 4115) -> (262, 4447) offset 0 text "45°"
-    dim (-70, 5055) -> (262, 4723) offset 0 text "45°"
+    dim (-70, 4270) -> (262, 4602) offset 0 text "45°"
+    dim (-70, 5210) -> (262, 4878) offset 0 text "45°"
     # bath fittings: ground floor only
     # bath fittings (measured): a level-access shower 90 x 90 in the north-east corner,
     # a corner bath with 130 cm legs in the north-west corner. ArchLang has no corner bath:
