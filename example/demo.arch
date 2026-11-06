@@ -7,12 +7,13 @@ plan "Demo" {
 
   let W = 8000
   let D = 10000
-  let XS = 3000      # stair hall | living
-  let YK = 4000      # kitchen | living
+  let XS = 5000      # stair hall | kitchen
+  let YH = 3000      # stair hall | living
+  let YK = 4000      # kitchen | room
 
   # --- section data (comments, ignored by ArchLang) ---
-  # @section A x=1000 look east
-  # @section B y=1000 look south    # in front of the stair: flight, winders and exit in view
+  # @section A x=4300 look east     # through the winders and the exit
+  # @section B y=650 look south     # along the flight: its steps from the side, the exit full width
   # @datum 0
   # @floor -1 Estrich:50 Bodenplatte:250
   # @floor 0 Fliesen:15 Estrich:65 Trittschall:30 Stahlbeton:180 Putz:15
@@ -21,21 +22,24 @@ plan "Demo" {
   # @ground -300
 
   component floorplan() {
-    room id=hall at (0, 0) size XS x D label "Diele" uses hall
+    room id=hall at (0, 0) size XS x YH label "Treppenhaus" uses circulation
     room id=kitchen at (XS, 0) size (W - XS) x YK label "Küche" uses kitchen
-    room id=living at (XS, YK) size (W - XS) x (D - YK) label "Wohnen" uses living
+    room id=living at (0, YH) size XS x (D - YH) label "Wohnen" uses living
+    room id=room at (XS, YK) size (W - XS) x (D - YK) label "Zimmer" uses bedroom
     walls from rooms exterior 300 partition 115
     door at (XS, 2000) width 900 wall partition swing into kitchen
-    door at (XS, 7000) width 900 wall partition swing into living
-    window at (1500, D) width 1200 wall exterior
+    door at (2000, YH) width 900 wall partition swing into living
+    door at (XS, 7000) width 900 wall partition swing into room
+    door at (0, 6000) width 1000 wall exterior
+    window at (2500, D) width 1500 wall exterior
     window at (W, 7000) width 1500 wall exterior sill 500 head 2250
-    window at (5500, 0) width 1200 wall exterior
-    # entered from the north, climbs south, winders turn east into the hall
+    window at (6500, 0) width 1200 wall exterior
+    # like the real house: along the north wall, climbs west -> east, the winders turn south
     # (`winders` needs the ArchLang branch feat/stair-winders)
     stair id=tr dir up width 1000 {
-      flight at (500, 1200) size 1000x2400
-      landing at (500, 3600) size 1000x1000 winders 4
-      flight at (1500, 3600) size 400x1000
+      flight at (1200, 150) size 2700x1000
+      landing at (3900, 150) size 1000x1000 winders 4
+      flight at (3900, 1150) size 1000x560
     }
   }
 

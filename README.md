@@ -71,6 +71,18 @@ A level without `@floor` gets an assumed 250 mm slab, drawn red and marked TODO.
 Storey height (finished floor to finished floor) comes from ArchLang's `level … height`; clear height is
 storey height minus the `@floor` build-up of the level above.
 
+## Quarter-turn stair on its own
+
+`stair_quarter_turn.py` draws one quarter-turn stair from storey height, riser count, stair width and
+the two run lengths: plan with walking line, developments of the walking line and of the inner
+stringer, and sections A (looking east) and B (looking south) at 1:50. All risers are equal, all goings
+on the walking line are equal, and the treads are tapered gradually over the winding zone
+(inner stringer τ(σ) = σ − π·w/2 · (3u² − 2u³)). Defaults are the house in `example/haus.arch`.
+
+```sh
+./stair_quarter_turn.py --height 2660 --width 1000 --run1 2700 --run2 560 --straight 9 -o treppe
+```
+
 ## Limits
 
 Only what the cut plane hits — nothing behind it is projected except the cut stair, no roofs, axis-aligned cuts only,

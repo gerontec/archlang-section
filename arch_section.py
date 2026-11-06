@@ -359,7 +359,7 @@ def stair_faces(treads, zl, rise, waist):
             n = _outward(t["back"], t["poly"])
             faces.append(([(*a, zt), (*b, zt), (*b, zt + rise), (*a, zt + rise)], [True] * 4, (-n[0], -n[1], 0.0), "riser"))
         for a, b in t["sides"]:
-            m = 8 if t["winder"] else 1
+            m = 8 if t["winder"] or t.get("tapered") else 1
             V = [(*q, soff(q)) for q in (_lerp(a, b, i / m) for i in range(m + 1))]
             Fl = [True] * m
 
@@ -401,16 +401,16 @@ def stair_faces(treads, zl, rise, waist):
                 faces.append(([(*C, za), (*b, zb), (*C, zb)], [False, fb, False], None, "soffit"))
         else:
             P = t["poly"]
-            V = [(*q, soff(q)) for q in P]
-            Fl = []
+            cx, cy = sum(p[0] for p in P) / len(P), sum(p[1] for p in P) / len(P)
+            M = (cx, cy, soff((cx, cy)))
             for a, b in zip(P, P[1:] + P[:1]):
                 if t["front"] and _near_seg(a, *t["front"]) and _near_seg(b, *t["front"]):
-                    Fl.append(first)
+                    f = first
                 elif t["back"] and _near_seg(a, *t["back"]) and _near_seg(b, *t["back"]):
-                    Fl.append(last)
+                    f = last
                 else:
-                    Fl.append(True)
-            faces.append((V, Fl, None, "soffit"))
+                    f = True
+                faces.append(([(*a, soff(a)), (*b, soff(b)), M], [f, False, False], None, "soffit"))
     return faces
 
 
@@ -486,11 +486,19 @@ def _seg_t(a, b, c, d):
 
 
 def stair_section_view(v, zl, H, axis, pos, look, U, goings=None):
-    """Section and view of one stair storey.  Returns dict with
-    cut: [polygon (u, z)], cut_lines / view_lines: [((u, z), (u, z))], risers, rise, going."""
+    """Section and view of one stair storey of an ArchLang stair (plan y points south)."""
     treads, rise, going = stair_treads(v, H, goings)
+    grad = {"north": (0, -1), "south": (0, 1), "east": (1, 0), "west": (-1, 0)}[look]
+    return tread_section_view(treads, rise, going, zl, axis, pos, grad, U)
+
+
+def tread_section_view(treads, rise, going, zl, axis, pos, grad, U):
+    """Section and view of a stair given as tread areas (see stair_treads) on the cut line
+    axis = pos ('x': x = pos), looking along grad (plan vector), U(c) = sheet position of the
+    plan coordinate c along the line.  Returns dict with cut: [polygon (u, z)],
+    cut_lines / view_lines / hidden_lines: [((u, z), (u, z))], risers, rise, going."""
     waist = STAIR_WAIST * math.hypot(going, rise) / going
-    gx, gy = {"north": (0, -1), "south": (0, 1), "east": (1, 0), "west": (-1, 0)}[look]
+    gx, gy = grad
 
     def to_view(x, y, z):
         if axis == "x":
