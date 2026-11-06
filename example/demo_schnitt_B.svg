@@ -16,31 +16,31 @@
 <rect x="-150" y="2600" width="8300" height="50" fill="url(#screed)" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="2650" width="8300" height="250" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="0" width="650" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
-<rect x="1500" y="0" width="6650" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
+<rect x="1900" y="0" width="6250" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="15" width="650" height="65" fill="url(#screed)" stroke="#000" stroke-width="9"/>
-<rect x="1500" y="15" width="6650" height="65" fill="url(#screed)" stroke="#000" stroke-width="9"/>
+<rect x="1900" y="15" width="6250" height="65" fill="url(#screed)" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="80" width="650" height="30" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
-<rect x="1500" y="80" width="6650" height="30" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
+<rect x="1900" y="80" width="6250" height="30" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="110" width="650" height="180" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
-<rect x="1500" y="110" width="6650" height="180" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
+<rect x="1900" y="110" width="6250" height="180" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="290" width="650" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
-<rect x="1500" y="290" width="6650" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
+<rect x="1900" y="290" width="6250" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="-2850" width="650" height="15" fill="url(#wood)" stroke="#000" stroke-width="9"/>
-<rect x="1500" y="-2850" width="6650" height="15" fill="url(#wood)" stroke="#000" stroke-width="9"/>
+<rect x="1900" y="-2850" width="6250" height="15" fill="url(#wood)" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="-2835" width="650" height="60" fill="url(#screed)" stroke="#000" stroke-width="9"/>
-<rect x="1500" y="-2835" width="6650" height="60" fill="url(#screed)" stroke="#000" stroke-width="9"/>
+<rect x="1900" y="-2835" width="6250" height="60" fill="url(#screed)" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="-2775" width="650" height="40" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
-<rect x="1500" y="-2775" width="6650" height="40" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
+<rect x="1900" y="-2775" width="6250" height="40" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="-2735" width="650" height="160" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
-<rect x="1500" y="-2735" width="6650" height="160" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
+<rect x="1900" y="-2735" width="6250" height="160" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="-2575" width="650" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
-<rect x="1500" y="-2575" width="6650" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
+<rect x="1900" y="-2575" width="6250" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="-5600" width="650" height="25" fill="url(#wood)" stroke="#000" stroke-width="9"/>
-<rect x="1500" y="-5600" width="6650" height="25" fill="url(#wood)" stroke="#000" stroke-width="9"/>
+<rect x="1900" y="-5600" width="6250" height="25" fill="url(#wood)" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="-5575" width="650" height="200" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
-<rect x="1500" y="-5575" width="6650" height="200" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
+<rect x="1900" y="-5575" width="6250" height="200" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="-5375" width="650" height="15" fill="#dddddd" stroke="#000" stroke-width="9"/>
-<rect x="1500" y="-5375" width="6650" height="15" fill="#dddddd" stroke="#000" stroke-width="9"/>
+<rect x="1900" y="-5375" width="6250" height="15" fill="#dddddd" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="305" width="300" height="2295" fill="#222" stroke="#000" stroke-width="12"/>
 <rect x="2942" y="305" width="115" height="2295" fill="#555" stroke="#000" stroke-width="12"/>
 <rect x="7850" y="305" width="300" height="2295" fill="#222" stroke="#000" stroke-width="12"/>
@@ -50,25 +50,31 @@
 <rect x="-150" y="-5360" width="300" height="2510" fill="#222" stroke="#000" stroke-width="12"/>
 <rect x="2942" y="-5360" width="115" height="2510" fill="#555" stroke="#000" stroke-width="12"/>
 <rect x="7850" y="-5360" width="300" height="2510" fill="#222" stroke="#000" stroke-width="12"/>
-<rect x="500" y="2405" width="1000" height="160" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1000" y="2715" font-size="105" text-anchor="middle">Treppe (quer)</text>
-<rect x="500" y="-214" width="1000" height="160" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1000" y="96" font-size="105" text-anchor="middle">Treppe (quer)</text>
-<rect x="500" y="-3056" width="1000" height="160" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1000" y="-2746" font-size="105" text-anchor="middle">Treppe (quer)</text>
+<polygon points="500,1040 500,867 750,867 750,693 1000,693 1000,520 1250,520 1250,347 1500,347 1500,541 500,1235" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1560" y="527" font-size="120" text-anchor="start">4 Stg. 173/250</text>
+<polygon points="1500,347 1500,173 1700,173 1700,-0 1900,-0 1900,212 1500,558" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1960" y="180" font-size="120" text-anchor="start">2 Stg. 173/200</text>
+<polygon points="500,-1710 500,-1900 750,-1900 750,-2090 1000,-2090 1000,-2280 1250,-2280 1250,-2470 1500,-2470 1500,-2269 500,-1509" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1560" y="-2290" font-size="120" text-anchor="start">4 Stg. 190/250</text>
+<polygon points="1500,-2470 1500,-2660 1700,-2660 1700,-2850 1900,-2850 1900,-2629 1500,-2249" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1960" y="-2670" font-size="120" text-anchor="start">2 Stg. 190/200</text>
+<polygon points="500,-4500 500,-4683 750,-4683 750,-4867 1000,-4867 1000,-5050 1250,-5050 1250,-5233 1500,-5233 1500,-5035 500,-4302" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1560" y="-5053" font-size="120" text-anchor="start">4 Stg. 183/250</text>
+<polygon points="1500,-5233 1500,-5417 1700,-5417 1700,-5600 1900,-5600 1900,-5383 1500,-5016" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1960" y="-5420" font-size="120" text-anchor="start">2 Stg. 183/200</text>
 <line x1="-2650" y1="300" x2="10650" y2="300" stroke="#3a7a20" stroke-width="25"/>
 <text x="10650" y="210" font-size="120" text-anchor="end" fill="#3a7a20">Gelände -0,30</text>
 <text x="1500" y="690" font-size="150" text-anchor="middle">Diele</text>
 <text x="1500" y="990" font-size="120" text-anchor="middle">LH 2,29</text>
-<text x="5500" y="690" font-size="150" text-anchor="middle">Küche</text>
+<text x="5500" y="690" font-size="150" text-anchor="middle">Wohnen</text>
 <text x="5500" y="990" font-size="120" text-anchor="middle">LH 2,29</text>
 <text x="1500" y="-2117" font-size="150" text-anchor="middle">Diele</text>
 <text x="1500" y="-1817" font-size="120" text-anchor="middle">LH 2,56</text>
-<text x="5500" y="-2117" font-size="150" text-anchor="middle">Küche</text>
+<text x="5500" y="-2117" font-size="150" text-anchor="middle">Wohnen</text>
 <text x="5500" y="-1817" font-size="120" text-anchor="middle">LH 2,56</text>
 <text x="1500" y="-4928" font-size="150" text-anchor="middle">Diele</text>
 <text x="1500" y="-4628" font-size="120" text-anchor="middle">LH 2,51</text>
-<text x="5500" y="-4928" font-size="150" text-anchor="middle">Küche</text>
+<text x="5500" y="-4928" font-size="150" text-anchor="middle">Wohnen</text>
 <text x="5500" y="-4628" font-size="120" text-anchor="middle">LH 2,51</text>
 <text x="-550" y="2810" font-size="105" text-anchor="end" fill="#000">Estrich 50 / Bodenplatte 250 = 300 mm</text>
 <text x="-550" y="212" font-size="105" text-anchor="end" fill="#000">Fliesen 15 / Estrich 65 / Trittschall 30 / Stahlbeton 180 / Putz 15 = 305 mm</text>
@@ -114,6 +120,6 @@
 <line x1="-200" y1="3650" x2="-100" y2="3550" stroke="#000" stroke-width="13"/>
 <line x1="8100" y1="3650" x2="8200" y2="3550" stroke="#000" stroke-width="13"/>
 <text x="4000" y="3525" font-size="120" text-anchor="middle">8,30</text>
-<text x="-150" y="-6960" font-size="210" font-weight="bold">Schnitt B-B  (y = 1,50 m, Blick nach Norden)</text>
+<text x="-150" y="-6960" font-size="210" font-weight="bold">Schnitt B-B  (y = 4,10 m, Blick nach Norden)</text>
 <text x="-150" y="4980" font-size="105">M 1:50 · arch_section.py (rudimentär: nur Schnittebene, keine Ansicht dahinter, Dach nicht modelliert)</text>
 </svg>
