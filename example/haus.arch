@@ -160,6 +160,10 @@ plan "Haus" {
     # 450 left between its end and the south wall at the archway. The sofa_l symbol fixes its seat
     # depth at min(0.56 x short, 0.35 x long) = 822, so the legs are drawn 82 deep, not 90
     furniture sofa_l at (140, 6035) size 1900x2350 label "Eckcouch 235/190" rotate 270 mirror
+    # bedroom: double bed, two mattresses 90 x 190 (footprint 1800 x 1900 = mattresses, no frame),
+    # head end on the south wall (face y 7575), centred in the clear width (faces x 5095 / 8770
+    # -> 6932,5, grid 5 -> 6935); its foot end at y 5675 stays clear of the door leaf (to y 5635)
+    furniture double_bed at (6035, 5675) size 1800x1900 label "Doppelbett 2 x 90/190" rotate 180
     # bath fittings: ground floor only
     # bath fittings (measured): a level-access shower 90 x 90 in the north-east corner,
     # a corner bath with 130 cm legs in the north-west corner (ArchLang has no corner bath:
