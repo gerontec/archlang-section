@@ -30,7 +30,13 @@ plan "Demo" {
     window at (1500, D) width 1200 wall exterior
     window at (W, 7000) width 1500 wall exterior sill 500 head 2250
     window at (5500, 0) width 1200 wall exterior
-    stair at (500, 400) size 1000x3600 dir up
+    # entered from the north, climbs south, winders turn east into the hall
+    # (`winders` needs the ArchLang branch feat/stair-winders)
+    stair id=tr dir up width 1000 {
+      flight at (500, 1200) size 1000x2400
+      landing at (500, 3600) size 1000x1000 winders 4
+      flight at (1500, 3600) size 400x1000
+    }
   }
 
   level -1 "Keller" height 2600 { floorplan() }

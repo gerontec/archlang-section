@@ -15,32 +15,32 @@
 <rect x="-9150.0" y="-7200" width="23500.0" height="12300.0" fill="white"/>
 <rect x="-150" y="2600" width="10300" height="50" fill="url(#screed)" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="2650" width="10300" height="250" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
-<rect x="-150" y="0" width="550" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
-<rect x="4000" y="0" width="6150" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
-<rect x="-150" y="15" width="550" height="65" fill="url(#screed)" stroke="#000" stroke-width="9"/>
-<rect x="4000" y="15" width="6150" height="65" fill="url(#screed)" stroke="#000" stroke-width="9"/>
-<rect x="-150" y="80" width="550" height="30" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
-<rect x="4000" y="80" width="6150" height="30" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
-<rect x="-150" y="110" width="550" height="180" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
-<rect x="4000" y="110" width="6150" height="180" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
-<rect x="-150" y="290" width="550" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
-<rect x="4000" y="290" width="6150" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
-<rect x="-150" y="-2850" width="550" height="15" fill="url(#wood)" stroke="#000" stroke-width="9"/>
-<rect x="4000" y="-2850" width="6150" height="15" fill="url(#wood)" stroke="#000" stroke-width="9"/>
-<rect x="-150" y="-2835" width="550" height="60" fill="url(#screed)" stroke="#000" stroke-width="9"/>
-<rect x="4000" y="-2835" width="6150" height="60" fill="url(#screed)" stroke="#000" stroke-width="9"/>
-<rect x="-150" y="-2775" width="550" height="40" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
-<rect x="4000" y="-2775" width="6150" height="40" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
-<rect x="-150" y="-2735" width="550" height="160" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
-<rect x="4000" y="-2735" width="6150" height="160" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
-<rect x="-150" y="-2575" width="550" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
-<rect x="4000" y="-2575" width="6150" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
-<rect x="-150" y="-5600" width="550" height="25" fill="url(#wood)" stroke="#000" stroke-width="9"/>
-<rect x="4000" y="-5600" width="6150" height="25" fill="url(#wood)" stroke="#000" stroke-width="9"/>
-<rect x="-150" y="-5575" width="550" height="200" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
-<rect x="4000" y="-5575" width="6150" height="200" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
-<rect x="-150" y="-5375" width="550" height="15" fill="#dddddd" stroke="#000" stroke-width="9"/>
-<rect x="4000" y="-5375" width="6150" height="15" fill="#dddddd" stroke="#000" stroke-width="9"/>
+<rect x="-150" y="0" width="1350" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
+<rect x="4600" y="0" width="5550" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
+<rect x="-150" y="15" width="1350" height="65" fill="url(#screed)" stroke="#000" stroke-width="9"/>
+<rect x="4600" y="15" width="5550" height="65" fill="url(#screed)" stroke="#000" stroke-width="9"/>
+<rect x="-150" y="80" width="1350" height="30" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
+<rect x="4600" y="80" width="5550" height="30" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
+<rect x="-150" y="110" width="1350" height="180" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
+<rect x="4600" y="110" width="5550" height="180" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
+<rect x="-150" y="290" width="1350" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
+<rect x="4600" y="290" width="5550" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
+<rect x="-150" y="-2850" width="1350" height="15" fill="url(#wood)" stroke="#000" stroke-width="9"/>
+<rect x="4600" y="-2850" width="5550" height="15" fill="url(#wood)" stroke="#000" stroke-width="9"/>
+<rect x="-150" y="-2835" width="1350" height="60" fill="url(#screed)" stroke="#000" stroke-width="9"/>
+<rect x="4600" y="-2835" width="5550" height="60" fill="url(#screed)" stroke="#000" stroke-width="9"/>
+<rect x="-150" y="-2775" width="1350" height="40" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
+<rect x="4600" y="-2775" width="5550" height="40" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
+<rect x="-150" y="-2735" width="1350" height="160" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
+<rect x="4600" y="-2735" width="5550" height="160" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
+<rect x="-150" y="-2575" width="1350" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
+<rect x="4600" y="-2575" width="5550" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
+<rect x="-150" y="-5600" width="1350" height="25" fill="url(#wood)" stroke="#000" stroke-width="9"/>
+<rect x="4600" y="-5600" width="5550" height="25" fill="url(#wood)" stroke="#000" stroke-width="9"/>
+<rect x="-150" y="-5575" width="1350" height="200" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
+<rect x="4600" y="-5575" width="5550" height="200" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
+<rect x="-150" y="-5375" width="1350" height="15" fill="#dddddd" stroke="#000" stroke-width="9"/>
+<rect x="4600" y="-5375" width="5550" height="15" fill="#dddddd" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="305" width="300" height="2295" fill="#222" stroke="#000" stroke-width="12"/>
 <rect x="9850" y="1700" width="300" height="900" fill="#222" stroke="#000" stroke-width="12"/>
 <rect x="9850" y="305" width="300" height="195" fill="#222" stroke="#000" stroke-width="12"/>
@@ -59,12 +59,18 @@
 <line x1="9950" y1="-3750" x2="9950" y2="-4950" stroke="#1060c0" stroke-width="9"/>
 <line x1="10050" y1="-3750" x2="10050" y2="-4950" stroke="#1060c0" stroke-width="9"/>
 <rect x="9850" y="-3770" width="300" height="20" fill="#1060c0"/>
-<polygon points="4000,2600 4000,2427 3760,2427 3760,2253 3520,2253 3520,2080 3280,2080 3280,1907 3040,1907 3040,1733 2800,1733 2800,1560 2560,1560 2560,1387 2320,1387 2320,1213 2080,1213 2080,1040 1840,1040 1840,867 1600,867 1600,693 1360,693 1360,520 1120,520 1120,347 880,347 880,173 640,173 640,-0 400,-0 400,197 4000,2797" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="3280" y="2510" font-size="120" text-anchor="middle">15 Stg. 173/240</text>
-<polygon points="4000,-0 4000,-178 3775,-178 3775,-356 3550,-356 3550,-534 3325,-534 3325,-712 3100,-712 3100,-891 2875,-891 2875,-1069 2650,-1069 2650,-1247 2425,-1247 2425,-1425 2200,-1425 2200,-1603 1975,-1603 1975,-1781 1750,-1781 1750,-1959 1525,-1959 1525,-2138 1300,-2138 1300,-2316 1075,-2316 1075,-2494 850,-2494 850,-2672 625,-2672 625,-2850 400,-2850 400,-2646 4000,204" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="3280" y="-90" font-size="120" text-anchor="middle">16 Stg. 178/225</text>
-<polygon points="4000,-2850 4000,-3022 3775,-3022 3775,-3194 3550,-3194 3550,-3366 3325,-3366 3325,-3538 3100,-3538 3100,-3709 2875,-3709 2875,-3881 2650,-3881 2650,-4053 2425,-4053 2425,-4225 2200,-4225 2200,-4397 1975,-4397 1975,-4569 1750,-4569 1750,-4741 1525,-4741 1525,-4912 1300,-4912 1300,-5084 1075,-5084 1075,-5256 850,-5256 850,-5428 625,-5428 625,-5600 400,-5600 400,-5399 4000,-2649" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="3280" y="-2940" font-size="120" text-anchor="middle">16 Stg. 172/225</text>
+<polygon points="1200,2600 1200,2427 1467,2427 1467,2253 1733,2253 1733,2080 2000,2080 2000,1907 2267,1907 2267,1733 2533,1733 2533,1560 2800,1560 2800,1387 3067,1387 3067,1213 3333,1213 3333,1040 3600,1040 3600,1231 1200,2791" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1680" y="2510" font-size="120" text-anchor="middle">9 Stg. 173/267</text>
+<polygon points="3600,1040 3600,867 3850,867 3850,693 4100,693 4100,520 4350,520 4350,347 4600,347 4600,541 3600,1235" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="4660" y="527" font-size="120" text-anchor="start">4 Stg. 173/250</text>
+<polygon points="1200,-0 1200,-190 1467,-190 1467,-380 1733,-380 1733,-570 2000,-570 2000,-760 2267,-760 2267,-950 2533,-950 2533,-1140 2800,-1140 2800,-1330 3067,-1330 3067,-1520 3333,-1520 3333,-1710 3600,-1710 3600,-1514 1200,196" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1680" y="-90" font-size="120" text-anchor="middle">9 Stg. 190/267</text>
+<polygon points="3600,-1710 3600,-1900 3850,-1900 3850,-2090 4100,-2090 4100,-2280 4350,-2280 4350,-2470 4600,-2470 4600,-2269 3600,-1509" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="4660" y="-2290" font-size="120" text-anchor="start">4 Stg. 190/250</text>
+<polygon points="1200,-2850 1200,-3033 1467,-3033 1467,-3217 1733,-3217 1733,-3400 2000,-3400 2000,-3583 2267,-3583 2267,-3767 2533,-3767 2533,-3950 2800,-3950 2800,-4133 3067,-4133 3067,-4317 3333,-4317 3333,-4500 3600,-4500 3600,-4306 1200,-2656" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1680" y="-2940" font-size="120" text-anchor="middle">9 Stg. 183/267</text>
+<polygon points="3600,-4500 3600,-4683 3850,-4683 3850,-4867 4100,-4867 4100,-5050 4350,-5050 4350,-5233 4600,-5233 4600,-5035 3600,-4302" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="4660" y="-5053" font-size="120" text-anchor="start">4 Stg. 183/250</text>
 <line x1="-2650" y1="300" x2="12650" y2="300" stroke="#3a7a20" stroke-width="25"/>
 <text x="12650" y="210" font-size="120" text-anchor="end" fill="#3a7a20">Gelände -0,30</text>
 <text x="5000" y="690" font-size="150" text-anchor="middle">Diele</text>

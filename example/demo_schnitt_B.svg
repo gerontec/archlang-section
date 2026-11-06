@@ -50,12 +50,12 @@
 <rect x="-150" y="-5360" width="300" height="2510" fill="#222" stroke="#000" stroke-width="12"/>
 <rect x="2942" y="-5360" width="115" height="2510" fill="#555" stroke="#000" stroke-width="12"/>
 <rect x="7850" y="-5360" width="300" height="2510" fill="#222" stroke="#000" stroke-width="12"/>
-<rect x="500" y="794" width="1000" height="160" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1000" y="1104" font-size="105" text-anchor="middle">Treppe (quer)</text>
-<rect x="500" y="-1979" width="1000" height="160" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1000" y="-1669" font-size="105" text-anchor="middle">Treppe (quer)</text>
-<rect x="500" y="-4760" width="1000" height="160" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1000" y="-4450" font-size="105" text-anchor="middle">Treppe (quer)</text>
+<rect x="500" y="2405" width="1000" height="160" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1000" y="2715" font-size="105" text-anchor="middle">Treppe (quer)</text>
+<rect x="500" y="-214" width="1000" height="160" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1000" y="96" font-size="105" text-anchor="middle">Treppe (quer)</text>
+<rect x="500" y="-3056" width="1000" height="160" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1000" y="-2746" font-size="105" text-anchor="middle">Treppe (quer)</text>
 <line x1="-2650" y1="300" x2="10650" y2="300" stroke="#3a7a20" stroke-width="25"/>
 <text x="10650" y="210" font-size="120" text-anchor="end" fill="#3a7a20">Gelände -0,30</text>
 <text x="1500" y="690" font-size="150" text-anchor="middle">Diele</text>

@@ -22,8 +22,10 @@ pip install --user ezdxf cairosvg
 ## Use
 
 ```sh
-./arch_section.py example/demo.arch            # all @section lines
+./arch_section.py example/haus.arch            # all @section lines
 ./arch_section.py plan.arch --section A -o out/ --scale 50 --no-dxf
+# demo.arch and haus_winders.arch use `landing … winders <n>` (ArchLang branch feat/stair-winders):
+ARCHLANG_CLI=/path/to/archlang/dist/cli.js ./arch_section.py example/demo.arch
 ```
 
 Output: `<plan>_schnitt_<name>.svg|png|dxf` next to the plan (or in `-o`). The SVG is to scale (default 1:50).
