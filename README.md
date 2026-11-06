@@ -53,7 +53,10 @@ A level without `@floor` gets an assumed 250 mm slab, drawn red and marked TODO.
 * clear height (LH) per room, overall dimension, terrain line
 * straight and turning stairs (`stair { flight … landing … flight … }`): each flight along the cut with
   risers/goings (`16 Stg. 175/225`), across the cut as a flight slab; landings flat. The storey rise is
-  shared by the flights in proportion to their run. Winders are not in ArchLang — model them as a landing
+  shared by step count (equal risers): a flight's steps as ArchLang draws its treads, a level landing none.
+  Winders (`landing … winders <n>`) rise with their own steps; that clause needs the ArchLang branch
+  `feat/stair-winders` (see `example/haus_winders.arch`, `example/poc_winders.png`). Run against a local
+  build with `ARCHLANG_CLI=/path/to/archlang/dist/cli.js`
 
 Storey height (finished floor to finished floor) comes from ArchLang's `level … height`; clear height is
 storey height minus the `@floor` build-up of the level above.

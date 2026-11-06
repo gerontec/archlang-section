@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="532.4mm" height="237.6mm" viewBox="-9145 -6920 26620 11880" font-family="DejaVu Sans, sans-serif">
+<defs>
+<pattern id="concrete" patternUnits="userSpaceOnUse" width="120" height="120" patternTransform="rotate(45)">
+  <rect width="120" height="120" fill="#c8c8c8"/><line x1="0" y1="0" x2="0" y2="120" stroke="#555" stroke-width="10"/></pattern>
+<pattern id="screed" patternUnits="userSpaceOnUse" width="80" height="80">
+  <rect width="80" height="80" fill="#e8e8e8"/><circle cx="40" cy="40" r="8" fill="#777"/></pattern>
+<pattern id="insulation" patternUnits="userSpaceOnUse" width="120" height="60">
+  <rect width="120" height="60" fill="#fff6d0"/><path d="M0 60 L30 0 L60 60 L90 0 L120 60" fill="none" stroke="#a08020" stroke-width="6"/></pattern>
+<pattern id="wood" patternUnits="userSpaceOnUse" width="200" height="40">
+  <rect width="200" height="40" fill="#e9cf9f"/><line x1="0" y1="20" x2="200" y2="20" stroke="#8a6a30" stroke-width="5"/></pattern>
+<pattern id="plaster" patternUnits="userSpaceOnUse" width="50" height="50"><rect width="50" height="50" fill="#f7f7f7"/></pattern>
+<pattern id="todo" patternUnits="userSpaceOnUse" width="150" height="150" patternTransform="rotate(45)">
+  <rect width="150" height="150" fill="#ffe0e0"/><line x1="0" y1="0" x2="0" y2="150" stroke="#e05050" stroke-width="8"/></pattern>
+</defs>
+<rect x="-9145.0" y="-6920" width="26620.0" height="11880" fill="white"/>
+<rect x="-145" y="2510" width="13420" height="250" fill="url(#todo)" stroke="#d03030" stroke-width="9" stroke-dasharray="100 50"/>
+<rect x="-145" y="0" width="290" height="80" fill="url(#screed)" stroke="#000" stroke-width="9"/>
+<rect x="1705" y="0" width="11570" height="80" fill="url(#screed)" stroke="#000" stroke-width="9"/>
+<rect x="-145" y="80" width="290" height="240" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
+<rect x="1705" y="80" width="11570" height="240" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
+<rect x="-145" y="-2660" width="290" height="80" fill="url(#screed)" stroke="#000" stroke-width="9"/>
+<rect x="1705" y="-2660" width="11570" height="80" fill="url(#screed)" stroke="#000" stroke-width="9"/>
+<rect x="-145" y="-2580" width="290" height="240" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
+<rect x="1705" y="-2580" width="11570" height="240" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
+<rect x="-145" y="-5320" width="290" height="80" fill="url(#screed)" stroke="#000" stroke-width="9"/>
+<rect x="1705" y="-5320" width="11570" height="80" fill="url(#screed)" stroke="#000" stroke-width="9"/>
+<rect x="-145" y="-5240" width="290" height="240" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
+<rect x="1705" y="-5240" width="11570" height="240" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
+<rect x="-145" y="320" width="290" height="2190" fill="#222" stroke="#000" stroke-width="12"/>
+<rect x="2400" y="320" width="150" height="90" fill="#555" stroke="#000" stroke-width="12"/>
+<rect x="8835" y="320" width="150" height="90" fill="#555" stroke="#000" stroke-width="12"/>
+<rect x="12985" y="320" width="290" height="2190" fill="#222" stroke="#000" stroke-width="12"/>
+<rect x="-145" y="-2340" width="290" height="2340" fill="#222" stroke="#000" stroke-width="12"/>
+<rect x="2400" y="-2340" width="150" height="240" fill="#555" stroke="#000" stroke-width="12"/>
+<rect x="8835" y="-2340" width="150" height="240" fill="#555" stroke="#000" stroke-width="12"/>
+<rect x="12985" y="-2340" width="290" height="2340" fill="#222" stroke="#000" stroke-width="12"/>
+<rect x="-145" y="-5000" width="290" height="2340" fill="#222" stroke="#000" stroke-width="12"/>
+<rect x="2400" y="-5000" width="150" height="240" fill="#555" stroke="#000" stroke-width="12"/>
+<rect x="8835" y="-5000" width="150" height="240" fill="#555" stroke="#000" stroke-width="12"/>
+<rect x="12985" y="-5000" width="290" height="2340" fill="#222" stroke="#000" stroke-width="12"/>
+<polygon points="145,941 145,784 395,784 395,628 645,628 645,471 895,471 895,314 1145,314 1145,503 145,1130" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1205" y="494" font-size="120" text-anchor="start">4 Stg. 157/250</text>
+<polygon points="1145,314 1145,157 1425,157 1425,-0 1705,-0 1705,183 1145,497" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1765" y="180" font-size="120" text-anchor="start">2 Stg. 157/280</text>
+<polygon points="145,-1662 145,-1829 395,-1829 395,-1995 645,-1995 645,-2161 895,-2161 895,-2328 1145,-2328 1145,-2135 145,-1470" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1205" y="-2148" font-size="120" text-anchor="start">4 Stg. 166/250</text>
+<polygon points="1145,-2328 1145,-2494 1425,-2494 1425,-2660 1705,-2660 1705,-2474 1145,-2141" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1765" y="-2480" font-size="120" text-anchor="start">2 Stg. 166/280</text>
+<polygon points="145,-4322 145,-4489 395,-4489 395,-4655 645,-4655 645,-4821 895,-4821 895,-4988 1145,-4988 1145,-4795 145,-4130" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1205" y="-4808" font-size="120" text-anchor="start">4 Stg. 166/250</text>
+<polygon points="1145,-4988 1145,-5154 1425,-5154 1425,-5320 1705,-5320 1705,-5134 1145,-4801" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1765" y="-5140" font-size="120" text-anchor="start">2 Stg. 166/280</text>
+<line x1="-2645" y1="200" x2="15775" y2="200" stroke="#3a7a20" stroke-width="25"/>
+<text x="15775" y="110" font-size="120" text-anchor="end" fill="#3a7a20">Gelände -0,20</text>
+<text x="1238" y="682" font-size="150" text-anchor="middle">Treppenhaus</text>
+<text x="1238" y="982" font-size="120" text-anchor="middle">LH 2,19</text>
+<text x="5692" y="682" font-size="150" text-anchor="middle">Flur</text>
+<text x="5692" y="982" font-size="120" text-anchor="middle">LH 2,19</text>
+<text x="11020" y="682" font-size="150" text-anchor="middle">Wohnzimmer</text>
+<text x="11020" y="982" font-size="120" text-anchor="middle">LH 2,19</text>
+<text x="1238" y="-1945" font-size="150" text-anchor="middle">Treppenhaus</text>
+<text x="1238" y="-1645" font-size="120" text-anchor="middle">LH 2,34</text>
+<text x="5692" y="-1945" font-size="150" text-anchor="middle">Flur</text>
+<text x="5692" y="-1645" font-size="120" text-anchor="middle">LH 2,34</text>
+<text x="11020" y="-1945" font-size="150" text-anchor="middle">Wohnzimmer</text>
+<text x="11020" y="-1645" font-size="120" text-anchor="middle">LH 2,34</text>
+<text x="1238" y="-4605" font-size="150" text-anchor="middle">Treppenhaus</text>
+<text x="1238" y="-4305" font-size="120" text-anchor="middle">LH 2,34</text>
+<text x="5692" y="-4605" font-size="150" text-anchor="middle">Flur</text>
+<text x="5692" y="-4305" font-size="120" text-anchor="middle">LH 2,34</text>
+<text x="11020" y="-4605" font-size="150" text-anchor="middle">Wohnzimmer</text>
+<text x="11020" y="-4305" font-size="120" text-anchor="middle">LH 2,34</text>
+<text x="-545" y="2695" font-size="105" text-anchor="end" fill="#c02020">Aufbau unbekannt: Annahme 250 mm (TODO @floor -1)</text>
+<text x="-545" y="220" font-size="105" text-anchor="end" fill="#000">Belag+Estrich 80 / Stahlbeton 240 = 320 mm</text>
+<text x="-545" y="-2440" font-size="105" text-anchor="end" fill="#000">Belag+Estrich 80 / Stahlbeton 240 = 320 mm</text>
+<text x="-545" y="-5100" font-size="105" text-anchor="end" fill="#000">Belag+Estrich 80 / Stahlbeton 240 = 320 mm</text>
+<path d="M13875 2510 l-40 -80 h80 z" fill="#000"/>
+<line x1="13795" y1="2510" x2="17075" y2="2510" stroke="#000" stroke-width="6"/>
+<text x="13955" y="2435" font-size="120">-2,51  OK FFB Keller</text>
+<path d="M13875 0 l-40 -80 h80 z" fill="#000"/>
+<line x1="13795" y1="0" x2="17075" y2="0" stroke="#000" stroke-width="6"/>
+<text x="13955" y="-75" font-size="120">±0,00  OK FFB Erdgeschoss</text>
+<path d="M13875 80 l-40 -80 h80 z" fill="#000"/>
+<line x1="13795" y1="80" x2="17075" y2="80" stroke="#000" stroke-width="6"/>
+<text x="13955" y="260" font-size="120">-0,08  OK RFB Erdgeschoss</text>
+<path d="M13875 -2660 l-40 -80 h80 z" fill="#000"/>
+<line x1="13795" y1="-2660" x2="17075" y2="-2660" stroke="#000" stroke-width="6"/>
+<text x="13955" y="-2735" font-size="120">+2,66  OK FFB Obergeschoss</text>
+<path d="M13875 -2580 l-40 -80 h80 z" fill="#000"/>
+<line x1="13795" y1="-2580" x2="17075" y2="-2580" stroke="#000" stroke-width="6"/>
+<text x="13955" y="-2400" font-size="120">+2,58  OK RFB Obergeschoss</text>
+<path d="M13875 -5320 l-40 -80 h80 z" fill="#000"/>
+<line x1="13795" y1="-5320" x2="17075" y2="-5320" stroke="#000" stroke-width="6"/>
+<text x="13955" y="-5395" font-size="120">+5,32  OK Decke</text>
+<path d="M13875 -5240 l-40 -80 h80 z" fill="#000"/>
+<line x1="13795" y1="-5240" x2="17075" y2="-5240" stroke="#000" stroke-width="6"/>
+<text x="13955" y="-5060" font-size="120">+5,24  OK Rohdecke</text>
+<line x1="3762" y1="2510" x2="3762" y2="320" stroke="#000" stroke-width="6"/>
+<line x1="3712" y1="2560" x2="3812" y2="2460" stroke="#000" stroke-width="13"/>
+<line x1="3712" y1="370" x2="3812" y2="270" stroke="#000" stroke-width="13"/>
+<text x="3672" y="1415" font-size="120" text-anchor="middle" transform="rotate(-90 3672 1415)">2,19</text>
+<line x1="3762" y1="0" x2="3762" y2="-2340" stroke="#000" stroke-width="6"/>
+<line x1="3712" y1="50" x2="3812" y2="-50" stroke="#000" stroke-width="13"/>
+<line x1="3712" y1="-2290" x2="3812" y2="-2390" stroke="#000" stroke-width="13"/>
+<text x="3672" y="-1170" font-size="120" text-anchor="middle" transform="rotate(-90 3672 -1170)">2,34</text>
+<line x1="3762" y1="-2660" x2="3762" y2="-5000" stroke="#000" stroke-width="6"/>
+<line x1="3712" y1="-2610" x2="3812" y2="-2710" stroke="#000" stroke-width="13"/>
+<line x1="3712" y1="-4950" x2="3812" y2="-5050" stroke="#000" stroke-width="13"/>
+<text x="3672" y="-3830" font-size="120" text-anchor="middle" transform="rotate(-90 3672 -3830)">2,34</text>
+<line x1="-145" y1="3460" x2="13275" y2="3460" stroke="#000" stroke-width="6"/>
+<line x1="-195" y1="3510" x2="-95" y2="3410" stroke="#000" stroke-width="13"/>
+<line x1="13225" y1="3510" x2="13325" y2="3410" stroke="#000" stroke-width="13"/>
+<text x="6565" y="3385" font-size="120" text-anchor="middle">13,42</text>
+<text x="-145" y="-6680" font-size="210" font-weight="bold">Schnitt A-A  (x = 4,30 m, Blick nach Osten)</text>
+<text x="-145" y="4840" font-size="105">M 1:50 · arch_section.py (rudimentär: nur Schnittebene, keine Ansicht dahinter, Dach nicht modelliert)</text>
+</svg>

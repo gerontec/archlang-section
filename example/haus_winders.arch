@@ -1,0 +1,122 @@
+# Haus: Keller, Erdgeschoss, Obergeschoss with the identical floor plan of eg.arch.
+# Rooms are wall-CENTERLINE boxes (ArchLang convention), mm, origin top-left, y down.
+# Storey heights = floor-to-floor (top finished floor to top finished floor).
+# Measured 2026-11-06: clear heights KG 2,19 m, EG/OG 2,34 m; every ceiling is
+# concrete, total build-up incl. screed + floor finish 0,32 m.
+#   H_xx = clear height + slab build-up of the ceiling above.
+plan "Haus" {
+  units mm
+  grid 5
+  paper A3 portrait
+  scale 1:50
+  north up
+  dims auto all
+  sheet text { decimal "," total "SUMME" }
+  schedule rooms net
+
+  # centerline grid (x right, y down)
+  let XW = 0
+  let XH = 3610      # west rooms | hall
+  let XM = 5020      # hall | east rooms
+  let XB = 6240      # WC/lobby | bath
+  let XE = 8910
+  let YN = 0
+  let YWC = 1770     # WC | lobby
+  let YST = 2475     # stairwell | kitchen/hall
+  let YBA = 3870     # bath/lobby | room NE
+  let YKI = 5960     # kitchen | room W
+  let YNE = 7650     # room NE | room SE
+  let YLR = 8910     # room W/hall | living room
+  let YS = 13130
+
+
+  # --- vertical datum (measured 2026-11-06) ---
+  let KG_CLEAR = 2190   # clear height basement
+  let KG_SLAB  = 320    # ceiling KG|EG, concrete + screed + finish
+  let EG_CLEAR = 2340   # clear height ground floor
+  let EG_SLAB  = 320    # ceiling EG|OG
+  let OG_CLEAR = 2340   # clear height upper floor
+  let OG_SLAB  = 320    # ceiling OG|attic
+
+  # --- section data for arch_section.py (comments, ignored by ArchLang) ---
+  # @section A x=4300 look east      # through stair top, hall, living room
+  # @section B y=645 look north      # along the stair flight, WC, bath (cf. photo IMG_20261106_083237)
+  # @datum 0
+  # floor build-up top -> bottom in mm; level -1 = basement ground slab, level 2 = ceiling above OG.
+  # Total 320 incl. floor finish confirmed 2026-11-06; only the split 80 / 240 is assumed.
+  # @floor 0 Belag+Estrich:80 Stahlbeton:240
+  # @floor 1 Belag+Estrich:80 Stahlbeton:240
+  # @floor 2 Belag+Estrich:80 Stahlbeton:240
+  # terrain roughly 0,2 m below FFB EG, estimated from the photo, not measured
+  # @ground -200
+
+  component grundriss() {
+    room id=treppe at (XW, YN) size (XM - XW) x (YST - YN) label "Treppenhaus" uses circulation
+    room id=wc at (XM, YN) size (XB - XM) x (YWC - YN) label "WC" uses wc
+    room id=vorraum at (XM, YWC) size (XB - XM) x (YBA - YWC) label "Vorraum" uses hall
+    room id=bad at (XB, YN) size (XE - XB) x (YBA - YN) label "Bad" uses bath
+    room id=kueche at (XW, YST) size (XH - XW) x (YKI - YST) label "Küche" uses kitchen
+    room id=flur at (XH, YST) size (XM - XH) x (YLR - YST) label "Flur" uses hall
+    room id=zw at (XW, YKI) size (XH - XW) x (YLR - YKI) label "Zimmer" uses bedroom
+    room id=zno at (XM, YBA) size (XE - XM) x (YNE - YBA) label "Zimmer" uses bedroom
+    room id=zso at (XM, YNE) size (XE - XM) x (YS - YNE) label "Zimmer" uses bedroom
+    room id=wz at (XW, YLR) size (XM - XW) x (YS - YLR) label "Wohnzimmer" uses living
+
+    walls from rooms exterior 290 partition 150 {
+      between zw and flur thickness 130
+      between kueche and flur thickness 130
+      between kueche and treppe thickness 180
+      between wc and bad thickness 190
+      between vorraum and bad thickness 190
+    }
+
+    # windows (exterior, centre on the wall centerline); only the living room one is measured
+    window at (3615, YS) width 1060 wall exterior
+    window at (XW, 4585) width 1000 wall exterior
+    window at (XW, 6810) width 1150 wall exterior
+    window at (5720, YS) width 1050 wall exterior
+    window at (XE, 10635) width 1000 wall exterior
+    window at (XE, 5560) width 1050 wall exterior
+    window at (XE, 2035) width 1000 wall exterior
+
+    # doors
+    door at (XW, 10985) width 1000 wall exterior swing into wz
+    door at (XW, 1785) width 900 wall exterior swing outward
+    door at (4295, YLR) width 800 wall partition swing into wz
+    door at (XH, 6735) width 800 wall partition swing into zw
+    door at (XH, 4255) width 800 wall partition swing into kueche
+    door at (XM, 8235) width 800 wall partition swing into zso
+    door at (XM, 5235) width 800 wall partition swing into zno
+    door at (4295, YST) width 800 wall partition swing into treppe
+    door at (5595, YWC) width 800 wall partition swing into wc
+    door at (XB, 2610) width 750 wall partition swing into bad
+    # hall -> lobby: open passage, no door leaf
+    opening at (XM, 3168) width 1035 wall partition
+
+    # stair along the north wall, climbs west -> east, winders at the top turn south
+    # winders need the ArchLang branch feat/stair-winders (landing ... winders <n>)
+    stair id=tr dir up width 1000 {
+      flight at (1195, 145) size 2700x1000
+      landing at (3895, 145) size 1000x1000 winders 4
+      flight at (3895, 1145) size 1000x560
+    }
+    # chimney flues between kitchen and room W
+    column at (2765, 5865) size 200x200
+    column at (3025, 5865) size 200x200
+    column at (3285, 5865) size 200x200
+  }
+
+  level -1 "Keller" height KG_CLEAR + KG_SLAB {
+    grundriss()
+  }
+  level 0 "Erdgeschoss" height EG_CLEAR + EG_SLAB {
+    grundriss()
+  }
+  level 1 "Obergeschoss" height OG_CLEAR + OG_SLAB {
+    grundriss()
+  }
+
+  notes "Grundriss aller Geschosse identisch mit eg.arch (Stand 2026-11-05)"
+        "Raumhöhen und Deckenaufbau gemessen 2026-11-06, Aufteilung Estrich/Beton angenommen"
+  title { project "Haus KG/EG/OG" drawn_by "GH" date "2026-11-06" }
+}

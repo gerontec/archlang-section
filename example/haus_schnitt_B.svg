@@ -38,18 +38,18 @@
 <rect x="4945" y="-5000" width="150" height="2340" fill="#555" stroke="#000" stroke-width="12"/>
 <rect x="6145" y="-5000" width="190" height="2340" fill="#555" stroke="#000" stroke-width="12"/>
 <rect x="8765" y="-5000" width="290" height="2340" fill="#222" stroke="#000" stroke-width="12"/>
-<polygon points="1195,2510 1195,2337 1420,2337 1420,2164 1645,2164 1645,1990 1870,1990 1870,1817 2095,1817 2095,1644 2320,1644 2320,1471 2545,1471 2545,1297 2770,1297 2770,1124 2995,1124 2995,951 3220,951 3220,778 3445,778 3445,604 3670,604 3670,431 3895,431 3895,633 1195,2712" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1735" y="2420" font-size="120" text-anchor="middle">12 Stg. 173/225</text>
-<rect x="3895" y="431" width="1000" height="160" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="4395" y="741" font-size="105" text-anchor="middle">Podest/Wendelung</text>
-<polygon points="1195,-0 1195,-169 1403,-169 1403,-339 1610,-339 1610,-508 1818,-508 1818,-678 2026,-678 2026,-847 2233,-847 2233,-1017 2441,-1017 2441,-1186 2649,-1186 2649,-1356 2857,-1356 2857,-1525 3064,-1525 3064,-1695 3272,-1695 3272,-1864 3480,-1864 3480,-2034 3687,-2034 3687,-2203 3895,-2203 3895,-1997 1195,207" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1735" y="-90" font-size="120" text-anchor="middle">13 Stg. 169/208</text>
-<rect x="3895" y="-2203" width="1000" height="160" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="4395" y="-1893" font-size="105" text-anchor="middle">Podest/Wendelung</text>
-<polygon points="1195,-2660 1195,-2829 1403,-2829 1403,-2999 1610,-2999 1610,-3168 1818,-3168 1818,-3338 2026,-3338 2026,-3507 2233,-3507 2233,-3677 2441,-3677 2441,-3846 2649,-3846 2649,-4016 2857,-4016 2857,-4185 3064,-4185 3064,-4355 3272,-4355 3272,-4524 3480,-4524 3480,-4694 3687,-4694 3687,-4863 3895,-4863 3895,-4657 1195,-2453" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1735" y="-2750" font-size="120" text-anchor="middle">13 Stg. 169/208</text>
-<rect x="3895" y="-4863" width="1000" height="160" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="4395" y="-4553" font-size="105" text-anchor="middle">Podest/Wendelung</text>
+<polygon points="1195,2510 1195,2301 1465,2301 1465,2092 1735,2092 1735,1882 2005,1882 2005,1673 2275,1673 2275,1464 2545,1464 2545,1255 2815,1255 2815,1046 3085,1046 3085,837 3355,837 3355,627 3625,627 3625,418 3895,418 3895,621 1195,2712" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1735" y="2420" font-size="120" text-anchor="middle">10 Stg. 209/270</text>
+<rect x="3895" y="418" width="1000" height="160" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="4395" y="728" font-size="105" text-anchor="middle">Podest/Wendelung</text>
+<polygon points="1195,-0 1195,-222 1465,-222 1465,-443 1735,-443 1735,-665 2005,-665 2005,-887 2275,-887 2275,-1108 2545,-1108 2545,-1330 2815,-1330 2815,-1552 3085,-1552 3085,-1773 3355,-1773 3355,-1995 3625,-1995 3625,-2217 3895,-2217 3895,-2010 1195,207" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1735" y="-90" font-size="120" text-anchor="middle">10 Stg. 222/270</text>
+<rect x="3895" y="-2217" width="1000" height="160" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="4395" y="-1907" font-size="105" text-anchor="middle">Podest/Wendelung</text>
+<polygon points="1195,-2660 1195,-2882 1465,-2882 1465,-3103 1735,-3103 1735,-3325 2005,-3325 2005,-3547 2275,-3547 2275,-3768 2545,-3768 2545,-3990 2815,-3990 2815,-4212 3085,-4212 3085,-4433 3355,-4433 3355,-4655 3625,-4655 3625,-4877 3895,-4877 3895,-4670 1195,-2453" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="1735" y="-2750" font-size="120" text-anchor="middle">10 Stg. 222/270</text>
+<rect x="3895" y="-4877" width="1000" height="160" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
+<text x="4395" y="-4567" font-size="105" text-anchor="middle">Podest/Wendelung</text>
 <line x1="-2645" y1="200" x2="11555" y2="200" stroke="#3a7a20" stroke-width="25"/>
 <text x="11555" y="110" font-size="120" text-anchor="end" fill="#3a7a20">Gelände -0,20</text>
 <text x="2510" y="682" font-size="150" text-anchor="middle">Treppenhaus</text>

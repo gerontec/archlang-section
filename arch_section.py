@@ -43,6 +43,8 @@ from xml.sax.saxutils import escape
 ARCHLANG_DIR = os.environ.get("ARCHLANG_DIR", os.path.dirname(os.path.realpath(__file__)))
 RISER_MAX = 180          # mm, for the drawn step count
 STAIR_WAIST = 160        # mm, flight slab thickness
+TREAD_GOING_MM = 280     # ArchLang's drawn tread going (src/elements/vertical-glyphs.ts)
+MIN_TREADS = 2
 DEFAULT_SLAB = 250       # mm, used when a level has no @floor
 STRUCTURAL = re.compile(r"beton|rohdecke|bodenplatte|holzbalken|balken|decke|ziegel|hourdis|filigran|concrete|slab|timber",
                         re.I)
@@ -50,7 +52,8 @@ STRUCTURAL = re.compile(r"beton|rohdecke|bodenplatte|holzbalken|balken|decke|zie
 
 # ---------------------------------------------------------------- input ---
 def run_archlang(args):
-    cmd = ["npx", "--no-install", "archlang"] + args
+    cli = os.environ.get("ARCHLANG_CLI")       # e.g. a local build: .../archlang/dist/cli.js
+    cmd = (["node", cli] if cli else ["npx", "--no-install", "archlang"]) + args
     r = subprocess.run(cmd, cwd=ARCHLANG_DIR, capture_output=True, text=True, timeout=120)
     if r.returncode not in (0,):
         sys.exit(f"archlang {' '.join(args)} failed:\n{r.stderr[-2000:]}")
@@ -161,16 +164,46 @@ def stair_pieces(v):
                 hx, hy = (p["high"], None) if p["axis"] == "x" else (None, p["high"])
                 if (hx is not None and (abs(hx - lx0) < 1 or abs(hx - lx1) < 1)) or \
                    (hy is not None and (abs(hy - ly0) < 1 or abs(hy - ly1) < 1)):
-                    ordered.append({"bbox": b, "axis": None, "run": 0})
+                    if lg.get("winders"):
+                        ordered.append({"bbox": b, "axis": None, "winders": lg["winders"],
+                                        "run": 0, "before": p})
+                    else:
+                        ordered.append({"bbox": b, "axis": None, "run": 0})
                     landings = [x for x in landings if x is not lg]
                     break
-    total = sum(p["run"] for p in ordered) or 1
+    # Equal risers over the whole stair: share the rise by step count, a flight's steps as
+    # ArchLang draws its treads (round(run / TREAD_GOING_MM), at least MIN_TREADS), a winder
+    # landing's steps as authored, a level landing none.
+    for p in ordered:
+        if p["axis"] is not None:
+            p["steps"] = max(MIN_TREADS, round(p["run"] / TREAD_GOING_MM))
+        else:
+            p["steps"] = p.get("winders", 0)
+    if len(ordered) == 1:          # straight stair: risers come from the storey height
+        ordered[0]["steps"] = None
+    total = sum(p["steps"] or 0 for p in ordered) or 1
     acc = 0
     for p in ordered:
         p["f0"] = acc / total
-        acc += p["run"]
-        p["f1"] = acc / total
+        acc += p["steps"] or total
+        p["f1"] = min(1.0, acc / total)
     return ordered
+
+
+def winder_ends(p, pieces, axis):
+    """Low and high end of a winder landing along a cut line.  The cut 'y=pos' runs along x.
+    Along the entry flight's axis the winders rise away from the entry side; along the exit
+    flight's axis they rise toward the exit side."""
+    b = p["bbox"]
+    x0, y0, x1, y1 = b["x"], b["y"], b["x"] + b["w"], b["y"] + b["h"]
+    before, after = p["before"], pieces[[q is p for q in pieces].index(True) + 1]
+    run_axis = "x" if axis == "y" else "y"            # coordinate the cut runs along
+    lo_c, hi_c = (x0, x1) if run_axis == "x" else (y0, y1)
+    if before["axis"] == run_axis:                    # entered across a side normal to the cut
+        low = before["high"]
+        return low, (hi_c if abs(low - lo_c) < 1 else lo_c)
+    high = after["low"]
+    return (hi_c if abs(high - lo_c) < 1 else lo_c), high
 
 
 def level_cut(level, axis, pos):
@@ -206,16 +239,21 @@ def level_cut(level, axis, pos):
     for v in level["verticals"]:
         if v.get("kind") != "stair" or "bbox" not in v:
             continue
-        for p in stair_pieces(v):
+        pieces_all = stair_pieces(v)
+        for p in pieces_all:
             bb = p["bbox"]
             x0, y0, x1, y1 = bb["x"], bb["y"], bb["x"] + bb["w"], bb["y"] + bb["h"]
             if axis == "x" and not (x0 < pos < x1) or axis == "y" and not (y0 < pos < y1):
                 continue
             a0, a1 = (y0, y1) if axis == "x" else (x0, x1)      # piece extent along the cut
-            if p["axis"] is None:                               # landing: flat
+            if p["axis"] is None and p.get("winders"):          # winders: rise across the cut
+                lo, hi = winder_ends(p, pieces_all, axis)
+                stairs.append({"mode": "along", "c_low": lo, "c_high": hi, "steps": p["winders"],
+                               "f0": p["f0"], "f1": p["f1"], "dir": v.get("dir", "up")})
+            elif p["axis"] is None:                             # landing: flat
                 stairs.append({"mode": "flat", "c0": a0, "c1": a1, "f": p["f0"], "dir": v.get("dir", "up")})
             elif p["axis"] != axis:                              # cut runs along the flight
-                stairs.append({"mode": "along", "c_low": p["low"], "c_high": p["high"],
+                stairs.append({"mode": "along", "c_low": p["low"], "c_high": p["high"], "steps": p["steps"],
                                "f0": p["f0"], "f1": p["f1"], "dir": v.get("dir", "up")})
             else:                                                # cut crosses the flight
                 t = (pos - p["low"]) / (p["high"] - p["low"])
@@ -311,7 +349,7 @@ def build_section(levels, d, name):
             vl = n + 1 if s["dir"] == "up" else n
             if s["mode"] == "along":
                 ul, uh = U(s["c_low"]), U(s["c_high"])
-                els["stairs"].append(("along", ul, uh, zl + s["f0"] * Hs, zl + s["f1"] * Hs))
+                els["stairs"].append(("along", ul, uh, zl + s["f0"] * Hs, zl + s["f1"] * Hs, s.get("steps")))
                 stair_voids.setdefault(vl, []).append(tuple(sorted((ul, uh))))
             else:
                 ua, ub = sorted((U(s["c0"]), U(s["c1"])))
@@ -422,8 +460,8 @@ def render_svg(sec, scale):
         out.append(f'<rect x="{u - t / 2:.0f}" y="{-a - 0.4 * S:.0f}" width="{t:.0f}" height="{0.4 * S:.0f}" fill="#1060c0"/>')
     for s in els["stairs"]:
         if s[0] == "along":
-            _, ul, uh, za, zb = s
-            n = max(1, math.ceil((zb - za) / RISER_MAX))
+            _, ul, uh, za, zb, steps = s
+            n = steps or max(1, math.ceil((zb - za) / RISER_MAX))
             run = (uh - ul) / n
             rise = (zb - za) / n
             pts = [(ul, za)]
@@ -513,8 +551,8 @@ def render_dxf(sec, path):
             msp.add_line((u + off, a), (u + off, b), dxfattribs={"layer": "S_GLAS"})
     for s in els["stairs"]:
         if s[0] == "along":
-            _, ul, uh, za, zb = s
-            n = max(1, math.ceil((zb - za) / RISER_MAX))
+            _, ul, uh, za, zb, steps = s
+            n = steps or max(1, math.ceil((zb - za) / RISER_MAX))
             run, rise = (uh - ul) / n, (zb - za) / n
             pts = [(ul, za)]
             for i in range(n):
