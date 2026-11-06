@@ -39,7 +39,7 @@ plan "Haus" {
   let OG_SLAB  = 320    # ceiling OG|attic
 
   # --- section data for arch_section.py (comments, ignored by ArchLang) ---
-  # @section A x=4300 look east      # through stair top, hall, living room
+  # @section A x=700 look east       # in front of the first step: the flight full width, the turn behind
   # @section B y=645 look south      # along the stair flight, WC, bath (cf. photo IMG_20261106_083237)
   # @datum 0
   # floor build-up top -> bottom in mm; level -1 = basement ground slab, level 2 = ceiling above OG.

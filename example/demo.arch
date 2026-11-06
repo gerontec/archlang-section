@@ -12,7 +12,7 @@ plan "Demo" {
   let YK = 4000      # kitchen | room
 
   # --- section data (comments, ignored by ArchLang) ---
-  # @section A x=4300 look east     # through the winders and the exit
+  # @section A x=700 look east      # in front of the first step: the flight full width, the turn behind
   # @section B y=650 look south     # along the flight: its steps from the side, the exit full width
   # @datum 0
   # @floor -1 Estrich:50 Bodenplatte:250
