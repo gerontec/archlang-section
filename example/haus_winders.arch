@@ -22,12 +22,12 @@ plan "Haus" {
   let XE = 8910
   let YN = 0
   let YWC = 1770     # WC | lobby
-  let YST = 2440     # stairwell | kitchen/hall: 2.22 m clear (1.01 stair eye + 1.21 hall), measured
+  let YST = 2435     # stairwell | kitchen/hall: 2.22 m clear (1.01 stair eye + 1.21 hall), measured
   let YBA = 3870     # bath/lobby | room NE
   let YKI = 5960     # kitchen | room W
   let YNE = 7650     # room NE | room SE
   let YLR = 8910     # room W/hall | living room
-  let YS = 13130
+  let YS = 13000     # east side 13,28 m outside with 28 cm walls, measured 2026-11-06
 
 
   # --- vertical datum (measured 2026-11-06) ---
@@ -40,7 +40,7 @@ plan "Haus" {
 
   # --- section data for arch_section.py (comments, ignored by ArchLang) ---
   # @section A x=700 look east       # in front of the first step: the flight full width, the turn behind
-  # @section B y=645 look south      # along the stair flight, WC, bath (cf. photo IMG_20261106_083237)
+  # @section B y=640 look south      # along the stair flight, WC, bath (cf. photo IMG_20261106_083237)
   # @datum 0
   # floor build-up top -> bottom in mm; level -1 = basement ground slab, level 2 = ceiling above OG.
   # Total 320 incl. floor finish confirmed 2026-11-06; only the split 80 / 240 is assumed.
@@ -63,7 +63,7 @@ plan "Haus" {
     room id=zso at (XM, YNE) size (XE - XM) x (YS - YNE) label "Zimmer" uses bedroom
     room id=wz at (XW, YLR) size (XM - XW) x (YS - YLR) label "Wohnzimmer" uses living
 
-    walls from rooms exterior 290 partition 150 {
+    walls from rooms exterior 280 partition 150 {   # exterior walls 28 cm, measured
       between zw and flur thickness 130
       between kueche and flur thickness 130
       between kueche and treppe thickness 180
@@ -97,14 +97,14 @@ plan "Haus" {
     # stair along the north wall, climbs west -> east, winders at the top turn south
     # winders need the ArchLang branch feat/stair-winders (landing ... winders <n>)
     stair id=tr dir up width 1000 {
-      flight at (1195, 145) size 2700x1000
-      landing at (3895, 145) size 1000x1000 winders 4
-      flight at (3895, 1145) size 1000x560
+      flight at (1195, 140) size 2700x1000
+      landing at (3895, 140) size 1000x1000 winders 4
+      flight at (3895, 1140) size 1000x560
     }
-    # chimney flues between kitchen and room W
-    column at (2765, 5865) size 200x200
-    column at (3025, 5865) size 200x200
-    column at (3285, 5865) size 200x200
+    # chimney on the wall kitchen | room W: stands 420 mm into room W (south), 1200 mm wide,
+    # measured; its position along the wall (flush with the hall wall) is assumed.
+    # The three flues (200 x 200) are inside it.
+    column id=kamin at (2345, 6035) size 1200x420
   }
 
   level -1 "Keller" height KG_CLEAR + KG_SLAB {
