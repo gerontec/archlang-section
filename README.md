@@ -31,6 +31,21 @@ ARCHLANG_CLI=/path/to/archlang/dist/cli.js ./arch_section.py example/demo.arch
 Output: `<plan>_schnitt_<name>.svg|png|dxf` next to the plan (or in `-o`). The SVG is to scale (default 1:50).
 Set `ARCHLANG_DIR` to use an ArchLang install in another directory.
 
+Every section sheet carries a footer with the command that made it (absolute paths);
+`--footer TEXT` replaces the command, `--no-footer` drops the line.
+
+### Export every sheet at once
+
+```sh
+./arch_export.py example/haus.arch -o ~/Dokumente/Plan/archlang
+```
+
+Writes the plan copy, the floor plans of every level (`<plan>_arch.L<n>.svg|png|pdf|dxf`,
+ArchLang `compile`) and all sections. Each SVG/PNG/PDF sheet gets a footer at the bottom:
+`created by: <this command>   →   <sheet file>`, so a printout says how to rebuild it
+(stamped onto ArchLang's output afterwards; the npm package is untouched; DXF has no sheet,
+no footer). Needs Pillow, pypdf and reportlab besides the section requirements.
+
 ## Directives
 
 Section data lives in **comments** of the `.arch` file, so ArchLang still compiles it unchanged:

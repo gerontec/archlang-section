@@ -22,6 +22,11 @@ compiler still accepts the file unchanged:
 
 Usage:
   arch_section.py plan.arch [--section A] [-o outdir] [--scale 50] [--no-png] [--no-dxf]
+                  [--footer TEXT | --no-footer]
+
+Every sheet gets a footer line with the command that made it (default: this
+invocation, all paths absolute; `--footer` replaces the command, e.g. when a
+wrapper such as arch_export.py runs this script).
 
 Requires: node + `npm install` in this directory (ArchLang), Python 3 with ezdxf (DXF) and cairosvg (PNG).
 
@@ -861,9 +866,11 @@ def layer_fill(name, assumed):
     return "#dddddd"
 
 
-def render_svg(sec, scale):
+def render_svg(sec, scale, footer=None):
     els, (x0, z0, x1, z1) = sec["els"], sec["bb"]
     pad_l, pad_r, pad_t, pad_b = 9000, 4200, 1600, 2200
+    if footer:
+        pad_b += 2.5 * scale            # one more line below the caption
     vx, vy = x0 - pad_l, -(z1 + pad_t)
     vw, vh = (x1 - x0) + pad_l + pad_r, (z1 - z0) + pad_t + pad_b
     S = scale / 1.0                     # model mm per paper mm
@@ -934,6 +941,9 @@ def render_svg(sec, scale):
     out.append(f'<text x="{x0:.0f}" y="{vy + 1.6 * txt:.0f}" font-size="{txt * 1.4:.0f}" font-weight="bold">{escape(sec["title"])}</text>')
     out.append(f'<text x="{x0:.0f}" y="{vy + vh - 0.8 * txt:.0f}" font-size="{txt * 0.7:.0f}">M 1:{scale:g} · arch_section.py '
                f'(rudimentär: nur Schnittebene, Ansicht dahinter nur Treppen, verdeckte Stufenkanten gestrichelt, Dach nicht modelliert)</text>')
+    if footer:                          # the caption above moved up by the extra padding
+        out[-1] = out[-1].replace(f'y="{vy + vh - 0.8 * txt:.0f}"', f'y="{vy + vh - 0.8 * txt - 2.5 * scale:.0f}"')
+        out.append(f'<text x="{x0:.0f}" y="{vy + vh - 0.8 * txt:.0f}" font-size="{txt * 0.6:.0f}" fill="#555">{escape(footer)}</text>')
     out.append("</svg>")
     return "\n".join(out)
 
@@ -991,6 +1001,17 @@ def render_dxf(sec, path):
 
 
 # ----------------------------------------------------------------- main ---
+def own_command(a, arch, outdir):
+    """This invocation as one shell line, paths absolute, so it reruns from any directory."""
+    cmd = [os.path.realpath(__file__), arch, "-o", os.path.abspath(outdir)]
+    if a.section:
+        cmd += ["--section", a.section]
+    if a.scale != 50:
+        cmd += ["--scale", f"{a.scale:g}"]
+    cmd += [f for f, on in (("--no-png", a.no_png), ("--no-dxf", a.no_dxf)) if on]
+    return shlex.join(cmd)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("arch")
@@ -999,6 +1020,8 @@ def main():
     ap.add_argument("--scale", type=float, default=50)
     ap.add_argument("--no-png", action="store_true")
     ap.add_argument("--no-dxf", action="store_true")
+    ap.add_argument("--footer", help="command shown in the footer (default: this invocation)")
+    ap.add_argument("--no-footer", action="store_true")
     a = ap.parse_args()
     arch = os.path.abspath(a.arch)
     d = parse_directives(arch)
@@ -1011,10 +1034,12 @@ def main():
     levels = load_plan(arch)
     outdir = a.outdir or os.path.dirname(arch)
     stem = os.path.splitext(os.path.basename(arch))[0]
+    cmd = a.footer or own_command(a, arch, outdir)
     for n in names:
         sec = build_section(levels, d, n)
         base = os.path.join(outdir, f"{stem}_schnitt_{n}")
-        svg = render_svg(sec, a.scale)
+        footer = None if a.no_footer else f"created by: {cmd}   →   {os.path.basename(base)}.svg/.png/.dxf"
+        svg = render_svg(sec, a.scale, footer)
         open(base + ".svg", "w", encoding="utf-8").write(svg)
         made = [base + ".svg"]
         if not a.no_png:
