@@ -1,7 +1,8 @@
 # Haus: Keller, Erdgeschoss, Obergeschoss with the identical floor plan of eg.arch.
 # Rooms are wall-CENTERLINE boxes (ArchLang convention), mm, origin top-left, y down.
 # Storey heights = floor-to-floor (top finished floor to top finished floor).
-# TODO measure: clear room height + slab build-up per storey, then
+# Measured 2026-11-06: clear heights KG 2,19 m, EG/OG 2,34 m; every ceiling is
+# concrete, total build-up incl. screed + floor finish 0,32 m.
 #   H_xx = clear height + slab build-up of the ceiling above.
 plan "Haus" {
   units mm
@@ -29,22 +30,25 @@ plan "Haus" {
   let YS = 13130
 
 
-  # --- vertical datum (PLACEHOLDERS, replace with measured values) ---
-  let KG_CLEAR = 2300   # clear height basement        TODO
-  let KG_SLAB  = 300    # slab build-up KG|EG ceiling  TODO
-  let EG_CLEAR = 2500   # clear height ground floor    TODO
-  let EG_SLAB  = 300    # slab build-up EG|OG ceiling  TODO
-  let OG_CLEAR = 2500   # clear height upper floor     TODO
-  let OG_SLAB  = 250    # top ceiling / attic floor    TODO
+  # --- vertical datum (measured 2026-11-06) ---
+  let KG_CLEAR = 2190   # clear height basement
+  let KG_SLAB  = 320    # ceiling KG|EG, concrete + screed + finish
+  let EG_CLEAR = 2340   # clear height ground floor
+  let EG_SLAB  = 320    # ceiling EG|OG
+  let OG_CLEAR = 2340   # clear height upper floor
+  let OG_SLAB  = 320    # ceiling OG|attic
 
-  # --- section data for ~/archlang_test/arch_section.py (comments, ignored by ArchLang) ---
-  # @section A x=4300 look east      # through stairwell, hall, living room
-  # @section B y=1000 look north     # along the stair flight, WC, bath
+  # --- section data for arch_section.py (comments, ignored by ArchLang) ---
+  # @section A x=4300 look east      # through stair top, hall, living room
+  # @section B y=645 look north      # along the stair flight, WC, bath (cf. photo IMG_20261106_083237)
   # @datum 0
-  # floor build-up top -> bottom in mm, fill in after measuring, e.g.:
-  #   example: @floor 0 Parkett:15 Estrich:60 Trittschall:30 Stahlbeton:180 Putz:15
-  #   level -1 = basement ground slab, level 2 = ceiling above OG
-  #   example: @ground -200
+  # floor build-up top -> bottom in mm; level -1 = basement ground slab, level 2 = ceiling above OG.
+  # Total 320 measured; the split finish+screed 80 / concrete 240 is an ASSUMPTION.
+  # @floor 0 Belag+Estrich:80 Stahlbeton:240
+  # @floor 1 Belag+Estrich:80 Stahlbeton:240
+  # @floor 2 Belag+Estrich:80 Stahlbeton:240
+  # terrain roughly 0,2 m below FFB EG, estimated from the photo, not measured
+  # @ground -200
 
   component grundriss() {
     room id=treppe at (XW, YN) size (XM - XW) x (YST - YN) label "Treppenhaus" uses circulation
@@ -89,8 +93,14 @@ plan "Haus" {
     # hall -> lobby: open passage, no door leaf
     opening at (XM, 3168) width 1035 wall partition
 
-    # stairs along the north wall, chimney flues between kitchen and room W
-    stair at (1195, 145) size 3400x1000 dir up
+    # stair along the north wall, climbs west -> east, winders at the top turn south
+    # (ArchLang has no winders: modelled as quarter landing + short flight)
+    stair id=tr dir up width 1000 {
+      flight at (1195, 145) size 2700x1000
+      landing at (3895, 145) size 1000x1000
+      flight at (3895, 1145) size 1000x560
+    }
+    # chimney flues between kitchen and room W
     column at (2765, 5865) size 200x200
     column at (3025, 5865) size 200x200
     column at (3285, 5865) size 200x200
@@ -107,6 +117,6 @@ plan "Haus" {
   }
 
   notes "Grundriss aller Geschosse identisch mit eg.arch (Stand 2026-11-05)"
-        "Raumhöhen und Deckenaufbau sind Platzhalter, Aufmaß folgt"
+        "Raumhöhen und Deckenaufbau gemessen 2026-11-06, Aufteilung Estrich/Beton angenommen"
   title { project "Haus KG/EG/OG" drawn_by "GH" date "2026-11-06" }
 }

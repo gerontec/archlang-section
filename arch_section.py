@@ -134,6 +134,45 @@ def poly_intervals(poly, axis, pos):
     return [(hits[i], hits[i + 1]) for i in range(0, len(hits) - 1, 2)]
 
 
+def stair_pieces(v):
+    """Flights and landings of a stair in climbing order, each with the climbing
+    axis ('x'/'y' = axis the flight runs along, None = landing), low/high end
+    coordinate and the storey-height fractions f0..f1 it covers. Rise is shared
+    by the flights in proportion to their run; landings stay flat."""
+    flights, landings = v.get("flights"), v.get("landings") or []
+    if not flights:                                   # straight stair: entry at the larger coordinate
+        bb = v["bbox"]
+        flights = [{"bbox": bb, "entry": "right" if bb["w"] >= bb["h"] else "bottom"}]
+    pieces = []
+    for f in flights:
+        bb = f["bbox"]
+        x0, y0, x1, y1 = bb["x"], bb["y"], bb["x"] + bb["w"], bb["y"] + bb["h"]
+        low, high, ax = {"left": (x0, x1, "x"), "right": (x1, x0, "x"),
+                         "top": (y0, y1, "y"), "bottom": (y1, y0, "y")}[f.get("entry", "right")]
+        pieces.append({"bbox": bb, "axis": ax, "low": low, "high": high, "run": abs(high - low)})
+    # landings sit between flights; order them by touching the end of a flight
+    ordered = []
+    for i, p in enumerate(pieces):
+        ordered.append(p)
+        if i + 1 < len(pieces):
+            for lg in landings:
+                b = lg["bbox"]
+                lx0, ly0, lx1, ly1 = b["x"], b["y"], b["x"] + b["w"], b["y"] + b["h"]
+                hx, hy = (p["high"], None) if p["axis"] == "x" else (None, p["high"])
+                if (hx is not None and (abs(hx - lx0) < 1 or abs(hx - lx1) < 1)) or \
+                   (hy is not None and (abs(hy - ly0) < 1 or abs(hy - ly1) < 1)):
+                    ordered.append({"bbox": b, "axis": None, "run": 0})
+                    landings = [x for x in landings if x is not lg]
+                    break
+    total = sum(p["run"] for p in ordered) or 1
+    acc = 0
+    for p in ordered:
+        p["f0"] = acc / total
+        acc += p["run"]
+        p["f1"] = acc / total
+    return ordered
+
+
 def level_cut(level, axis, pos):
     """Rooms, walls and openings of one level on the cut line, in plan coordinate c along the line."""
     pj = level["plan"]
@@ -167,21 +206,21 @@ def level_cut(level, axis, pos):
     for v in level["verticals"]:
         if v.get("kind") != "stair" or "bbox" not in v:
             continue
-        bb = v["bbox"]
-        x0, y0, x1, y1 = bb["x"], bb["y"], bb["x"] + bb["w"], bb["y"] + bb["h"]
-        along_x = bb["w"] >= bb["h"]                     # flight runs along the long axis
-        lo, hi = (x0, x1) if along_x else (y0, y1)       # flight extent along its axis
-        a0, a1 = (y0, y1) if along_x else (x0, x1)       # across extent
-        if axis == "y" and along_x and y0 < pos < y1:    # line y=pos runs along an x-flight
-            stairs.append({"mode": "along", "c0": lo, "c1": hi, "dir": v.get("dir", "up")})
-        elif axis == "x" and not along_x and x0 < pos < x1:
-            stairs.append({"mode": "along", "c0": lo, "c1": hi, "dir": v.get("dir", "up")})
-        elif axis == "x" and along_x and x0 < pos < x1:  # line crosses an x-flight
-            f = (hi - pos) / (hi - lo)                   # rises from the larger-coordinate end
-            stairs.append({"mode": "across", "c0": a0, "c1": a1, "f": f, "dir": v.get("dir", "up")})
-        elif axis == "y" and not along_x and y0 < pos < y1:
-            f = (hi - pos) / (hi - lo)
-            stairs.append({"mode": "across", "c0": a0, "c1": a1, "f": f, "dir": v.get("dir", "up")})
+        for p in stair_pieces(v):
+            bb = p["bbox"]
+            x0, y0, x1, y1 = bb["x"], bb["y"], bb["x"] + bb["w"], bb["y"] + bb["h"]
+            if axis == "x" and not (x0 < pos < x1) or axis == "y" and not (y0 < pos < y1):
+                continue
+            a0, a1 = (y0, y1) if axis == "x" else (x0, x1)      # piece extent along the cut
+            if p["axis"] is None:                               # landing: flat
+                stairs.append({"mode": "flat", "c0": a0, "c1": a1, "f": p["f0"], "dir": v.get("dir", "up")})
+            elif p["axis"] != axis:                              # cut runs along the flight
+                stairs.append({"mode": "along", "c_low": p["low"], "c_high": p["high"],
+                               "f0": p["f0"], "f1": p["f1"], "dir": v.get("dir", "up")})
+            else:                                                # cut crosses the flight
+                t = (pos - p["low"]) / (p["high"] - p["low"])
+                stairs.append({"mode": "across", "c0": a0, "c1": a1,
+                               "f": p["f0"] + t * (p["f1"] - p["f0"]), "dir": v.get("dir", "up")})
     return {"rooms": rooms, "walls": walls, "stairs": stairs}
 
 
@@ -269,15 +308,15 @@ def build_section(levels, d, name):
             H = l["height"]
             zl = z0 if s["dir"] == "up" else z0 - next((x["height"] for x in levels if x["n"] == n - 1), H)
             Hs = H if s["dir"] == "up" else z0 - zl
+            vl = n + 1 if s["dir"] == "up" else n
             if s["mode"] == "along":
-                uh, ul = U(s["c0"]), U(s["c1"])   # high end = smaller coordinate, low end = entry
-                els["stairs"].append(("along", ul, uh, zl, zl + Hs))
-                vl = n + 1 if s["dir"] == "up" else n
+                ul, uh = U(s["c_low"]), U(s["c_high"])
+                els["stairs"].append(("along", ul, uh, zl + s["f0"] * Hs, zl + s["f1"] * Hs))
                 stair_voids.setdefault(vl, []).append(tuple(sorted((ul, uh))))
             else:
                 ua, ub = sorted((U(s["c0"]), U(s["c1"])))
-                els["stairs"].append(("across", ua, ub, zl + s["f"] * Hs, None))
-                vl = n + 1 if s["dir"] == "up" else n
+                label = "Podest/Wendelung" if s["mode"] == "flat" else "Treppe (quer)"
+                els["stairs"].append(("across", ua, ub, zl + s["f"] * Hs, label))
                 stair_voids.setdefault(vl, []).append((ua, ub))
 
     # slabs
@@ -395,13 +434,18 @@ def render_svg(sec, scale):
             pts += [(uh, zb - off), (ul, za - off)]
             out.append('<polygon points="' + " ".join(f"{p:.0f},{-q:.0f}" for p, q in pts)
                        + f'" fill="#9a9a9a" stroke="#000" stroke-width="{0.25 * S:.0f}"/>')
-            out.append(f'<text x="{ul + 0.2 * (uh - ul):.0f}" y="{-za - 0.6 * txt:.0f}" font-size="{txt * 0.8:.0f}" '
-                       f'text-anchor="middle">{n} Stg. {rise:.0f}/{abs(run):.0f}</text>')
+            if abs(uh - ul) >= 1500:     # long flight: label above its foot
+                lx, ly, anc = ul + 0.2 * (uh - ul), za + 0.6 * txt, "middle"
+            else:                        # short flight: label beside its head
+                lx, ly = uh + math.copysign(0.4 * txt, uh - ul), zb - 1.2 * txt
+                anc = "start" if uh > ul else "end"
+            out.append(f'<text x="{lx:.0f}" y="{-ly:.0f}" font-size="{txt * 0.8:.0f}" '
+                       f'text-anchor="{anc}">{n} Stg. {rise:.0f}/{abs(run):.0f}</text>')
         else:
             _, ua, ub, z, _n = s
             out.append(f'<rect x="{ua:.0f}" y="{-z:.0f}" width="{ub - ua:.0f}" height="{STAIR_WAIST:.0f}" fill="#9a9a9a" '
                        f'stroke="#000" stroke-width="{0.25 * S:.0f}"/>')
-            out.append(f'<text x="{(ua + ub) / 2:.0f}" y="{-z - 0.8 * txt:.0f}" font-size="{txt * 0.8:.0f}" text-anchor="middle">Treppe (quer)</text>')
+            out.append(f'<text x="{(ua + ub) / 2:.0f}" y="{-z + STAIR_WAIST + 1.0 * txt:.0f}" font-size="{txt * 0.7:.0f}" text-anchor="middle">{_n}</text>')
     if sec["ground"] is not None:
         g = sec["ground"]
         out.append(f'<line x1="{x0 - 2500:.0f}" y1="{-g:.0f}" x2="{x1 + 2500:.0f}" y2="{-g:.0f}" stroke="#3a7a20" stroke-width="{0.5 * S:.0f}"/>')
