@@ -100,6 +100,11 @@ plan "Haus" {
       landing at (3895, 140) size 1000x1000
       flight at (3895, 1140) size 1000x560
     }
+    # bath fittings (measured): a level-access shower 90 x 90 in the north-east corner,
+    # a corner bath with 130 cm legs in the north-west corner (ArchLang has no corner bath:
+    # drawn as its 130 x 130 footprint)
+    furniture shower in bad anchor top-right flush size 900x900 label "Dusche bodengleich 90/90"
+    furniture bathtub in bad anchor top-left flush size 1300x1300 label "Eckwanne 130/130"
     # chimney on the wall kitchen | room W: 1200 x 420 mm into room W (measured), flush with the
     # hall wall (the room door rests on its face). ArchLang has no chimney symbol: three brick
     # cells of 400 (1200 / 3), each with a stainless flue pipe of 100 mm in its centre (measured),

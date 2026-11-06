@@ -36,6 +36,22 @@
 <line x1="4395" y1="1632.8" x2="4468.92" y2="1509.6" stroke="#6c6864" stroke-width="9"/>
 <text x="1330" y="640" font-size="100" fill="#333333" text-anchor="middle" dominant-baseline="central">UP</text>
 </g>
+<g id="A-FURN" inkscape:groupmode="layer" inkscape:label="A-FURN">
+<path d="M 7906,140 L 8734,140 A 36 36 0 0 1 8770,176 L 8770,1004 A 36 36 0 0 1 8734,1040 L 7906,1040 A 36 36 0 0 1 7870,1004 L 7870,176 A 36 36 0 0 1 7906,140 Z" fill="#f4f2ee" stroke="#6c6864" stroke-width="9"/>
+<path d="M 7942,194 L 8698,194 A 18 18 0 0 1 8716,212 L 8716,968 A 18 18 0 0 1 8698,986 L 7942,986 A 18 18 0 0 1 7924,968 L 7924,212 A 18 18 0 0 1 7942,194 Z" fill="#ffffff" stroke="#a8a29a" stroke-width="6.5"/>
+<line x1="7943.09" y1="213.09" x2="8285" y2="555" stroke="#a8a29a" stroke-width="6.5"/>
+<line x1="8696.91" y1="213.09" x2="8355" y2="555" stroke="#a8a29a" stroke-width="6.5"/>
+<line x1="8696.91" y1="966.91" x2="8355" y2="625" stroke="#a8a29a" stroke-width="6.5"/>
+<line x1="7943.09" y1="966.91" x2="8285" y2="625" stroke="#a8a29a" stroke-width="6.5"/>
+<circle cx="8320" cy="590" r="49.5" fill="none" stroke="#a8a29a" stroke-width="6.5"/>
+<circle cx="8320" cy="590" r="18" fill="#a8a29a" stroke="#a8a29a" stroke-width="6.5"/>
+<path d="M 6439,140 L 7531,140 A 104 104 0 0 1 7635,244 L 7635,1336 A 104 104 0 0 1 7531,1440 L 6439,1440 A 104 104 0 0 1 6335,1336 L 6335,244 A 104 104 0 0 1 6439,140 Z" fill="#f4f2ee" stroke="#6c6864" stroke-width="9"/>
+<path d="M 6744.24,257 L 7070.28,257 A 447.72 447.72 0 0 1 7518,704.72 L 7518,875.28 A 447.72 447.72 0 0 1 7070.28,1323 L 6744.24,1323 A 149.24 149.24 0 0 1 6595,1173.76 L 6595,406.24 A 149.24 149.24 0 0 1 6744.24,257 Z" fill="#ffffff" stroke="#6c6864" stroke-width="9"/>
+<circle cx="6465" cy="634" r="45.5" fill="#a8a29a" stroke="#a8a29a" stroke-width="6.5"/>
+<circle cx="6465" cy="946" r="45.5" fill="#a8a29a" stroke="#a8a29a" stroke-width="6.5"/>
+<circle cx="6790" cy="790" r="58.5" fill="none" stroke="#a8a29a" stroke-width="6.5"/>
+<circle cx="6790" cy="790" r="19.5" fill="#a8a29a" stroke="#a8a29a" stroke-width="6.5"/>
+</g>
 <g id="A-FLOR-OVHD" inkscape:groupmode="layer" inkscape:label="A-FLOR-OVHD">
 <polygon points="2465,6165 2625,6165 2625,6325 2465,6325" fill="none" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
 <line x1="2465" y1="6165" x2="2625" y2="6325" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
