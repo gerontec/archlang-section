@@ -55,15 +55,39 @@ plan "Haus" {
   # terrain roughly 0,2 m below FFB EG, estimated from the photo, not measured
   # @ground -200
 
-  component grundriss() {
+  # some rooms change use per storey: lvl = the storey number (-1 basement, 0 ground, 1 upper floor)
+  component grundriss(lvl) {
     room id=treppe at (XW, YN) size (XM - XW) x (YST - YN) label "Treppenhaus" uses circulation
     room id=wc at (XM, YN) size (XB - XM) x (YWC - YN) label "WC" uses wc
     room id=vorraum at (XM, YWC) size (XB - XM) x (YBA - YWC) label "Vorraum" uses hall
-    room id=bad at (XB, YN) size (XE - XB) x (YBA - YN) label "Bad" uses bath
-    room id=kueche at (XW, YST) size (XH - XW) x (YKI - YST) label "Küche" uses kitchen
+    if lvl == -1 {
+      room id=bad at (XB, YN) size (XE - XB) x (YBA - YN) label "Waschkeller" uses utility
+    }
+    if lvl != -1 {
+      room id=bad at (XB, YN) size (XE - XB) x (YBA - YN) label "Bad" uses bath
+    }
+    if lvl == -1 {
+      room id=kueche at (XW, YST) size (XH - XW) x (YKI - YST) label "Tankraum" uses storage
+    }
+    if lvl != -1 {
+      room id=kueche at (XW, YST) size (XH - XW) x (YKI - YST) label "Küche" uses kitchen
+    }
     room id=flur at (XH, YST) size (XM - XH) x (YLR - YST) label "Flur" uses hall
-    room id=zw at (XW, YKI) size (XH - XW) x (YLR - YKI) label "Zimmer" uses bedroom
-    room id=zno at (XM, YBA) size (XE - XM) x (YNE - YBA) label "Zimmer" uses bedroom
+    if lvl == -1 {
+      room id=zw at (XW, YKI) size (XH - XW) x (YLR - YKI) label "Heizung" uses utility
+    }
+    if lvl == 0 {
+      room id=zw at (XW, YKI) size (XH - XW) x (YLR - YKI) label "Kino" uses living
+    }
+    if lvl == 1 {
+      room id=zw at (XW, YKI) size (XH - XW) x (YLR - YKI) label "Esszimmer" uses dining
+    }
+    if lvl == -1 {
+      room id=zno at (XM, YBA) size (XE - XM) x (YNE - YBA) label "Weinkeller" uses storage
+    }
+    if lvl != -1 {
+      room id=zno at (XM, YBA) size (XE - XM) x (YNE - YBA) label "Schlafzimmer" uses bedroom
+    }
     room id=zso at (XM, YNE) size (XE - XM) x (YS - YNE) label "Zimmer" uses bedroom
     room id=wz at (XW, YLR) size (XM - XW) x (YS - YLR) label "Wohnzimmer" uses living
 
@@ -88,7 +112,7 @@ plan "Haus" {
     door at (XW, 10985) width 1000 wall exterior swing into wz
     door at (XW, 1735) width 900 wall exterior swing outward
     door at (4295, YLR) width 800 wall partition swing into wz
-    door at (XH, 6855) width 800 wall partition swing into zw   # open leaf rests flush on the chimney face (y 6455)
+    # door hall -> room W: per level (walled up on the ground floor)
     door at (XH, 4255) width 800 wall partition swing into kueche
     door at (XM, 8235) width 800 wall partition swing into zso
     door at (XM, 5235) width 800 wall partition swing into zno
@@ -118,14 +142,24 @@ plan "Haus" {
   }
 
   level -1 "Keller" height KG_CLEAR + KG_SLAB {
-    grundriss()
+    grundriss(-1)
+    door at (XH, 6855) width 800 wall partition swing into zw   # open leaf rests flush on the chimney face (y 6455)
     # the shaft stands on the basement floor: no hole in it, so drawn as its footprint
     furniture shaft at (SX, SY) size 410x410 label "Schacht"
   }
   level 0 "Erdgeschoss" height EG_CLEAR + EG_SLAB {
-    grundriss()
+    grundriss(0)
     # the shaft passes through this storey's floor slab
     void id=schacht at (SX, SY) size 410x410
+    # room W (cinema): the door to the hall is walled up; instead an archway 2000 wide to the living
+    # room, centred in room W's clear width (faces x 140 and 3545 -> centre 1842,5, grid 5 -> 1845).
+    # ArchLang has no arch shape: drawn as a leaf-less opening, head = wall height
+    opening at (1845, YLR) width 2000 wall partition
+    # corner sofa in the cinema (room W), north-west corner: long side 2350 on the west wall (faces x 140,
+    # y 6035), short side 1900 on the kitchen wall towards the chimney (305 clear of it), 900 deep;
+    # 450 left between its end and the south wall at the archway. The sofa_l symbol fixes its seat
+    # depth at min(0.56 x short, 0.35 x long) = 822, so the legs are drawn 82 deep, not 90
+    furniture sofa_l at (140, 6035) size 1900x2350 label "Eckcouch 235/190" rotate 270 mirror
     # bath fittings: ground floor only
     # bath fittings (measured): a level-access shower 90 x 90 in the north-east corner,
     # a corner bath with 130 cm legs in the north-west corner (ArchLang has no corner bath:
@@ -144,7 +178,8 @@ plan "Haus" {
     furniture basin at (7400, 3215) size 600x450 label "Waschbecken" rotate 180
   }
   level 1 "Obergeschoss" height OG_CLEAR + OG_SLAB {
-    grundriss()
+    grundriss(1)
+    door at (XH, 6855) width 800 wall partition swing into zw   # open leaf rests flush on the chimney face (y 6455)
     # the shaft passes through this storey's floor slab
     void id=schacht at (SX, SY) size 410x410
   }
