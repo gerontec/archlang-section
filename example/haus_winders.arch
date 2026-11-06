@@ -84,7 +84,7 @@ plan "Haus" {
     door at (XW, 10985) width 1000 wall exterior swing into wz
     door at (XW, 1735) width 900 wall exterior swing outward
     door at (4295, YLR) width 800 wall partition swing into wz
-    door at (XH, 6735) width 800 wall partition swing into zw
+    door at (XH, 6855) width 800 wall partition swing into zw   # open leaf rests flush on the chimney face (y 6455)
     door at (XH, 4255) width 800 wall partition swing into kueche
     door at (XM, 8235) width 800 wall partition swing into zso
     door at (XM, 5235) width 800 wall partition swing into zno
