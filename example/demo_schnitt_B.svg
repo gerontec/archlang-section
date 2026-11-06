@@ -13,33 +13,84 @@
   <rect width="150" height="150" fill="#ffe0e0"/><line x1="0" y1="0" x2="0" y2="150" stroke="#e05050" stroke-width="8"/></pattern>
 </defs>
 <rect x="-9150.0" y="-7200" width="21500.0" height="12300.0" fill="white"/>
-<polyline points="500,2600 1500,2600 1500,1138 500,1138 500,2600" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,2438 1500,2438" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,2275 1500,2275" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,2112 1500,2112" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,1950 1500,1950" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,1788 1500,1788" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,1625 1500,1625" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,1462 1500,1462" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,1300 1500,1300" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,-0 1500,-0 1500,-1603 500,-1603 500,-0" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,-178 1500,-178" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,-356 1500,-356" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,-534 1500,-534" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,-712 1500,-712" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,-891 1500,-891" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,-1069 1500,-1069" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,-1247 1500,-1247" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,-1425 1500,-1425" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,-2850 1500,-2850 1500,-4397 500,-4397 500,-2850" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,-3022 1500,-3022" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,-3194 1500,-3194" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,-3366 1500,-3366" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,-3538 1500,-3538" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,-3709 1500,-3709" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,-3881 1500,-3881" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,-4053 1500,-4053" fill="none" stroke="#000" stroke-width="6"/>
-<polyline points="500,-4225 1500,-4225" fill="none" stroke="#000" stroke-width="6"/>
+<line x1="500" y1="2600" x2="500" y2="2444" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="2444" x2="1500" y2="2600" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="2444" x2="500" y2="2271" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="2271" x2="1500" y2="2444" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="2271" x2="500" y2="2097" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="2097" x2="1500" y2="2271" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="2097" x2="500" y2="1924" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="1924" x2="1500" y2="2097" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="1924" x2="500" y2="1751" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="1751" x2="1500" y2="1924" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="1751" x2="500" y2="1577" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="1577" x2="1500" y2="1751" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="1577" x2="500" y2="1404" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="1404" x2="1500" y2="1577" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="1404" x2="500" y2="1231" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="1231" x2="1500" y2="1404" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="1231" x2="500" y2="1208" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="1208" x2="500" y2="1185" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="1185" x2="500" y2="1163" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="1163" x2="500" y2="1141" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="1141" x2="500" y2="1119" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="1119" x2="500" y2="1098" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="1098" x2="500" y2="1077" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="1077" x2="500" y2="1057" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="1057" x2="500" y2="1031" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="1031" x2="500" y2="1026" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-0" x2="500" y2="-164" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="-164" x2="1500" y2="-0" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-164" x2="500" y2="-342" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="-342" x2="1500" y2="-164" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-342" x2="500" y2="-520" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="-520" x2="1500" y2="-342" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-520" x2="500" y2="-698" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="-698" x2="1500" y2="-520" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-698" x2="500" y2="-876" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="-876" x2="1500" y2="-698" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-876" x2="500" y2="-1054" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="-1054" x2="1500" y2="-876" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-1054" x2="500" y2="-1233" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="-1233" x2="1500" y2="-1054" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-1233" x2="500" y2="-1411" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="-1411" x2="1500" y2="-1233" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-1411" x2="500" y2="-1434" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-1434" x2="500" y2="-1458" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-1458" x2="500" y2="-1481" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-1481" x2="500" y2="-1503" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-1503" x2="500" y2="-1526" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-1526" x2="500" y2="-1547" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-1547" x2="500" y2="-1568" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-1568" x2="500" y2="-1589" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-1589" x2="500" y2="-1616" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-1616" x2="500" y2="-1621" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-2850" x2="500" y2="-3003" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="-3003" x2="1500" y2="-2850" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-3003" x2="500" y2="-3175" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="-3175" x2="1500" y2="-3003" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-3175" x2="500" y2="-3347" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="-3347" x2="1500" y2="-3175" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-3347" x2="500" y2="-3519" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="-3519" x2="1500" y2="-3347" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-3519" x2="500" y2="-3691" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="-3691" x2="1500" y2="-3519" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-3691" x2="500" y2="-3863" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="-3863" x2="1500" y2="-3691" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-3863" x2="500" y2="-4035" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="-4035" x2="1500" y2="-3863" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-4035" x2="500" y2="-4207" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="1500" y1="-4207" x2="1500" y2="-4035" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-4207" x2="500" y2="-4229" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-4229" x2="500" y2="-4252" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-4252" x2="500" y2="-4274" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-4274" x2="500" y2="-4296" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-4296" x2="500" y2="-4317" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-4317" x2="500" y2="-4338" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-4338" x2="500" y2="-4359" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-4359" x2="500" y2="-4378" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-4378" x2="500" y2="-4405" stroke="#000" stroke-width="12" stroke-linecap="round"/>
+<line x1="500" y1="-4405" x2="500" y2="-4409" stroke="#000" stroke-width="12" stroke-linecap="round"/>
 <rect x="-150" y="2600" width="8300" height="50" fill="url(#screed)" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="2650" width="8300" height="250" fill="url(#concrete)" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="0" width="650" height="15" fill="url(#plaster)" stroke="#000" stroke-width="9"/>
@@ -68,27 +119,176 @@
 <rect x="1900" y="-5575" width="6250" height="200" fill="url(#insulation)" stroke="#000" stroke-width="9"/>
 <rect x="-150" y="-5375" width="650" height="15" fill="#dddddd" stroke="#000" stroke-width="9"/>
 <rect x="1900" y="-5375" width="6250" height="15" fill="#dddddd" stroke="#000" stroke-width="9"/>
-<rect x="-150" y="305" width="300" height="2295" fill="#222" stroke="#000" stroke-width="12"/>
-<rect x="2942" y="305" width="115" height="2295" fill="#555" stroke="#000" stroke-width="12"/>
-<rect x="7850" y="305" width="300" height="2295" fill="#222" stroke="#000" stroke-width="12"/>
-<rect x="-150" y="-2560" width="300" height="2560" fill="#222" stroke="#000" stroke-width="12"/>
-<rect x="2942" y="-2560" width="115" height="2560" fill="#555" stroke="#000" stroke-width="12"/>
-<rect x="7850" y="-2560" width="300" height="2560" fill="#222" stroke="#000" stroke-width="12"/>
-<rect x="-150" y="-5360" width="300" height="2510" fill="#222" stroke="#000" stroke-width="12"/>
-<rect x="2942" y="-5360" width="115" height="2510" fill="#555" stroke="#000" stroke-width="12"/>
-<rect x="7850" y="-5360" width="300" height="2510" fill="#222" stroke="#000" stroke-width="12"/>
-<polygon points="500,1138 500,975 750,975 750,812 1000,812 1000,650 1250,650 1250,488 1500,488 1500,678 500,1328" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1000" y="1454" font-size="120" text-anchor="middle">4 Stg. 162/250</text>
-<polygon points="1500,488 1500,325 1700,325 1700,162 1900,162 1900,-0 1900,206 1500,694" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1700" y="975" font-size="120" text-anchor="middle">3 Stg. 162/200</text>
-<polygon points="500,-1603 500,-1781 750,-1781 750,-1959 1000,-1959 1000,-2138 1250,-2138 1250,-2316 1500,-2316 1500,-2119 500,-1407" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1000" y="-1284" font-size="120" text-anchor="middle">4 Stg. 178/250</text>
-<polygon points="1500,-2316 1500,-2494 1700,-2494 1700,-2672 1900,-2672 1900,-2850 1900,-2636 1500,-2101" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1700" y="-1807" font-size="120" text-anchor="middle">3 Stg. 178/200</text>
-<polygon points="500,-4397 500,-4569 750,-4569 750,-4741 1000,-4741 1000,-4912 1250,-4912 1250,-5084 1500,-5084 1500,-4890 500,-4203" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1000" y="-4079" font-size="120" text-anchor="middle">4 Stg. 172/250</text>
-<polygon points="1500,-5084 1500,-5256 1700,-5256 1700,-5428 1900,-5428 1900,-5600 1900,-5389 1500,-4873" fill="#9a9a9a" stroke="#000" stroke-width="12"/>
-<text x="1700" y="-4584" font-size="120" text-anchor="middle">3 Stg. 172/200</text>
+<rect x="-150" y="305" width="300" height="2295" fill="#222" stroke="#000" stroke-width="25"/>
+<rect x="2942" y="305" width="115" height="2295" fill="#555" stroke="#000" stroke-width="25"/>
+<rect x="7850" y="305" width="300" height="2295" fill="#222" stroke="#000" stroke-width="25"/>
+<rect x="-150" y="-2560" width="300" height="2560" fill="#222" stroke="#000" stroke-width="25"/>
+<rect x="2942" y="-2560" width="115" height="2560" fill="#555" stroke="#000" stroke-width="25"/>
+<rect x="7850" y="-2560" width="300" height="2560" fill="#222" stroke="#000" stroke-width="25"/>
+<rect x="-150" y="-5360" width="300" height="2510" fill="#222" stroke="#000" stroke-width="25"/>
+<rect x="2942" y="-5360" width="115" height="2510" fill="#555" stroke="#000" stroke-width="25"/>
+<rect x="7850" y="-5360" width="300" height="2510" fill="#222" stroke="#000" stroke-width="25"/>
+<polygon points="500,693 1000,693 1000,884 938,910 875,933 812,953 750,971 688,987 625,1002 563,1015 500,1026" fill="url(#concrete)" stroke="none"/>
+<polygon points="1000,520 1293,520 1293,711 1256,738 1220,763 1183,787 1146,809 1110,830 1073,849 1037,867 1000,884" fill="url(#concrete)" stroke="none"/>
+<polygon points="1293,347 1500,347 1500,537 1474,560 1448,583 1422,606 1396,628 1371,649 1345,670 1319,691 1293,711" fill="url(#concrete)" stroke="none"/>
+<polygon points="1500,173 1900,173 1900,364 1850,386 1800,407 1750,429 1700,451 1650,472 1600,494 1550,516 1500,537" fill="url(#concrete)" stroke="none"/>
+<polygon points="500,-1959 1000,-1959 1000,-1767 938,-1740 875,-1717 812,-1696 750,-1677 688,-1661 625,-1646 563,-1633 500,-1621" fill="url(#concrete)" stroke="none"/>
+<polygon points="1000,-2138 1293,-2138 1293,-1945 1256,-1917 1220,-1891 1183,-1867 1146,-1844 1110,-1823 1073,-1803 1037,-1784 1000,-1767" fill="url(#concrete)" stroke="none"/>
+<polygon points="1293,-2316 1500,-2316 1500,-2123 1474,-2100 1448,-2076 1422,-2053 1396,-2031 1371,-2008 1345,-1987 1319,-1965 1293,-1945" fill="url(#concrete)" stroke="none"/>
+<polygon points="1500,-2494 1700,-2494 1700,-2301 1675,-2279 1650,-2257 1625,-2235 1600,-2212 1575,-2190 1550,-2168 1525,-2145 1500,-2123" fill="url(#concrete)" stroke="none"/>
+<polygon points="1700,-2672 1900,-2672 1900,-2479 1875,-2457 1850,-2435 1825,-2413 1800,-2390 1775,-2368 1750,-2346 1725,-2324 1700,-2301" fill="url(#concrete)" stroke="none"/>
+<polygon points="500,-4741 1000,-4741 1000,-4550 938,-4525 875,-4502 812,-4482 750,-4464 688,-4448 625,-4434 563,-4421 500,-4409" fill="url(#concrete)" stroke="none"/>
+<polygon points="1000,-4912 1293,-4912 1293,-4722 1256,-4696 1220,-4670 1183,-4647 1146,-4625 1110,-4604 1073,-4585 1037,-4567 1000,-4550" fill="url(#concrete)" stroke="none"/>
+<polygon points="1293,-5084 1500,-5084 1500,-4894 1474,-4871 1448,-4849 1422,-4827 1396,-4805 1371,-4783 1345,-4762 1319,-4742 1293,-4722" fill="url(#concrete)" stroke="none"/>
+<polygon points="1500,-5256 1700,-5256 1700,-5066 1675,-5044 1650,-5023 1625,-5001 1600,-4980 1575,-4958 1550,-4937 1525,-4916 1500,-4894" fill="url(#concrete)" stroke="none"/>
+<polygon points="1700,-5428 1900,-5428 1900,-5238 1875,-5216 1850,-5195 1825,-5173 1800,-5152 1775,-5130 1750,-5109 1725,-5087 1700,-5066" fill="url(#concrete)" stroke="none"/>
+<line x1="500" y1="693" x2="1000" y2="693" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1000" y1="884" x2="938" y2="910" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="938" y1="910" x2="875" y2="933" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="875" y1="933" x2="812" y2="953" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="812" y1="953" x2="750" y2="971" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="750" y1="971" x2="688" y2="987" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="688" y1="987" x2="625" y2="1002" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="625" y1="1002" x2="563" y2="1015" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="563" y1="1015" x2="500" y2="1026" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1000" y1="520" x2="1293" y2="520" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1293" y1="711" x2="1256" y2="738" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1256" y1="738" x2="1220" y2="763" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1220" y1="763" x2="1183" y2="787" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1183" y1="787" x2="1146" y2="809" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1146" y1="809" x2="1110" y2="830" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1110" y1="830" x2="1073" y2="849" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1073" y1="849" x2="1037" y2="867" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1037" y1="867" x2="1000" y2="884" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1293" y1="347" x2="1500" y2="347" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1500" y1="537" x2="1474" y2="560" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1474" y1="560" x2="1448" y2="583" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1448" y1="583" x2="1422" y2="606" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1422" y1="606" x2="1396" y2="628" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1396" y1="628" x2="1371" y2="649" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1371" y1="649" x2="1345" y2="670" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1345" y1="670" x2="1319" y2="691" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1319" y1="691" x2="1293" y2="711" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1500" y1="173" x2="1900" y2="173" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1900" y1="364" x2="1850" y2="386" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1850" y1="386" x2="1800" y2="407" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1800" y1="407" x2="1750" y2="429" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1750" y1="429" x2="1700" y2="451" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1700" y1="451" x2="1650" y2="472" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1650" y1="472" x2="1600" y2="494" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1600" y1="494" x2="1550" y2="516" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1550" y1="516" x2="1500" y2="537" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1000" y1="884" x2="1000" y2="884" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1000" y1="693" x2="1000" y2="520" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="500" y1="1026" x2="500" y2="693" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1293" y1="520" x2="1293" y2="347" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1500" y1="347" x2="1500" y2="173" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1900" y1="364" x2="1900" y2="173" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="500" y1="-1959" x2="1000" y2="-1959" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1000" y1="-1767" x2="938" y2="-1740" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="938" y1="-1740" x2="875" y2="-1717" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="875" y1="-1717" x2="812" y2="-1696" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="812" y1="-1696" x2="750" y2="-1677" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="750" y1="-1677" x2="688" y2="-1661" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="688" y1="-1661" x2="625" y2="-1646" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="625" y1="-1646" x2="563" y2="-1633" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="563" y1="-1633" x2="500" y2="-1621" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1000" y1="-2138" x2="1293" y2="-2138" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1293" y1="-1945" x2="1256" y2="-1917" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1256" y1="-1917" x2="1220" y2="-1891" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1220" y1="-1891" x2="1183" y2="-1867" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1183" y1="-1867" x2="1146" y2="-1844" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1146" y1="-1844" x2="1110" y2="-1823" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1110" y1="-1823" x2="1073" y2="-1803" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1073" y1="-1803" x2="1037" y2="-1784" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1037" y1="-1784" x2="1000" y2="-1767" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1293" y1="-2316" x2="1500" y2="-2316" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1500" y1="-2123" x2="1474" y2="-2100" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1474" y1="-2100" x2="1448" y2="-2076" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1448" y1="-2076" x2="1422" y2="-2053" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1422" y1="-2053" x2="1396" y2="-2031" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1396" y1="-2031" x2="1371" y2="-2008" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1371" y1="-2008" x2="1345" y2="-1987" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1345" y1="-1987" x2="1319" y2="-1965" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1319" y1="-1965" x2="1293" y2="-1945" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1500" y1="-2494" x2="1700" y2="-2494" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1700" y1="-2301" x2="1675" y2="-2279" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1675" y1="-2279" x2="1650" y2="-2257" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1650" y1="-2257" x2="1625" y2="-2235" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1625" y1="-2235" x2="1600" y2="-2212" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1600" y1="-2212" x2="1575" y2="-2190" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1575" y1="-2190" x2="1550" y2="-2168" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1550" y1="-2168" x2="1525" y2="-2145" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1525" y1="-2145" x2="1500" y2="-2123" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1700" y1="-2672" x2="1900" y2="-2672" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1900" y1="-2479" x2="1875" y2="-2457" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1875" y1="-2457" x2="1850" y2="-2435" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1850" y1="-2435" x2="1825" y2="-2413" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1825" y1="-2413" x2="1800" y2="-2390" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1800" y1="-2390" x2="1775" y2="-2368" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1775" y1="-2368" x2="1750" y2="-2346" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1750" y1="-2346" x2="1725" y2="-2324" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1725" y1="-2324" x2="1700" y2="-2301" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1000" y1="-1959" x2="1000" y2="-2138" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="500" y1="-1621" x2="500" y2="-1959" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1293" y1="-2138" x2="1293" y2="-2316" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1500" y1="-2316" x2="1500" y2="-2494" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1700" y1="-2494" x2="1700" y2="-2672" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1900" y1="-2479" x2="1900" y2="-2672" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="500" y1="-4741" x2="1000" y2="-4741" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1000" y1="-4550" x2="938" y2="-4525" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="938" y1="-4525" x2="875" y2="-4502" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="875" y1="-4502" x2="812" y2="-4482" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="812" y1="-4482" x2="750" y2="-4464" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="750" y1="-4464" x2="688" y2="-4448" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="688" y1="-4448" x2="625" y2="-4434" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="625" y1="-4434" x2="563" y2="-4421" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="563" y1="-4421" x2="500" y2="-4409" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1000" y1="-4912" x2="1293" y2="-4912" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1293" y1="-4722" x2="1256" y2="-4696" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1256" y1="-4696" x2="1220" y2="-4670" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1220" y1="-4670" x2="1183" y2="-4647" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1183" y1="-4647" x2="1146" y2="-4625" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1146" y1="-4625" x2="1110" y2="-4604" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1110" y1="-4604" x2="1073" y2="-4585" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1073" y1="-4585" x2="1037" y2="-4567" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1037" y1="-4567" x2="1000" y2="-4550" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1293" y1="-5084" x2="1500" y2="-5084" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1500" y1="-4894" x2="1474" y2="-4871" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1474" y1="-4871" x2="1448" y2="-4849" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1448" y1="-4849" x2="1422" y2="-4827" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1422" y1="-4827" x2="1396" y2="-4805" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1396" y1="-4805" x2="1371" y2="-4783" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1371" y1="-4783" x2="1345" y2="-4762" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1345" y1="-4762" x2="1319" y2="-4742" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1319" y1="-4742" x2="1293" y2="-4722" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1500" y1="-5256" x2="1700" y2="-5256" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1700" y1="-5066" x2="1675" y2="-5044" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1675" y1="-5044" x2="1650" y2="-5023" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1650" y1="-5023" x2="1625" y2="-5001" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1625" y1="-5001" x2="1600" y2="-4980" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1600" y1="-4980" x2="1575" y2="-4958" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1575" y1="-4958" x2="1550" y2="-4937" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1550" y1="-4937" x2="1525" y2="-4916" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1525" y1="-4916" x2="1500" y2="-4894" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1700" y1="-5428" x2="1900" y2="-5428" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1900" y1="-5238" x2="1875" y2="-5216" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1875" y1="-5216" x2="1850" y2="-5195" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1850" y1="-5195" x2="1825" y2="-5173" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1825" y1="-5173" x2="1800" y2="-5152" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1800" y1="-5152" x2="1775" y2="-5130" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1775" y1="-5130" x2="1750" y2="-5109" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1750" y1="-5109" x2="1725" y2="-5087" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1725" y1="-5087" x2="1700" y2="-5066" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1000" y1="-4741" x2="1000" y2="-4912" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="500" y1="-4409" x2="500" y2="-4741" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1293" y1="-4912" x2="1293" y2="-5084" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1500" y1="-5084" x2="1500" y2="-5256" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1700" y1="-5256" x2="1700" y2="-5428" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<line x1="1900" y1="-5238" x2="1900" y2="-5428" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<text x="1200" y="2450" font-size="120" text-anchor="middle">15 Stg. 173/267</text>
+<text x="1200" y="-150" font-size="120" text-anchor="middle">16 Stg. 178/267</text>
+<text x="1200" y="-3000" font-size="120" text-anchor="middle">16 Stg. 172/267</text>
 <line x1="-2650" y1="300" x2="10650" y2="300" stroke="#3a7a20" stroke-width="25"/>
 <text x="10650" y="210" font-size="120" text-anchor="end" fill="#3a7a20">Gelände -0,30</text>
 <text x="2450" y="1332" font-size="150" text-anchor="middle">Diele</text>

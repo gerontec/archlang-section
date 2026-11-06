@@ -49,6 +49,7 @@ plan "Haus" {
   # @floor 2 Belag+Estrich:80 Stahlbeton:240
   # terrain roughly 0,2 m below FFB EG, estimated from the photo, not measured
   # @ground -200
+  # @stair tr goings 9 1        # the real stair: 9 rectangular steps, then the turn
 
   component grundriss() {
     room id=treppe at (XW, YN) size (XM - XW) x (YST - YN) label "Treppenhaus" uses circulation
