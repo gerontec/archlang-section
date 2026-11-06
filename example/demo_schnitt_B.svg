@@ -128,6 +128,46 @@
 <rect x="-150" y="-5360" width="300" height="2510" fill="#222" stroke="#000" stroke-width="25"/>
 <rect x="2942" y="-5360" width="115" height="2510" fill="#555" stroke="#000" stroke-width="25"/>
 <rect x="7850" y="-5360" width="300" height="2510" fill="#222" stroke="#000" stroke-width="25"/>
+<line x1="1500" y1="2427" x2="500" y2="2427" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="2253" x2="500" y2="2253" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="2080" x2="500" y2="2080" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="1907" x2="500" y2="1907" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="1733" x2="500" y2="1733" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="1560" x2="500" y2="1560" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="1387" x2="500" y2="1387" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="1213" x2="734" y2="1213" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="734" y1="1213" x2="500" y2="1213" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="1040" x2="849" y2="1040" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="849" y1="1040" x2="500" y2="1040" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1040" y1="867" x2="1465" y2="867" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1319" y1="693" x2="1500" y2="693" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="-178" x2="500" y2="-178" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="-356" x2="500" y2="-356" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="-534" x2="500" y2="-534" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="-712" x2="500" y2="-712" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="-891" x2="500" y2="-891" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="-1069" x2="500" y2="-1069" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="-1247" x2="500" y2="-1247" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="-1425" x2="891" y2="-1425" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="891" y1="-1425" x2="500" y2="-1425" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="-1603" x2="982" y2="-1603" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="982" y1="-1603" x2="500" y2="-1603" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1037" y1="-1781" x2="1500" y2="-1781" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1319" y1="-1959" x2="1500" y2="-1959" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="-3022" x2="500" y2="-3022" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="-3194" x2="500" y2="-3194" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="-3366" x2="500" y2="-3366" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="-3538" x2="500" y2="-3538" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="-3709" x2="500" y2="-3709" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="-3881" x2="500" y2="-3881" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="-4053" x2="500" y2="-4053" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="-4225" x2="684" y2="-4225" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="684" y1="-4225" x2="500" y2="-4225" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1500" y1="-4397" x2="806" y2="-4397" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="806" y1="-4397" x2="500" y2="-4397" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1044" y1="-4569" x2="1411" y2="-4569" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1411" y1="-4569" x2="1500" y2="-4569" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
+<line x1="1319" y1="-4741" x2="1500" y2="-4741" stroke="#000" stroke-width="12" stroke-dasharray="100 50"/>
 <polygon points="500,693 1000,693 1000,884 938,910 875,933 812,953 750,971 688,987 625,1002 563,1015 500,1026" fill="url(#concrete)" stroke="none"/>
 <polygon points="1000,520 1293,520 1293,711 1256,738 1220,763 1183,787 1146,809 1110,830 1073,849 1037,867 1000,884" fill="url(#concrete)" stroke="none"/>
 <polygon points="1293,347 1500,347 1500,537 1474,560 1448,583 1422,606 1396,628 1371,649 1345,670 1319,691 1293,711" fill="url(#concrete)" stroke="none"/>
@@ -286,8 +326,11 @@
 <line x1="1500" y1="-5084" x2="1500" y2="-5256" stroke="#000" stroke-width="25" stroke-linecap="round"/>
 <line x1="1700" y1="-5256" x2="1700" y2="-5428" stroke="#000" stroke-width="25" stroke-linecap="round"/>
 <line x1="1900" y1="-5238" x2="1900" y2="-5428" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<rect x="660" y="2330" width="1080" height="158" fill="white"/>
 <text x="1200" y="2450" font-size="120" text-anchor="middle">15 Stg. 173/267</text>
+<rect x="660" y="-270" width="1080" height="158" fill="white"/>
 <text x="1200" y="-150" font-size="120" text-anchor="middle">16 Stg. 178/267</text>
+<rect x="660" y="-3120" width="1080" height="158" fill="white"/>
 <text x="1200" y="-3000" font-size="120" text-anchor="middle">16 Stg. 172/267</text>
 <line x1="-2650" y1="300" x2="10650" y2="300" stroke="#3a7a20" stroke-width="25"/>
 <text x="10650" y="210" font-size="120" text-anchor="end" fill="#3a7a20">Gelände -0,30</text>
@@ -348,5 +391,5 @@
 <line x1="8100" y1="3650" x2="8200" y2="3550" stroke="#000" stroke-width="13"/>
 <text x="4000" y="3525" font-size="120" text-anchor="middle">8,30</text>
 <text x="-150" y="-6960" font-size="210" font-weight="bold">Schnitt B-B  (y = 4,10 m, Blick nach Norden)</text>
-<text x="-150" y="4980" font-size="105">M 1:50 · arch_section.py (rudimentär: nur Schnittebene, Ansicht dahinter nur Treppen, Dach nicht modelliert)</text>
+<text x="-150" y="4980" font-size="105">M 1:50 · arch_section.py (rudimentär: nur Schnittebene, Ansicht dahinter nur Treppen, verdeckte Stufenkanten gestrichelt, Dach nicht modelliert)</text>
 </svg>

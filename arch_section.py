@@ -353,11 +353,11 @@ def stair_faces(treads, zl, rise, waist):
         if t["front"]:
             a, b = t["front"]
             n = _outward(t["front"], t["poly"])
-            faces.append(([(*a, zt - rise), (*b, zt - rise), (*b, zt), (*a, zt)], [True] * 4, (*n, 0.0)))
+            faces.append(([(*a, zt - rise), (*b, zt - rise), (*b, zt), (*a, zt)], [True] * 4, (*n, 0.0), "riser"))
         if last and t["back"]:                               # arrival riser onto the floor above
             a, b = t["back"]
             n = _outward(t["back"], t["poly"])
-            faces.append(([(*a, zt), (*b, zt), (*b, zt + rise), (*a, zt + rise)], [True] * 4, (-n[0], -n[1], 0.0)))
+            faces.append(([(*a, zt), (*b, zt), (*b, zt + rise), (*a, zt + rise)], [True] * 4, (-n[0], -n[1], 0.0), "riser"))
         for a, b in t["sides"]:
             m = 8 if t["winder"] else 1
             V = [(*q, soff(q)) for q in (_lerp(a, b, i / m) for i in range(m + 1))]
@@ -386,7 +386,7 @@ def stair_faces(treads, zl, rise, waist):
                 if i < len(sega) - 1:
                     V.append((*a, z_))
             n = _outward((a, b), t["poly"])
-            faces.append((V, Fl, (*n, 0.0)))
+            faces.append((V, Fl, (*n, 0.0), "side"))
         if t["winder"]:                                      # helical soffit, one strip per rim step
             C, rim = t["C"], t["rim"]
             pts = []
@@ -397,8 +397,8 @@ def stair_faces(treads, zl, rise, waist):
                 za, zb = soff(a), soff(b)
                 fa = first if i == 0 else False
                 fb = last if i == len(pts) - 2 else False
-                faces.append(([(*C, za), (*a, za), (*b, zb)], [fa, True, False], None))
-                faces.append(([(*C, za), (*b, zb), (*C, zb)], [False, fb, False], None))
+                faces.append(([(*C, za), (*a, za), (*b, zb)], [fa, True, False], None, "soffit"))
+                faces.append(([(*C, za), (*b, zb), (*C, zb)], [False, fb, False], None, "soffit"))
         else:
             P = t["poly"]
             V = [(*q, soff(q)) for q in P]
@@ -410,7 +410,7 @@ def stair_faces(treads, zl, rise, waist):
                     Fl.append(last)
                 else:
                     Fl.append(True)
-            faces.append((V, Fl, None))
+            faces.append((V, Fl, None, "soffit"))
     return faces
 
 
@@ -528,16 +528,20 @@ def stair_section_view(v, zl, H, axis, pos, look, U, goings=None):
             m = (za + zb) / 2
             if sum(1 for a, b in iv if a <= m <= b) == 1:
                 cut_lines.append(((u, za), (u, zb)))
-    # --- view: faces behind the cut plane that face the viewer, hidden edges removed
-    occ = []
-    for V, Fl, nrm in stair_faces(treads, zl, rise, waist):
+    # --- view: faces behind the cut plane.  Faces turned to the viewer hide what lies behind
+    # them; their edges are drawn where nothing nearer covers them.  The tread edges (top and
+    # bottom of every riser) that are covered are drawn dashed, as hidden edges (DIN 1356-1),
+    # so a flight seen from its head still shows its steps.
+    occ, risers_all = [], []
+    for V, Fl, nrm, kind in stair_faces(treads, zl, rise, waist):
         if nrm is None:                                    # soffit: faces down
             nx, ny, nz = _newell(V)
             if nz > 0:
                 nx, ny, nz = -nx, -ny, -nz
         else:
             nx, ny, nz = nrm
-        if nx * gx + ny * gy > -1e-6:                      # turned away or edge-on
+        front = nx * gx + ny * gy < -1e-6                  # turned to the viewer
+        if not front and kind != "riser":
             continue
         W, Fw = _clip_front([to_view(*p) for p in V], Fl)
         if len(W) >= 3:
@@ -545,50 +549,71 @@ def stair_section_view(v, zl, H, axis, pos, look, U, goings=None):
         if len(W) < 3:
             continue
         nu, nzv, nd = _newell(W)
-        if abs(nd) < 1e-9:
+        if abs(nd) < 1e-9:                                 # edge-on
             continue
         u0, z0_, d0 = W[0]
         poly2 = [(p[0], p[1]) for p in W]
-        occ.append({"poly": poly2, "flags": Fw,
-                    "depth": (lambda u, z, nu=nu, nzv=nzv, nd=nd, u0=u0, z0_=z0_, d0=d0:
-                              d0 - (nu * (u - u0) + nzv * (z - z0_)) / nd),
-                    "bb": (min(p[0] for p in poly2), min(p[1] for p in poly2),
-                           max(p[0] for p in poly2), max(p[1] for p in poly2))})
+        F = {"poly": poly2, "flags": Fw if front else [False] * len(Fw), "cut": False,
+             "depth": (lambda u, z, nu=nu, nzv=nzv, nd=nd, u0=u0, z0_=z0_, d0=d0:
+                       d0 - (nu * (u - u0) + nzv * (z - z0_)) / nd),
+             "bb": (min(p[0] for p in poly2), min(p[1] for p in poly2),
+                    max(p[0] for p in poly2), max(p[1] for p in poly2))}
+        if front:
+            occ.append(F)
+        if kind == "riser":
+            risers_all.append(F)
     for poly in cut:
-        occ.append({"poly": poly, "flags": [False] * len(poly), "depth": lambda u, z: 0.0,
+        occ.append({"poly": poly, "flags": [False] * len(poly), "depth": lambda u, z: 0.0, "cut": True,
                     "bb": (min(p[0] for p in poly), min(p[1] for p in poly),
                            max(p[0] for p in poly), max(p[1] for p in poly))})
-    seen, view_lines = set(), []
+
+    def parts(F, a, b):
+        """Pieces of edge a-b of face F as (p0, p1, 'visible' | 'hidden' | 'cut')."""
+        lo = (min(a[0], b[0]), min(a[1], b[1]))
+        hi = (max(a[0], b[0]), max(a[1], b[1]))
+        near = [Q for Q in occ if Q is not F and Q["bb"][0] <= hi[0] + 1 and Q["bb"][2] >= lo[0] - 1
+                and Q["bb"][1] <= hi[1] + 1 and Q["bb"][3] >= lo[1] - 1]
+        ts = {0.0, 1.0}
+        for Q in near:
+            QP = Q["poly"]
+            for j in range(len(QP)):
+                t = _seg_t(a, b, QP[j], QP[(j + 1) % len(QP)])
+                if t is not None:
+                    ts.add(t)
+        ts = sorted(ts)
+        out = []
+        for t0, t1 in zip(ts, ts[1:]):
+            m = _lerp(a, b, (t0 + t1) / 2)
+            dF = F["depth"](*m)
+            cover = [Q for Q in near if Q["bb"][0] <= m[0] <= Q["bb"][2] and Q["bb"][1] <= m[1] <= Q["bb"][3]
+                     and Q["depth"](*m) < dF - 1 and _inside(Q["poly"], m)]
+            state = "visible" if not cover else ("cut" if any(Q["cut"] for Q in cover) else "hidden")
+            out.append((_lerp(a, b, t0), _lerp(a, b, t1), state))
+        return out
+
+    def key(p0, p1):
+        return tuple(sorted(((round(p0[0]), round(p0[1])), (round(p1[0]), round(p1[1])))))
+    seen, view_lines, hidden_lines = set(), [], []
     for F in occ:
         P = F["poly"]
         for i, f in enumerate(F["flags"]):
-            if not f:
-                continue
+            if f:
+                for p0, p1, st in parts(F, P[i], P[(i + 1) % len(P)]):
+                    if st == "visible" and key(p0, p1) not in seen:
+                        seen.add(key(p0, p1))
+                        view_lines.append((p0, p1))
+    for F in risers_all:                                   # covered tread edges, dashed
+        P = F["poly"]
+        for i in range(len(P)):
             a, b = P[i], P[(i + 1) % len(P)]
-            lo = (min(a[0], b[0]), min(a[1], b[1]))
-            hi = (max(a[0], b[0]), max(a[1], b[1]))
-            near = [Q for Q in occ if Q is not F and Q["bb"][0] <= hi[0] + 1 and Q["bb"][2] >= lo[0] - 1
-                    and Q["bb"][1] <= hi[1] + 1 and Q["bb"][3] >= lo[1] - 1]
-            ts = {0.0, 1.0}
-            for Q in near:
-                QP = Q["poly"]
-                for j in range(len(QP)):
-                    t = _seg_t(a, b, QP[j], QP[(j + 1) % len(QP)])
-                    if t is not None:
-                        ts.add(t)
-            ts = sorted(ts)
-            for t0, t1 in zip(ts, ts[1:]):
-                m = _lerp(a, b, (t0 + t1) / 2)
-                dF = F["depth"](*m)
-                if any(Q["bb"][0] <= m[0] <= Q["bb"][2] and Q["bb"][1] <= m[1] <= Q["bb"][3]
-                       and Q["depth"](*m) < dF - 1 and _inside(Q["poly"], m) for Q in near):
-                    continue
-                p0, p1 = _lerp(a, b, t0), _lerp(a, b, t1)
-                key = tuple(sorted(((round(p0[0]), round(p0[1])), (round(p1[0]), round(p1[1])))))
-                if key not in seen:
-                    seen.add(key)
-                    view_lines.append((p0, p1))
-    return {"cut": cut, "cut_lines": cut_lines, "view_lines": view_lines,
+            if abs(a[1] - b[1]) > 0.5 or abs(a[0] - b[0]) < 1:   # horizontal edges only
+                continue
+            for p0, p1, st in parts(F, a, b):
+                k = key(p0, p1)
+                if st == "hidden" and k not in seen:
+                    seen.add(k)
+                    hidden_lines.append((p0, p1))
+    return {"cut": cut, "cut_lines": cut_lines, "view_lines": view_lines, "hidden_lines": hidden_lines,
             "risers": len(treads) + 1, "rise": rise, "going": going}
 
 
@@ -674,7 +699,7 @@ def build_section(levels, d, name):
             return None
         return (min(U(w["c"]) - w["t"] / 2 for w in c["walls"]), max(U(w["c"]) + w["t"] / 2 for w in c["walls"]))
 
-    els = {"walls": [], "slabs": [], "glass": [], "stair_cut": [], "stair_cut_lines": [], "views": [],
+    els = {"walls": [], "slabs": [], "glass": [], "stair_cut": [], "stair_cut_lines": [], "views": [], "hidden": [],
            "stair_labels": [], "texts": [], "dims": [], "marks": []}
     stair_voids = {}   # slab level -> list of (u0,u1) left open
     for l in levels:
@@ -713,6 +738,7 @@ def build_section(levels, d, name):
             els["stair_cut"] += g["cut"]
             els["stair_cut_lines"] += g["cut_lines"]
             els["views"] += g["view_lines"]
+            els["hidden"] += g["hidden_lines"]
             us = [p[0] for poly in g["cut"] for p in poly] + [p[0] for ln in g["view_lines"] for p in ln]
             if not us:
                 continue
@@ -848,6 +874,9 @@ def render_svg(sec, scale):
         for off in (-t / 6, t / 6):
             out.append(f'<line x1="{u + off:.0f}" y1="{-a:.0f}" x2="{u + off:.0f}" y2="{-b:.0f}" stroke="#1060c0" stroke-width="{0.18 * S:.0f}"/>')
         out.append(f'<rect x="{u - t / 2:.0f}" y="{-a - 0.4 * S:.0f}" width="{t:.0f}" height="{0.4 * S:.0f}" fill="#1060c0"/>')
+    for (ua, za), (ub, zb) in els["hidden"]:           # hidden tread edges: dashed, thin
+        out.append(f'<line x1="{ua:.0f}" y1="{-za:.0f}" x2="{ub:.0f}" y2="{-zb:.0f}" stroke="#000" '
+                   f'stroke-width="{0.25 * S:.0f}" stroke-dasharray="{2 * S:.0f} {1 * S:.0f}"/>')
     for poly in els["stair_cut"]:                      # cut stair: reinforced concrete
         out.append('<polygon points="' + " ".join(f"{p:.0f},{-q:.0f}" for p, q in poly)
                    + '" fill="url(#concrete)" stroke="none"/>')
@@ -855,6 +884,8 @@ def render_svg(sec, scale):
         out.append(f'<line x1="{ua:.0f}" y1="{-za:.0f}" x2="{ub:.0f}" y2="{-zb:.0f}" stroke="#000" '
                    f'stroke-width="{0.5 * S:.0f}" stroke-linecap="round"/>')
     for u, z, label in els["stair_labels"]:
+        w_ = 0.8 * txt * 0.6 * len(label)                  # white ground under the label
+        out.append(f'<rect x="{u - w_ / 2:.0f}" y="{-z - 0.8 * txt:.0f}" width="{w_:.0f}" height="{1.05 * txt:.0f}" fill="white"/>')
         out.append(f'<text x="{u:.0f}" y="{-z:.0f}" font-size="{txt * 0.8:.0f}" text-anchor="middle">{label}</text>')
     if sec["ground"] is not None:
         g = sec["ground"]
@@ -891,7 +922,7 @@ def render_svg(sec, scale):
             out.append(f'<text x="{(a + b) / 2:.0f}" y="{-z - 0.5 * txt:.0f}" font-size="{txt * 0.8:.0f}" text-anchor="middle">{fmt_len(b - a)}</text>')
     out.append(f'<text x="{x0:.0f}" y="{vy + 1.6 * txt:.0f}" font-size="{txt * 1.4:.0f}" font-weight="bold">{escape(sec["title"])}</text>')
     out.append(f'<text x="{x0:.0f}" y="{vy + vh - 0.8 * txt:.0f}" font-size="{txt * 0.7:.0f}">M 1:{scale:g} · arch_section.py '
-               f'(rudimentär: nur Schnittebene, Ansicht dahinter nur Treppen, Dach nicht modelliert)</text>')
+               f'(rudimentär: nur Schnittebene, Ansicht dahinter nur Treppen, verdeckte Stufenkanten gestrichelt, Dach nicht modelliert)</text>')
     out.append("</svg>")
     return "\n".join(out)
 
@@ -901,7 +932,7 @@ def render_dxf(sec, path):
     doc = ezdxf.new("R2010", setup=True)
     doc.units = ezdxf.units.MM
     msp = doc.modelspace()
-    for lay, col in (("S_WAND", 7), ("S_DECKE", 8), ("S_DECKE_ANNAHME", 1), ("S_GLAS", 5), ("S_TREPPE", 9), ("S_TREPPE_ANSICHT", 8), ("S_TEXT", 7), ("S_GELAENDE", 3)):
+    for lay, col in (("S_WAND", 7), ("S_DECKE", 8), ("S_DECKE_ANNAHME", 1), ("S_GLAS", 5), ("S_TREPPE", 9), ("S_TREPPE_ANSICHT", 8), ("S_TREPPE_VERDECKT", 8), ("S_TEXT", 7), ("S_GELAENDE", 3)):
         doc.layers.add(lay, color=col)
 
     def box(a, b, c, d_, layer, hatch=None):
@@ -923,6 +954,8 @@ def render_dxf(sec, path):
             msp.add_line((u + off, a), (u + off, b), dxfattribs={"layer": "S_GLAS"})
     for a, b in els["views"]:
         msp.add_line(a, b, dxfattribs={"layer": "S_TREPPE_ANSICHT", "lineweight": 25})
+    for a, b in els["hidden"]:
+        msp.add_line(a, b, dxfattribs={"layer": "S_TREPPE_VERDECKT", "linetype": "DASHED", "lineweight": 25})
     for poly in els["stair_cut"]:
         h = msp.add_hatch(dxfattribs={"layer": "S_TREPPE"})
         h.set_pattern_fill("ANSI31", scale=10)

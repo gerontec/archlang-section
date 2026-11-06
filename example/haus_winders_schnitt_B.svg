@@ -512,8 +512,11 @@
 <line x1="4102" y1="-4433" x2="4102" y2="-4611" stroke="#000" stroke-width="25" stroke-linecap="round"/>
 <line x1="4395" y1="-4611" x2="4395" y2="-4788" stroke="#000" stroke-width="25" stroke-linecap="round"/>
 <line x1="4895" y1="-4570" x2="4895" y2="-4788" stroke="#000" stroke-width="25" stroke-linecap="round"/>
+<rect x="2505" y="2240" width="1080" height="158" fill="white"/>
 <text x="3045" y="2360" font-size="120" text-anchor="middle">15 Stg. 167/300</text>
+<rect x="2505" y="-270" width="1080" height="158" fill="white"/>
 <text x="3045" y="-150" font-size="120" text-anchor="middle">15 Stg. 177/300</text>
+<rect x="2505" y="-2930" width="1080" height="158" fill="white"/>
 <text x="3045" y="-2810" font-size="120" text-anchor="middle">15 Stg. 177/300</text>
 <line x1="-2645" y1="200" x2="11555" y2="200" stroke="#3a7a20" stroke-width="25"/>
 <text x="11555" y="110" font-size="120" text-anchor="end" fill="#3a7a20">Gelände -0,20</text>
@@ -577,5 +580,5 @@
 <line x1="9005" y1="3510" x2="9105" y2="3410" stroke="#000" stroke-width="13"/>
 <text x="4455" y="3385" font-size="120" text-anchor="middle">9,20</text>
 <text x="-145" y="-6680" font-size="210" font-weight="bold">Schnitt B-B  (y = 0,65 m, Blick nach Norden)</text>
-<text x="-145" y="4840" font-size="105">M 1:50 · arch_section.py (rudimentär: nur Schnittebene, Ansicht dahinter nur Treppen, Dach nicht modelliert)</text>
+<text x="-145" y="4840" font-size="105">M 1:50 · arch_section.py (rudimentär: nur Schnittebene, Ansicht dahinter nur Treppen, verdeckte Stufenkanten gestrichelt, Dach nicht modelliert)</text>
 </svg>
