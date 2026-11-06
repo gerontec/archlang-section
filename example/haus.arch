@@ -27,6 +27,11 @@ plan "Haus" {
   let YKI = 5960     # kitchen | room W
   let YNE = 7650     # room NE | room SE
   let YLR = 8910     # room W/hall | living room
+  # installation shaft in the lobby against the bath wall, 410 x 410 mm, from the basement floor
+  # up through every storey: the only place on that wall clear of the bath door (y 2235-2985),
+  # flush with the bath wall's face (x 6145) and the face of the wall to room NE (y 3795)
+  let SX = 5735
+  let SY = 3385
   let YS = 13000     # east side 13,28 m outside with 28 cm walls, measured 2026-11-06
 
 
@@ -114,9 +119,13 @@ plan "Haus" {
 
   level -1 "Keller" height KG_CLEAR + KG_SLAB {
     grundriss()
+    # the shaft stands on the basement floor: no hole in it, so drawn as its footprint
+    furniture shaft at (SX, SY) size 410x410 label "Schacht"
   }
   level 0 "Erdgeschoss" height EG_CLEAR + EG_SLAB {
     grundriss()
+    # the shaft passes through this storey's floor slab
+    void id=schacht at (SX, SY) size 410x410
     # bath fittings: ground floor only
     # bath fittings (measured): a level-access shower 90 x 90 in the north-east corner,
     # a corner bath with 130 cm legs in the north-west corner (ArchLang has no corner bath:
@@ -136,6 +145,8 @@ plan "Haus" {
   }
   level 1 "Obergeschoss" height OG_CLEAR + OG_SLAB {
     grundriss()
+    # the shaft passes through this storey's floor slab
+    void id=schacht at (SX, SY) size 410x410
   }
 
   notes "Grundriss aller Geschosse identisch mit eg.arch (Stand 2026-11-05)"

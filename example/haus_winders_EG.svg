@@ -46,6 +46,9 @@
 <polygon points="3265,6165 3425,6165 3425,6325 3265,6325" fill="none" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
 <line x1="3265" y1="6165" x2="3425" y2="6325" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
 <line x1="3425" y1="6165" x2="3265" y2="6325" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
+<polygon points="5735,3385 6145,3385 6145,3795 5735,3795" fill="none" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
+<line x1="5735" y1="3385" x2="6145" y2="3795" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
+<line x1="6145" y1="3385" x2="5735" y2="3795" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
 </g>
 <g id="A-FURN" inkscape:groupmode="layer" inkscape:label="A-FURN">
 <path d="M 7906,140 L 8734,140 A 36 36 0 0 1 8770,176 L 8770,1004 A 36 36 0 0 1 8734,1040 L 7906,1040 A 36 36 0 0 1 7870,1004 L 7870,176 A 36 36 0 0 1 7906,140 Z" fill="#f4f2ee" stroke="#6c6864" stroke-width="9"/>
