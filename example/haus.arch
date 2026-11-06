@@ -103,13 +103,13 @@ plan "Haus" {
     # chimney on the wall kitchen | room W: 1200 x 420 mm into room W (measured), flush with the
     # hall wall (the room door rests on its face). ArchLang has no chimney symbol: three brick
     # cells of 400 (1200 / 3), each with a stainless flue pipe of 100 mm in its centre (measured),
-    # drawn as a 100 x 100 shaft (ArchLang draws circles only as arc walls).
+    # drawn as a shaft symbol in a 160 x 160 square.
     wall id=kamin1 chimney thickness 100 material brick { (2395, 6085) (2695, 6085) (2695, 6405) (2395, 6405) close }
     wall id=kamin2 chimney thickness 100 material brick { (2795, 6085) (3095, 6085) (3095, 6405) (2795, 6405) close }
     wall id=kamin3 chimney thickness 100 material brick { (3195, 6085) (3495, 6085) (3495, 6405) (3195, 6405) close }
-    void id=rohr1 at (2495, 6195) size 100x100
-    void id=rohr2 at (2895, 6195) size 100x100
-    void id=rohr3 at (3295, 6195) size 100x100
+    void id=rohr1 at (2465, 6165) size 160x160
+    void id=rohr2 at (2865, 6165) size 160x160
+    void id=rohr3 at (3265, 6165) size 160x160
   }
 
   level -1 "Keller" height KG_CLEAR + KG_SLAB {
