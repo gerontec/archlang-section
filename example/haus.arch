@@ -109,7 +109,7 @@ plan "Haus" {
     window at (XE, 2035) width 1000 wall exterior
 
     # doors
-    door at (XW, 10985) width 1000 wall exterior swing into wz
+    # west door of the living room: per level (terrace door 2000 double on the ground floor)
     door at (XW, 1735) width 900 wall exterior swing outward
     door at (4295, YLR) width 800 wall partition swing into wz
     # door hall -> room W: per level (walled up on the ground floor)
@@ -144,6 +144,7 @@ plan "Haus" {
   level -1 "Keller" height KG_CLEAR + KG_SLAB {
     grundriss(-1)
     door at (XH, 6855) width 800 wall partition swing into zw   # open leaf rests flush on the chimney face (y 6455)
+    door at (XW, 10985) width 1000 wall exterior swing into wz
     # the shaft stands on the basement floor: no hole in it, so drawn as its footprint
     furniture shaft at (SX, SY) size 410x410 label "Schacht"
   }
@@ -155,6 +156,9 @@ plan "Haus" {
     # room, centred in room W's clear width (faces x 140 and 3545 -> centre 1842,5, grid 5 -> 1845).
     # ArchLang has no arch shape: drawn as a leaf-less opening, head = wall height
     opening at (1845, YLR) width 2000 wall partition
+    # terrace door, west wall of the living room: widened to 2000, two leaves of 1000 opening
+    # inward, centre kept at y 10985 (y 9985-11985); the leaves sweep x 140-1140
+    door double at (XW, 10985) width 2000 wall exterior swing into wz
     # corner sofa in the cinema (room W), north-west corner: long side 2350 on the west wall (faces x 140,
     # y 6035), short side 1900 on the kitchen wall towards the chimney (305 clear of it), 900 deep;
     # 450 left between its end and the south wall at the archway. The sofa_l symbol fixes its seat
@@ -164,6 +168,17 @@ plan "Haus" {
     # head end on the south wall (face y 7575), centred in the clear width (faces x 5095 / 8770
     # -> 6932,5, grid 5 -> 6935); its foot end at y 5675 stays clear of the door leaf (to y 5635)
     furniture double_bed at (6035, 5675) size 1800x1900 label "Doppelbett 2 x 90/190" rotate 180
+    # living room: dining table at right angles to the south window (window x 3085-4145),
+    # 2000 x 900, y 10360-12360. Bench for 4 (2000 x 400) against the east wall (face x 4945),
+    # the wall is its backrest; the table 50 off the bench, x 3595-4495, so it overlaps the
+    # window width by 550. Three chairs on its west side and one at the south head, its back on
+    # the window wall (y 12410-12860); the north head stays free.
+    furniture id=esstisch table at (3595, 10360) size 900x2000 label "Esstisch"
+    furniture bench at (4545, 10360) size 400x2000 label "Bank"
+    furniture chair at (3095, 10468) size 450x450 facing esstisch
+    furniture chair at (3095, 11135) size 450x450 facing esstisch
+    furniture chair at (3095, 11802) size 450x450 facing esstisch
+    furniture chair at (3820, 12410) size 450x450 facing esstisch
     # kitchen: U-shaped, 600 deep, open to the east (door to the hall on the east wall, y 3855-4655).
     # Clear faces: west x 140, east x 3545, north y 2525, south y 5885.
     # Base of the U on the west wall with the double sink under the window (y 4050-5120): the
@@ -178,17 +193,19 @@ plan "Haus" {
     #   west leg:  corner counter 860 | dishwasher 600 | double sink 1200 | corner counter 700
     #   south leg: counter 400 | hob 600 (centre x 1440 = 1300 from the west wall face) |
     #              counter 1205 | fridge tall unit 600
-    #   north leg: counter run 1605 (storage), ends at x 2345; the north-east corner is a coffee
-    #              corner for two (table 600 x 600 in the corner, chairs on its west and south side,
-    #              the south chair ends at y 3575, clear of the door swing from y 3855)
+    #   north leg: counter run 1605 (storage), ends at x 2345; then a coffee corner for two:
+    #              table 600 x 600 flush against the counter end (x 2345-2945), two simple
+    #              stools 380 x 380 with a hand slot in the seat (ArchLang's stool symbol is round
+    #              and has no slot: noted in the label): one east of the table against the east
+    #              wall, one south of it (ends at y 3505, clear of the door swing from y 3855)
     furniture kitchen_sink at (140, 3985) size 600x1200 label "Doppelspüle" rotate 270
     furniture counter at (140, 2525) size 600x860 rotate 270
     furniture dishwasher at (140, 3385) size 600x600 label "GS" rotate 270
     furniture counter at (140, 5185) size 600x700 rotate 270
     furniture counter at (740, 2525) size 1605x600
-    furniture id=kaffeetisch table at (2945, 2525) size 600x600 label "Kaffeetisch"
-    furniture chair at (2495, 2600) size 450x450 facing kaffeetisch
-    furniture chair at (3020, 3125) size 450x450 facing kaffeetisch
+    furniture id=kaffeetisch table at (2345, 2525) size 600x600 label "Kaffeetisch"
+    furniture stool at (3165, 2635) size 380x380 label "Hocker mit Griffmulde"
+    furniture stool at (2455, 3125) size 380x380 label "Hocker mit Griffmulde"
     furniture counter at (740, 5285) size 400x600 rotate 180
     furniture stove at (1140, 5285) size 600x600 label "Kochfeld" rotate 180
     furniture range_hood at (1140, 5385) size 600x500 label "Dunstabzug" rotate 180
@@ -207,10 +224,12 @@ plan "Haus" {
     dim (-70, 5055) -> (262, 4723) offset 0 text "45°"
     # bath fittings: ground floor only
     # bath fittings (measured): a level-access shower 90 x 90 in the north-east corner,
-    # a corner bath with 130 cm legs in the north-west corner (ArchLang has no corner bath:
-    # drawn as its 130 x 130 footprint)
+    # a corner bath with 130 cm legs in the north-west corner. ArchLang has no corner bath:
+    # placeholder = the 45 deg triangle of its legs, inner corner (6335, 140): the legs are the
+    # wall faces, the hypotenuse is drawn as a labelled dimension line (a wall there would
+    # cut the triangle off the room)
     furniture shower in bad anchor top-right flush size 900x900 label "Dusche bodengleich 90/90"
-    furniture bathtub in bad anchor top-left flush size 1300x1300 label "Eckwanne 130/130"
+    dim (7635, 140) -> (6335, 1440) offset 0 text "Eckwanne 130/130"
     # pre-wall on the bath's south wall (measured): 130 deep, 1300 high, the drains of WC and
     # basin run in it (drawn open); the Geberit frame in it sits 300 from the west wall and is
     # 500 wide, x 6635-7135 (drawn hatched)
@@ -225,6 +244,7 @@ plan "Haus" {
   level 1 "Obergeschoss" height OG_CLEAR + OG_SLAB {
     grundriss(1)
     door at (XH, 6855) width 800 wall partition swing into zw   # open leaf rests flush on the chimney face (y 6455)
+    door at (XW, 10985) width 1000 wall exterior swing into wz
     # the shaft passes through this storey's floor slab
     void id=schacht at (SX, SY) size 410x410
   }
