@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="297mm" height="420mm" viewBox="-2970 -1863.75 14850 21000" font-family="Helvetica, Arial, sans-serif">
-<defs><pattern id="poche" patternUnits="userSpaceOnUse" width="60" height="60" patternTransform="rotate(45)"><rect width="60" height="60" fill="#e9e4db"/><line x1="0" y1="0" x2="0" y2="60" stroke="#b9b1a4" stroke-width="6.3"/></pattern></defs>
+<defs><pattern id="hatch-brick" patternUnits="userSpaceOnUse" width="180" height="84"><rect width="180" height="84" fill="#e9e4db"/><line x1="0" y1="84" x2="180" y2="84" stroke="#b9b1a4" stroke-width="5.4"/><line x1="0" y1="42" x2="180" y2="42" stroke="#b9b1a4" stroke-width="5.4"/><line x1="90" y1="0" x2="90" y2="42" stroke="#b9b1a4" stroke-width="5.4"/><line x1="0" y1="42" x2="0" y2="84" stroke="#b9b1a4" stroke-width="5.4"/><line x1="180" y1="42" x2="180" y2="84" stroke="#b9b1a4" stroke-width="5.4"/></pattern><pattern id="poche" patternUnits="userSpaceOnUse" width="60" height="60" patternTransform="rotate(45)"><rect width="60" height="60" fill="#e9e4db"/><line x1="0" y1="0" x2="0" y2="60" stroke="#b9b1a4" stroke-width="6.3"/></pattern></defs>
 <rect x="-2970" y="-1863.75" width="14850" height="21000" fill="#ffffff"/>
 <g id="A-FLOR" inkscape:groupmode="layer" inkscape:label="A-FLOR">
 <polygon points="0,0 5020,0 5020,2435 0,2435" fill="#fbfaf7"/>
@@ -36,12 +36,21 @@
 <line x1="4395" y1="1632.8" x2="4468.92" y2="1509.6" stroke="#6c6864" stroke-width="9"/>
 <text x="1330" y="640" font-size="100" fill="#333333" text-anchor="middle" dominant-baseline="central">UP</text>
 </g>
-<g id="A-COLS" inkscape:groupmode="layer" inkscape:label="A-COLS">
-<polygon points="2345,6035 3545,6035 3545,6455 2345,6455" fill="#4a4a4a" stroke="#1b1b1b" stroke-width="9"/>
+<g id="A-FLOR-OVHD" inkscape:groupmode="layer" inkscape:label="A-FLOR-OVHD">
+<polygon points="2445,6135 2645,6135 2645,6355 2445,6355" fill="none" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
+<line x1="2445" y1="6135" x2="2645" y2="6355" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
+<line x1="2645" y1="6135" x2="2445" y2="6355" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
+<polygon points="2845,6135 3045,6135 3045,6355 2845,6355" fill="none" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
+<line x1="2845" y1="6135" x2="3045" y2="6355" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
+<line x1="3045" y1="6135" x2="2845" y2="6355" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
+<polygon points="3245,6135 3445,6135 3445,6355 3245,6355" fill="none" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
+<line x1="3245" y1="6135" x2="3445" y2="6355" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
+<line x1="3445" y1="6135" x2="3245" y2="6355" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>
 </g>
 <g id="A-WALL" inkscape:groupmode="layer" inkscape:label="A-WALL">
+<path d="M 2345,6035 L 3545,6035 L 3545,6455 L 2345,6455 Z M 2445,6135 L 2445,6355 L 2645,6355 L 2645,6135 Z M 2845,6135 L 2845,6355 L 3045,6355 L 3045,6135 Z M 3245,6135 L 3245,6355 L 3445,6355 L 3445,6135 Z" fill="url(#hatch-brick)" fill-rule="nonzero"/>
 <path d="M -140,-140 L 9050,-140 L 9050,1535 L 8770,1535 L 8770,140 L 6335,140 L 6335,2235 L 6145,2235 L 6145,1845 L 5995,1845 L 5995,1695 L 6145,1695 L 6145,140 L 5095,140 L 5095,1695 L 5195,1695 L 5195,1845 L 5095,1845 L 5095,2652.5 L 4945,2652.5 L 4945,2510 L 4695,2510 L 4695,2360 L 4945,2360 L 4945,140 L 140,140 L 140,1285 L -140,1285 Z M -140,10485 L -140,7385 L 140,7385 L 140,8835 L 3545,8835 L 3545,7255 L 3675,7255 L 3675,8835 L 3895,8835 L 3895,8985 L 140,8985 L 140,10485 Z M -140,11485 L 140,11485 L 140,12860 L 3085,12860 L 3085,13140 L -140,13140 Z M -140,2185 L 140,2185 L 140,2345 L 3700,2345 L 3700,2360 L 3895,2360 L 3895,2510 L 3700,2510 L 3700,2525 L 3675,2525 L 3675,3855 L 3545,3855 L 3545,2525 L 140,2525 L 140,4085 L -140,4085 Z M -140,5085 L 140,5085 L 140,5885 L 3545,5885 L 3545,4655 L 3675,4655 L 3675,5885 L 3685,5885 L 3685,6035 L 3675,6035 L 3675,6455 L 3545,6455 L 3545,6035 L 140,6035 L 140,6235 L -140,6235 Z M 4145,12860 L 4945,12860 L 4945,8985 L 4695,8985 L 4695,8835 L 4945,8835 L 4945,8635 L 5095,8635 L 5095,12860 L 5195,12860 L 5195,13140 L 4145,13140 Z M 4945,3687.5 L 5095,3687.5 L 5095,3795 L 6145,3795 L 6145,2985 L 6335,2985 L 6335,3795 L 8770,3795 L 8770,2535 L 9050,2535 L 9050,5035 L 8770,5035 L 8770,3945 L 6335,3945 L 6335,3965 L 6145,3965 L 6145,3945 L 5095,3945 L 5095,4835 L 4945,4835 Z M 4945,5635 L 5095,5635 L 5095,7575 L 8770,7575 L 8770,6085 L 9050,6085 L 9050,10135 L 8770,10135 L 8770,7725 L 5095,7725 L 5095,7835 L 4945,7835 Z M 6245,12860 L 8770,12860 L 8770,11135 L 9050,11135 L 9050,13140 L 6245,13140 Z" fill="url(#poche)" fill-rule="nonzero"/>
-<path d="M -140,-140 L 9050,-140 L 9050,1535 L 8770,1535 L 8770,140 L 6335,140 L 6335,2235 L 6145,2235 L 6145,1845 L 5995,1845 L 5995,1695 L 6145,1695 L 6145,140 L 5095,140 L 5095,1695 L 5195,1695 L 5195,1845 L 5095,1845 L 5095,2652.5 L 4945,2652.5 L 4945,2510 L 4695,2510 L 4695,2360 L 4945,2360 L 4945,140 L 140,140 L 140,1285 L -140,1285 Z M -140,10485 L -140,7385 L 140,7385 L 140,8835 L 3545,8835 L 3545,7255 L 3675,7255 L 3675,8835 L 3895,8835 L 3895,8985 L 140,8985 L 140,10485 Z M -140,11485 L 140,11485 L 140,12860 L 3085,12860 L 3085,13140 L -140,13140 Z M -140,2185 L 140,2185 L 140,2345 L 3700,2345 L 3700,2360 L 3895,2360 L 3895,2510 L 3700,2510 L 3700,2525 L 3675,2525 L 3675,3855 L 3545,3855 L 3545,2525 L 140,2525 L 140,4085 L -140,4085 Z M -140,5085 L 140,5085 L 140,5885 L 3545,5885 L 3545,4655 L 3675,4655 L 3675,5885 L 3685,5885 L 3685,6035 L 3675,6035 L 3675,6455 L 3545,6455 L 3545,6035 L 140,6035 L 140,6235 L -140,6235 Z M 4145,12860 L 4945,12860 L 4945,8985 L 4695,8985 L 4695,8835 L 4945,8835 L 4945,8635 L 5095,8635 L 5095,12860 L 5195,12860 L 5195,13140 L 4145,13140 Z M 4945,3687.5 L 5095,3687.5 L 5095,3795 L 6145,3795 L 6145,2985 L 6335,2985 L 6335,3795 L 8770,3795 L 8770,2535 L 9050,2535 L 9050,5035 L 8770,5035 L 8770,3945 L 6335,3945 L 6335,3965 L 6145,3965 L 6145,3945 L 5095,3945 L 5095,4835 L 4945,4835 Z M 4945,5635 L 5095,5635 L 5095,7575 L 8770,7575 L 8770,6085 L 9050,6085 L 9050,10135 L 8770,10135 L 8770,7725 L 5095,7725 L 5095,7835 L 4945,7835 Z M 6245,12860 L 8770,12860 L 8770,11135 L 9050,11135 L 9050,13140 L 6245,13140 Z" fill="none" stroke="#1b1b1b" stroke-width="25" stroke-linejoin="miter" stroke-miterlimit="4"/>
+<path d="M -140,-140 L 9050,-140 L 9050,1535 L 8770,1535 L 8770,140 L 6335,140 L 6335,2235 L 6145,2235 L 6145,1845 L 5995,1845 L 5995,1695 L 6145,1695 L 6145,140 L 5095,140 L 5095,1695 L 5195,1695 L 5195,1845 L 5095,1845 L 5095,2652.5 L 4945,2652.5 L 4945,2510 L 4695,2510 L 4695,2360 L 4945,2360 L 4945,140 L 140,140 L 140,1285 L -140,1285 Z M -140,10485 L -140,7385 L 140,7385 L 140,8835 L 3545,8835 L 3545,7255 L 3675,7255 L 3675,8835 L 3895,8835 L 3895,8985 L 140,8985 L 140,10485 Z M -140,11485 L 140,11485 L 140,12860 L 3085,12860 L 3085,13140 L -140,13140 Z M -140,2185 L 140,2185 L 140,2345 L 3700,2345 L 3700,2360 L 3895,2360 L 3895,2510 L 3700,2510 L 3700,2525 L 3675,2525 L 3675,3855 L 3545,3855 L 3545,2525 L 140,2525 L 140,4085 L -140,4085 Z M -140,5085 L 140,5085 L 140,5885 L 3545,5885 L 3545,4655 L 3675,4655 L 3675,5885 L 3685,5885 L 3685,6035 L 3675,6035 L 3675,6455 L 2345,6455 L 2345,6035 L 140,6035 L 140,6235 L -140,6235 Z M 2445,6135 L 2445,6355 L 2645,6355 L 2645,6135 Z M 2845,6135 L 2845,6355 L 3045,6355 L 3045,6135 Z M 3245,6135 L 3245,6355 L 3445,6355 L 3445,6135 Z M 4145,12860 L 4945,12860 L 4945,8985 L 4695,8985 L 4695,8835 L 4945,8835 L 4945,8635 L 5095,8635 L 5095,12860 L 5195,12860 L 5195,13140 L 4145,13140 Z M 4945,3687.5 L 5095,3687.5 L 5095,3795 L 6145,3795 L 6145,2985 L 6335,2985 L 6335,3795 L 8770,3795 L 8770,2535 L 9050,2535 L 9050,5035 L 8770,5035 L 8770,3945 L 6335,3945 L 6335,3965 L 6145,3965 L 6145,3945 L 5095,3945 L 5095,4835 L 4945,4835 Z M 4945,5635 L 5095,5635 L 5095,7575 L 8770,7575 L 8770,6085 L 9050,6085 L 9050,10135 L 8770,10135 L 8770,7725 L 5095,7725 L 5095,7835 L 4945,7835 Z M 6245,12860 L 8770,12860 L 8770,11135 L 9050,11135 L 9050,13140 L 6245,13140 Z" fill="none" stroke="#1b1b1b" stroke-width="25" stroke-linejoin="miter" stroke-miterlimit="4"/>
 </g>
 <g id="A-DOOR" inkscape:groupmode="layer" inkscape:label="A-DOOR">
 <polygon points="140,11485 140,10485 -140,10485 -140,11485" fill="none"/>
@@ -134,7 +143,7 @@
 <text x="4315" y="5637.5" font-size="175" fill="#222222" text-anchor="middle" dominant-baseline="central" font-weight="600">Flur</text>
 <text x="4315" y="5830" font-size="125" fill="#7a7a7a" text-anchor="middle" dominant-baseline="central">8,0 m² net</text>
 <text x="1805" y="7400" font-size="175" fill="#222222" text-anchor="middle" dominant-baseline="central" font-weight="600">Zimmer</text>
-<text x="1805" y="7592.5" font-size="125" fill="#7a7a7a" text-anchor="middle" dominant-baseline="central">9,5 m² net</text>
+<text x="1805" y="7592.5" font-size="125" fill="#7a7a7a" text-anchor="middle" dominant-baseline="central">9,2 m² net</text>
 <text x="6965" y="5725" font-size="175" fill="#222222" text-anchor="middle" dominant-baseline="central" font-weight="600">Zimmer</text>
 <text x="6965" y="5917.5" font-size="125" fill="#7a7a7a" text-anchor="middle" dominant-baseline="central">13,3 m² net</text>
 <text x="6965" y="10290" font-size="175" fill="#222222" text-anchor="middle" dominant-baseline="central" font-weight="600">Zimmer</text>
@@ -395,6 +404,10 @@
 <line x1="9792.43" y1="13097.57" x2="9707.57" y2="13182.43" stroke="#0E5484" stroke-width="9"/>
 <line x1="9792.43" y1="-182.43" x2="9707.57" y2="-97.57" stroke="#0E5484" stroke-width="9"/>
 <text x="9837.5" y="6500" font-size="125" fill="#0E5484" text-anchor="middle" dominant-baseline="central" transform="rotate(-90 9837.5 6500)">13280</text>
+<line x1="2645" y1="6245" x2="2745" y2="6245" stroke="#0E5484" stroke-width="9"/>
+<line x1="2687.43" y1="6287.43" x2="2602.57" y2="6202.57" stroke="#0E5484" stroke-width="9"/>
+<line x1="2787.43" y1="6287.43" x2="2702.57" y2="6202.57" stroke="#0E5484" stroke-width="9"/>
+<text x="2923.75" y="6245" font-size="125" fill="#0E5484" text-anchor="middle" dominant-baseline="central" transform="rotate(0 2923.75 6245)">100</text>
 <line x1="3545" y1="3190" x2="3675" y2="3190" stroke="#0E5484" stroke-width="9"/>
 <line x1="3587.43" y1="3232.43" x2="3502.57" y2="3147.57" stroke="#0E5484" stroke-width="9"/>
 <line x1="3717.43" y1="3232.43" x2="3632.57" y2="3147.57" stroke="#0E5484" stroke-width="9"/>
@@ -460,7 +473,7 @@
 <text x="-2.5" y="17147.5" font-size="95" fill="#333333" text-anchor="middle" dominant-baseline="central">07</text>
 <text x="171" y="17147.5" font-size="95" fill="#333333" text-anchor="start" dominant-baseline="central">Zimmer</text>
 <text x="2199" y="17147.5" font-size="95" fill="#333333" text-anchor="end" dominant-baseline="central">10,65</text>
-<text x="2899" y="17147.5" font-size="95" fill="#333333" text-anchor="end" dominant-baseline="central">9,53</text>
+<text x="2899" y="17147.5" font-size="95" fill="#333333" text-anchor="end" dominant-baseline="central">9,16</text>
 <line x1="-140" y1="17062.5" x2="2935" y2="17062.5" stroke="#333333" stroke-width="6.5"/>
 <text x="-2.5" y="17317.5" font-size="95" fill="#333333" text-anchor="middle" dominant-baseline="central">08</text>
 <text x="171" y="17317.5" font-size="95" fill="#333333" text-anchor="start" dominant-baseline="central">Zimmer</text>
@@ -480,7 +493,7 @@
 <line x1="-140" y1="17742.5" x2="2935" y2="17742.5" stroke="#333333" stroke-width="9"/>
 <text x="-104" y="17827.5" font-size="95" fill="#333333" text-anchor="start" dominant-baseline="central" font-weight="600">SUMME</text>
 <text x="2199" y="17827.5" font-size="95" fill="#333333" text-anchor="end" dominant-baseline="central" font-weight="600">115,82</text>
-<text x="2899" y="17827.5" font-size="95" fill="#333333" text-anchor="end" dominant-baseline="central" font-weight="600">103,02</text>
+<text x="2899" y="17827.5" font-size="95" fill="#333333" text-anchor="end" dominant-baseline="central" font-weight="600">102,65</text>
 <polygon points="3085,15702.5 6760,15702.5 6760,16552.5 3085,16552.5" fill="none" stroke="#333333" stroke-width="9"/>
 <text x="3158.5" y="15787.5" font-size="95" fill="#333333" text-anchor="start" dominant-baseline="central" font-weight="600">NOTES</text>
 <line x1="3085" y1="15872.5" x2="6760" y2="15872.5" stroke="#333333" stroke-width="9"/>

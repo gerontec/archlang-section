@@ -100,10 +100,15 @@ plan "Haus" {
       landing at (3895, 140) size 1000x1000
       flight at (3895, 1140) size 1000x560
     }
-    # chimney on the wall kitchen | room W: stands 420 mm into room W (south), 1200 mm wide,
-    # measured; its position along the wall (flush with the hall wall) is assumed.
-    # The three flues (200 x 200) are inside it.
-    column id=kamin at (2345, 6035) size 1200x420
+    # chimney on the wall kitchen | room W: 1200 x 420 mm into room W (measured), flush with the
+    # hall wall (the room door rests on its face). ArchLang has no chimney symbol: three brick
+    # cells (webs 100 mm) round three flues 200 x 220 (assumed), each flue drawn as a shaft.
+    wall id=kamin1 chimney thickness 100 material brick { (2395, 6085) (2695, 6085) (2695, 6405) (2395, 6405) close }
+    wall id=kamin2 chimney thickness 100 material brick { (2795, 6085) (3095, 6085) (3095, 6405) (2795, 6405) close }
+    wall id=kamin3 chimney thickness 100 material brick { (3195, 6085) (3495, 6085) (3495, 6405) (3195, 6405) close }
+    void id=zug1 at (2445, 6135) size 200x220
+    void id=zug2 at (2845, 6135) size 200x220
+    void id=zug3 at (3245, 6135) size 200x220
   }
 
   level -1 "Keller" height KG_CLEAR + KG_SLAB {
