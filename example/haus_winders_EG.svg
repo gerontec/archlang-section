@@ -57,6 +57,12 @@
 <line x1="6953" y1="3505.55" x2="6953" y2="3474.65" stroke="#a8a29a" stroke-width="6.5"/>
 <line x1="6817" y1="3505.55" x2="6817" y2="3474.65" stroke="#a8a29a" stroke-width="6.5"/>
 <circle cx="6885" cy="3593" r="16" fill="#a8a29a" stroke="#a8a29a" stroke-width="6.5"/>
+<path d="M 7973,3665 L 7427,3665 A 27 27 0 0 1 7400,3638 L 7400,3242 A 27 27 0 0 1 7427,3215 L 7973,3215 A 27 27 0 0 1 8000,3242 L 8000,3638 A 27 27 0 0 1 7973,3665 Z" fill="#f4f2ee" stroke="#6c6864" stroke-width="9"/>
+<path d="M 7472,3404 A 120.17 120.17 0 0 1 7525.21,3304.21 A 313.68 313.68 0 0 1 7874.79,3304.21 A 120.17 120.17 0 0 1 7928,3404 A 120.17 120.17 0 0 1 7874.79,3503.79 A 313.68 313.68 0 0 1 7525.21,3503.79 A 120.17 120.17 0 0 1 7472,3404 Z" fill="#ffffff" stroke="#6c6864" stroke-width="9"/>
+<path d="M 7502.6,3404 A 92.52 92.52 0 0 1 7546.37,3325.37 A 291.54 291.54 0 0 1 7853.63,3325.37 A 92.52 92.52 0 0 1 7897.4,3404 A 92.52 92.52 0 0 1 7853.63,3482.63 A 291.54 291.54 0 0 1 7546.37,3482.63 A 92.52 92.52 0 0 1 7502.6,3404 Z" fill="#ffffff" stroke="#a8a29a" stroke-width="6.5"/>
+<circle cx="7700" cy="3613.25" r="15.75" fill="#a8a29a" stroke="#a8a29a" stroke-width="6.5"/>
+<line x1="7700" y1="3613.25" x2="7700" y2="3525.5" stroke="#a8a29a" stroke-width="6.5"/>
+<circle cx="7700" cy="3388.7" r="13.5" fill="#a8a29a" stroke="#a8a29a" stroke-width="6.5"/>
 </g>
 <g id="A-FLOR-OVHD" inkscape:groupmode="layer" inkscape:label="A-FLOR-OVHD">
 <polygon points="2465,6165 2625,6165 2625,6325 2465,6325" fill="none" stroke="#333333" stroke-width="9" stroke-dasharray="54 36"/>

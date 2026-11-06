@@ -114,6 +114,8 @@ plan "Haus" {
     wall id=vormauer2 prewall thickness 130 material none height 1300 { (7135, 3730) (8770, 3730) }
     # shower WC hung on the pre-wall, centred on the frame
     furniture wc at (6685, 3065) size 400x600 label "Dusch-WC" rotate 180
+    # basin on the pre-wall (position chosen: centre x 7700, 315 clear of the WC, 770 from the east wall)
+    furniture basin at (7400, 3215) size 600x450 label "Waschbecken" rotate 180
     # chimney on the wall kitchen | room W: 1200 x 420 mm into room W (measured), flush with the
     # hall wall (the room door rests on its face). ArchLang has no chimney symbol: three brick
     # cells of 400 (1200 / 3), each with a stainless flue pipe of 100 mm in its centre (measured),
