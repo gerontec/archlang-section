@@ -6,6 +6,10 @@ Writes, for plan.arch into OUTDIR:
   plan_arch.L<n>.svg|png|pdf|dxf        floor plans, one per level (ArchLang compile)
   plan_schnitt_<name>.svg|png|dxf       sections (arch_section.py, one per # @section)
 
+Before anything is drawn every quarter-turn stair runs through stair_check.py (the
+winder construction of stair_quarter_turn.py, variants 3 to 6 winders): its table and
+any complaint about the authored stair go to stderr. Advisory only, the export goes on.
+
 Every sheet (SVG, PNG, PDF) carries a footer line at the bottom with the command
 that produced it, i.e. this script's invocation with absolute paths, plus the
 sheet's own file name. DXF has no sheet and gets no footer. The npm package is
@@ -123,6 +127,13 @@ def main():
 
     if os.path.realpath(os.path.join(outdir, os.path.basename(arch))) != os.path.realpath(arch):
         shutil.copy2(arch, outdir)
+
+    # stairs first: every quarter-turn stair through the winder construction (advisory)
+    env = dict(os.environ, ARCHLANG_CLI=os.environ.get("ARCHLANG_CLI", CLI))
+    r = subprocess.run([sys.executable, os.path.join(HERE, "stair_check.py"), arch],
+                       capture_output=True, text=True, timeout=300, env=env)
+    for line in (r.stdout + r.stderr).splitlines():
+        print(line, file=sys.stderr)
 
     # floor plans: one compile per format writes every level (<stem>_arch.L<n>.<fmt>)
     for fmt in FORMATS:

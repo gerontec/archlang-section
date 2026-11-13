@@ -98,6 +98,21 @@ on the walking line are equal, and the treads are tapered gradually over the win
 ./stair_quarter_turn.py --height 2660 --width 1000 --run1 2700 --run2 560 --straight 9 -o treppe
 ```
 
+## Stair check before drawing
+
+`arch_export.py` first runs `stair_check.py plan.arch`, which puts every quarter-turn stair with
+`winders` through the construction of `stair_quarter_turn.py`: storey height, flight width, both
+runs and the riser count come from the plan (`describe --json`, `# @stair goings`, else risers of
+at most 180 mm). numpy computes the variants from 3 to 6 tapered steps, with run 2 as drawn and
+with run 2 = 0 (the winding ends at the stair eye, the arrival floor is the last tread), and
+prints riser/going, 2h + a, the winding zone over its minimum, the smallest inner going and the
+largest outer going; the authored variant is marked `*`. Complaints (zone too short, inner going
+under 100 mm, 2h + a outside 590 to 650) are advisory; `--strict` turns them into exit 1.
+
+```sh
+./stair_check.py example/haus_winders.arch --min-winders 3 --max-winders 6 --inner-min 100
+```
+
 ## Limits
 
 Only what the cut plane hits — nothing behind it is projected except the cut stair, no roofs, axis-aligned cuts only,
