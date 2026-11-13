@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """arch_section.py - rudimentary building section (Schnitt) for ArchLang plans.
 
-ArchLang 1.55 draws floor plans only ("heights draw nothing"). This tool reads
+ArchLang (1.60 as pinned here) draws floor plans only ("heights draw nothing"). This tool reads
 what ArchLang itself exports (Plan JSON per level + `describe --json`) and draws
 a vertical section along an axis-aligned cut line. The npm package is untouched.
 

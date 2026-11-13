@@ -2,7 +2,7 @@
 
 Rudimentary building sections (Schnitte) for [ArchLang](https://github.com/ChanMeng666/archlang) floor plans.
 
-ArchLang 1.55 draws floor plans only — heights are a datum that "draws nothing", and sections/elevations
+ArchLang (1.60 as pinned here) draws floor plans only — heights are a datum that "draws nothing", and sections/elevations
 are planned upstream for a later `archlang3d` package. Until then this tool reads what ArchLang itself
 exports (Plan JSON per storey and `describe --json`) and draws a vertical section along an axis-aligned
 cut line as **SVG, PNG and DXF**. The ArchLang package is not modified.
@@ -24,7 +24,9 @@ pip install --user ezdxf cairosvg
 ```sh
 ./arch_section.py example/haus.arch            # all @section lines
 ./arch_section.py plan.arch --section A -o out/ --scale 50 --no-dxf
-# demo.arch and haus_winders.arch use `landing … winders <n>` (ArchLang branch feat/stair-winders):
+# demo.arch and haus_winders.arch use `landing … winders <n>` (ArchLang 1.60 or later, as pinned):
+./arch_section.py example/demo.arch
+# a local build instead of the pinned package:
 ARCHLANG_CLI=/path/to/archlang/dist/cli.js ./arch_section.py example/demo.arch
 ```
 
@@ -80,8 +82,8 @@ A level without `@floor` gets an assumed 250 mm slab, drawn red and marked TODO.
     (thin lines); the part in front of the cut is left out
   * goings: winders as planned, a level landing one, the flights share the rest by run, or as
     written with `# @stair <id> goings 9 1` (one count per flight)
-  * `winders` needs the ArchLang branch `feat/stair-winders` (see `example/haus_winders.arch`,
-    `example/poc_winders.png`); run against a local build with `ARCHLANG_CLI=/path/to/archlang/dist/cli.js`
+  * `winders` needs ArchLang 1.60 or later (released; see `example/haus_winders.arch`,
+    `example/poc_winders.png`); a local build runs with `ARCHLANG_CLI=/path/to/archlang/dist/cli.js`
 
 Storey height (finished floor to finished floor) comes from ArchLang's `level … height`; clear height is
 storey height minus the `@floor` build-up of the level above.

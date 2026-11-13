@@ -3,6 +3,6 @@
   "private": true,
   "description": "Rudimentary building sections for ArchLang plans",
   "dependencies": {
-    "@chanmeng666/archlang": "^1.55.0"
+    "@chanmeng666/archlang": "^1.60.0"
   }
 }

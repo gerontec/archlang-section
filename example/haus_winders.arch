@@ -100,7 +100,7 @@ plan "Haus" {
     opening at (XM, 3168) width 1035 wall partition
 
     # stair along the north wall, climbs west -> east, winders at the top turn south
-    # winders need the ArchLang branch feat/stair-winders (landing ... winders <n>)
+    # winders need ArchLang 1.60 or later (landing ... winders <n>)
     stair id=tr dir up width 1000 {
       flight at (1195, 140) size 2700x1000
       landing at (3895, 140) size 1000x1000 winders 4
